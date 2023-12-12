@@ -17,6 +17,7 @@
     <div id="main-wrapper" class="wallet-open active">
         @include('owner.template.navbar')
         @include('owner.template.sidebar')
+
         <div class="content-body">
             <div class="container-fluid">
 
@@ -79,6 +80,13 @@
                 {{ $chart->script() }}
                </div>
             </div>
+
+            <div class="footer out-footer style-2">
+                <div class="copyright">
+                    <p>Copyright © Designed &amp; Developed by <a href="https://dexignlab.com/" target="_blank">DexignLab</a> 2023</p>
+                </div>
+            </div>
+            
 		  </div>
 		</div>
         </div>
