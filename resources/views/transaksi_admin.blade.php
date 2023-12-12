@@ -1054,16 +1054,13 @@
 												<td>
 													<img src="images/trans/1.jpg" alt="" class="avatar avatar-sm me-3">
 												</td>
-												{{-- <td>
-													<div class="badge bg-secondary">
-														VII A
-													</div>
-												</td> --}}
 												<td>
-													<div class=" " style="justify-content: center">
-                                                        <a href="javascript:void(0);" class="btn btn-danger btn-sm">Tolak</a>
-                                                        <a href="javascript:void(0);" class="btn btn-primary btn-sm"> Konfirmasi</a>
-                                                    </div>
+													<div>
+                                                        <div class="action-buttons">
+                                                            <button type="detail-button" class="btn btn-primary" onclick="detail()"><i class="fas fa-eye"></i></button>
+                                                            <button type="submit" class="btn btn-danger" id="" onclick="return confirm()"><i class="fas fa-trash-alt"></i></button>
+                                                          </div>
+													</div>
 												</td>
 											</tr>
 										</tbody>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TransaksiAdminController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
@@ -26,3 +27,4 @@ Route::get('/approval-owner', [OwnerApprovalController::class, 'approval'])->nam
 
 // Halaman Admin
 Route::get('/admin-approval', [AdminApprovalController::class, 'approval'])->name('app-admin');
+Route::get('/transaksi-admin', [TransaksiAdminController::class, 'transaksi'])->name('trans->admin');
