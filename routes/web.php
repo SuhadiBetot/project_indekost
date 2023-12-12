@@ -1,9 +1,10 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\OwnerController;
+use App\Http\Controllers\AdminApprovalController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +25,16 @@ Route::get('/', function () {
 });
 
 Route::get('/approvalowner', [OwnerController::class, 'approval'])->name('approval');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::get('/', function () {
+    return view('welcome');
+});
+Route::get('test', function () {
+    return 'halooo';
+});
+// Route::get('/admin-approval', [AdminApprovalController::class, 'approval'])->name('approval');
 
 // Auth::routes();
 
