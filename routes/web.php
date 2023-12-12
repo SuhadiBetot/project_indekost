@@ -34,7 +34,7 @@ Route::get('/', function () {
 Route::get('test', function () {
     return 'halooo';
 });
-// Route::get('/admin-approval', [AdminApprovalController::class, 'approval'])->name('approval');
+Route::get('/admin-approval', [AdminApprovalController::class, 'approval'])->name('approval');
 
 // Auth::routes();
 
