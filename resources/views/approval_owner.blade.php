@@ -904,7 +904,7 @@
 									<a class="nav-link ms-0" href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 										<div class="header-info2 d-flex align-items-center">
 											<div class="d-flex align-items-center sidebar-info">
-												
+
 											</div>
 											<img src="images/user.jpg" alt="">
 										</div>
