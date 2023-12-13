@@ -9,7 +9,7 @@ use App\Http\Controllers\OwnerController;
 use App\Http\Controllers\OwnerKosController;
 use App\Http\Controllers\AdminApprovalController;
 use App\Http\Controllers\DashboardAdminController;
-
+use App\Http\Controllers\KelolaOwnerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,3 +35,4 @@ Route::get('/data_kos', [OwnerKosController::class, 'data_kos'])->name('owner.da
 Route::get('/admin-approval', [AdminApprovalController::class, 'approval'])->name('app-admin');
 Route::get('/transaksi-admin', [TransaksiAdminController::class, 'transaksi'])->name('trans-admin');
 Route::get('/admin-dashboard', [DashboardAdminController::class, 'dashboardAdmin'])->name('admin.dashboard_admin');
+Route::get('/admin-kelolaowner', [KelolaOwnerController::class, 'kelolaowner'])->name('kelola-admin');
