@@ -30,23 +30,27 @@
 <div class="dlabnav">
     <div class="dlabnav-scroll">
         <ul class="metismenu" id="menu">
-            <li>
-                <a href="{{ url('/dashboard-owner') }}">
-                    <svg xmlns="http://www.w3.org/2000/svg" style="color: #000000;" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M17.45 15.18L22 7.31V21H2V3h2v12.54L9.5 6L16 9.78l4.24-7.33l1.73 1l-5.23 9.05l-6.51-3.75L4.31 19h2.26l4.39-7.56z"/></svg>
+            <li><a class="has-arrow " href="/admin-dashboard" aria-expanded="false">
+                    <i class="material-symbols-outlined">home</i>
                     <span class="nav-text">Dashboard</span>
                 </a>
             </li>
-            <li>
-                <a href="{{ url ('/approval-owner') }}">
-                    <svg xmlns="http://www.w3.org/2000/svg" style="color: #000000;" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M22.5 10h-6.75c-.62 0-1.15.38-1.38.91l-2.26 5.29c-.07.17-.11.36-.11.55V18a1 1 0 0 0 1 1h5.18l-.68 3.18v.24c0 .31.13.58.33.8l.79.78l4.94-4.94c.27-.27.44-.65.44-1.06v-6.5a1.5 1.5 0 0 0-1.5-1.5M12 6a1 1 0 0 0-1-1H5.82l.68-3.18v-.23c0-.31-.13-.59-.33-.8L5.38 0L.44 4.94C.17 5.21 0 5.59 0 6v6.5A1.5 1.5 0 0 0 1.5 14h6.75c.62 0 1.15-.38 1.38-.91l2.26-5.29c.07-.17.11-.36.11-.55z"/></svg>
-                    <span class="nav-text">Persetujuan</span>
-                </a>
+            <li><a class="has-arrow " href="/admin-approval" aria-expanded="false">
+                <i class="material-symbols-outlined">school</i>
+                <span class="nav-text">Approval Kost</span>
+            </a>
             </li>
-            <li>
-                <a href="{{ url('/data_kos') }}">
-                    <svg xmlns="http://www.w3.org/2000/svg" style="color: #000000;" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M5 15.5L7.5 20h-5zM9 19h12v-2H9zM5 9.5L7.5 14h-5zM9 13h12v-2H9zM5 3.5L7.5 8h-5zM9 7h12V5H9z"/></svg>
-                    <span class="nav-text">Kos Saya</span>
-                </a>
+            <li><a class="has-arrow " href="/data-kos" aria-expanded="false">
+                <i class="material-symbols-outlined">person</i>
+                <span class="nav-text">Kelola Owner</span>
+            </a>
+            </li>
+            <li><a class="has-arrow " href="/data-kos" aria-expanded="false">
+                <i class="material-symbols-outlined">person</i>
+                <span class="nav-text">Transaksi</span>
+            </a>
+            </li>
+                </ul>
             </li>
         </ul>
     </div>

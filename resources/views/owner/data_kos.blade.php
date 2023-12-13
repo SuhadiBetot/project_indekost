@@ -1,4 +1,4 @@
-@include('admin.template.header')
+@include('owner.template.header')
 <style>
     table.dataTable thead th {
         color: #000;
@@ -109,7 +109,7 @@
   </div>
   </div>
 </body>
-@include('admin.template.script')
+@include('owner.template.script')
 
 <!-- Mirrored from akademi.dexignlab.com/xhtml/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 11 Dec 2023 01:33:18 GMT -->
 
