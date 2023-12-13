@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\DetailkosController;
+use App\Http\Controllers\TransaksiAdminController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AdminController;
 use App\Http\Controllers\OwnerApprovalController;
 use App\Http\Controllers\OwnerController;
 use App\Http\Controllers\OwnerKosController;
@@ -10,7 +10,6 @@ use App\Http\Controllers\AdminApprovalController;
 use App\Http\Controllers\DashboardAdminController;
 use App\Http\Controllers\KelolaOwnerController;
 use App\Http\Controllers\LandingPageController;
-use App\Http\Controllers\TransaksiAdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,11 +32,12 @@ Route::get('/data-kos', [OwnerKosController::class, 'data_kos'])->name('owner.da
 
 
 // Halaman Admin
-Route::get('/admin-dashboard', [DashboardAdminController::class, 'dashboardAdmin'])->name('admin.dashboard_admin');
-Route::get('/transaksi-admin', [TransaksiAdminController::class, 'transaksi'])->name('trans-admin');
 Route::get('/admin-approval', [AdminApprovalController::class, 'approval'])->name('app-admin');
+Route::get('/transaksi-admin', [TransaksiAdminController::class, 'transaksi'])->name('trans-admin');
+Route::get('/admin-dashboard', [DashboardAdminController::class, 'dashboardAdmin'])->name('admin.dashboard_admin');
 Route::get('/admin-kelolaowner', [KelolaOwnerController::class, 'kelolaowner'])->name('kelola-admin');
 
 
-// Landingpage
+// Halaman user
 Route::get('/landingpage', [LandingPageController::class, 'landingpage'])->name('landing');
+Route::get('/detail-kos', [DetailkosController::class, 'detail'])->name('detail-kos');
