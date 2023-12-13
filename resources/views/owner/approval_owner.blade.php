@@ -41,10 +41,6 @@
 											<option value="1">Oldest</option>
 											<option value="2">Recent</option>
 										</select>
-										<!-- Button trigger modal -->
-										<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-										 + New Student
-										</button>
 									</div>
 								</div>
 							</div>
