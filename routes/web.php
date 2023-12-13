@@ -10,6 +10,11 @@ use App\Http\Controllers\AdminApprovalController;
 use App\Http\Controllers\DashboardAdminController;
 use App\Http\Controllers\KelolaOwnerController;
 use App\Http\Controllers\LandingPageController;
+<<<<<<< Updated upstream
+=======
+use App\Http\Controllers\TransaksiAdminController;
+use App\Http\Controllers\PengajuanController;
+>>>>>>> Stashed changes
 
 /*
 |--------------------------------------------------------------------------
@@ -38,6 +43,13 @@ Route::get('/admin-dashboard', [DashboardAdminController::class, 'dashboardAdmin
 Route::get('/admin-kelolaowner', [KelolaOwnerController::class, 'kelolaowner'])->name('kelola-admin');
 
 
+<<<<<<< Updated upstream
 // Halaman user
 Route::get('/landingpage', [LandingPageController::class, 'landingpage'])->name('landing');
 Route::get('/detail-kos', [DetailkosController::class, 'detail'])->name('detail-kos');
+=======
+// Halaman User
+Route::get('/pengajuan_sewa', [PengajuanController::class, 'pengajuansewa'])->name('user.pengajuan_sewa');
+
+
+>>>>>>> Stashed changes

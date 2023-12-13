@@ -4,7 +4,7 @@
 	<div id="preloader">
 		<div class="loader"></div>
 	  </div>
-	  
+
     <div id="main-wrapper">
 
         <!--**********************************
@@ -63,7 +63,7 @@
         <!--**********************************
             Sidebar start
         ***********************************-->
-        <div class="dlabnav">
+        @include('layout.sidebarr')
 			<div class="dlabnav-scroll">
 				<ul class="metismenu" id="menu">
 					<li><a class="has-arrow " href="javascript:void(0);" aria-expanded="false">

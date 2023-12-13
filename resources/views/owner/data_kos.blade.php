@@ -21,7 +21,7 @@
 
   <div id="main-wrapper" class="wallet-open active">
   @include('owner.template.navbar')
-  @include('owner.template.sidebar')
+  @include('layout.sidebar')
 
   <div class="content-body">
     <div class="container-fluid">

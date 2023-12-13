@@ -15,9 +15,9 @@
   </div>
 
   <div id="main-wrapper" class="wallet-open active">
-    
+
         @include('owner.template.navbar')
-        @include('owner.template.sidebar')
+        @include('layout.sidebarr')
 
     <div class="content-body">
       <!-- row -->

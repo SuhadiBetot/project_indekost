@@ -16,7 +16,7 @@
 
     <div id="main-wrapper" class="wallet-open active">
         @include('owner.template.navbar')
-        @include('owner.template.sidebar')
+        @include('layout.sidebar')
 
         <div class="content-body">
             <div class="container-fluid">
@@ -39,7 +39,7 @@
 												<h2 class="font-w700 mb-0">3</h2>
 											</div>
 										</div>
-									</div> 
+									</div>
 									<div class="col-4">
 										<div class="content-box">
 											<div class="event-data icon-box icon-box-xl">
@@ -86,7 +86,7 @@
                     <p>Copyright © Designed &amp; Developed by <a href="https://dexignlab.com/" target="_blank">DexignLab</a> 2023</p>
                 </div>
             </div>
-            
+
 		  </div>
 		</div>
         </div>

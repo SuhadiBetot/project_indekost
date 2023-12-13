@@ -1,3 +1,11 @@
+<style>
+    [data-headerbg="color_3"][data-theme-version="dark"], [data-headerbg="color_3"] {
+    --headerbg: #ffffff;
+}
+[data-headerbg="color_3"][data-theme-version="dark"] .header-left .dashboard_bar, [data-headerbg="color_3"] .header-left .dashboard_bar {
+    color: #636363;
+}
+</style>
 <div class="nav-header">
     <a href="index.html" class="brand-logo">
         <svg class="logo-abbr" width="40" height="40" viewBox="0 0 48 54" fill="none" xmlns="http://www.w3.org/2000/svg">

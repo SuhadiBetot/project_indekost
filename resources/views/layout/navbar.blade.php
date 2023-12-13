@@ -1,3 +1,11 @@
+<style>
+    [data-headerbg="color_3"][data-theme-version="dark"], [data-headerbg="color_3"] {
+    --headerbg: #ffffff;
+}
+[data-headerbg="color_3"][data-theme-version="dark"] .header-left .dashboard_bar, [data-headerbg="color_3"] .header-left .dashboard_bar {
+    color: #636363;
+}
+</style>
 <div class="header">
     <div class="header-content">
       <nav class="navbar navbar-expand">

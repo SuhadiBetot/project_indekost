@@ -1,48 +1,12 @@
 @include('admin.template.header')
+@include('layout.navbar')
+@include('layout.sidebarr')
 <body>
 	<div id="preloader">
 		<div class="loader"></div>
 	  </div>
 
     <div id="main-wrapper">
-		<div class="header">
-            <div class="header-content">
-                <nav class="navbar navbar-expand">
-                    <div class="collapse navbar-collapse justify-content-between">
-                        <div class="header-left">
-						<div class="dashboard_bar">
-						   Transaksi
-						</div>
-                        </div>
-                    </div>
-				</nav>
-			</div>
-
-		</div>
-
-        <div class="dlabnav">
-			<div class="dlabnav-scroll">
-				<ul class="metismenu" id="menu">
-					<li><a class="has-arrow " href="javascript:void(0);" aria-expanded="false">
-							<i class="material-symbols-outlined">home</i>
-							<span class="nav-text">Dashboard</span>
-						</a>
-
-					</li>
-					<li><a class="has-arrow " href="javascript:void(0);" aria-expanded="false">
-						<i class="material-symbols-outlined">school</i>
-						<span class="nav-text">Kelola Owner</span>
-
-					</a>
-					</li>
-					<li><a class="has-arrow " href="javascript:void(0);" aria-expanded="false">
-						<i class="material-symbols-outlined">person</i>
-						<span class="nav-text">Transaksi</span>
-					</a>
-					</li>
-				</ul>
-			</div>
-        </div>
         <div class="content-body">
             <!-- row -->
 			<div class="container-fluid">

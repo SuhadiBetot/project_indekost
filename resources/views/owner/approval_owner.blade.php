@@ -9,15 +9,15 @@
 				<div class="dot"></div>
 				<div class="dot"></div>
 		  </div>
-  
+
 		  </div>
 	  </div>
 
     <div id="main-wrapper">
-		
+
         @include('owner.template.navbar')
-        @include('owner.template.sidebar')
-		
+        @include('layout.sidebar')
+
         <div class="content-body">
             <!-- row -->
 			<div class="container-fluid">
