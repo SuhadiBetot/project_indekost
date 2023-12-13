@@ -10,6 +10,7 @@ use App\Http\Controllers\OwnerKosController;
 use App\Http\Controllers\AdminApprovalController;
 use App\Http\Controllers\DashboardAdminController;
 use App\Http\Controllers\KelolaOwnerController;
+use App\Http\Controllers\LandingPageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,3 +37,7 @@ Route::get('/admin-approval', [AdminApprovalController::class, 'approval'])->nam
 Route::get('/transaksi-admin', [TransaksiAdminController::class, 'transaksi'])->name('trans-admin');
 Route::get('/admin-dashboard', [DashboardAdminController::class, 'dashboardAdmin'])->name('admin.dashboard_admin');
 Route::get('/admin-kelolaowner', [KelolaOwnerController::class, 'kelolaowner'])->name('kelola-admin');
+
+
+// Landingpage
+Route::get('/landingpage', [LandingPageController::class, 'landingpage'])->name('landing');
