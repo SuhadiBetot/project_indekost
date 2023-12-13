@@ -8,6 +8,6 @@ class OwnerApprovalController extends Controller
 {
     public function approval()
     {
-        return view('approval_owner');
+        return view('owner.approval_owner');
     }
 }

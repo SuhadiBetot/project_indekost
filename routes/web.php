@@ -6,7 +6,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\OwnerApprovalController;
 use App\Http\Controllers\OwnerController;
+use App\Http\Controllers\OwnerKosController;
 use App\Http\Controllers\AdminApprovalController;
+use App\Http\Controllers\DashboardAdminController;
+use App\Http\Controllers\KelolaOwnerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,8 +26,13 @@ use App\Http\Controllers\AdminApprovalController;
 
 // Halaman Owner
 Route::get('/dashboard-owner', [OwnerController::class, 'dashboard'])->name('dash-owner');
-Route::get('/approval-owner', [OwnerApprovalController::class, 'approval'])->name('app-owner');
+// Route::get('/data_kos-owner', [OwnerKosController::class, 'data_kos'])->name('data_kos');
+Route::get('/approval-owner', [OwnerApprovalController::class, 'approval'])->name('owner.approval_owner');
+Route::get('/data_kos', [OwnerKosController::class, 'data_kos'])->name('owner.data_kos');
+
 
 // Halaman Admin
 Route::get('/admin-approval', [AdminApprovalController::class, 'approval'])->name('app-admin');
-Route::get('/transaksi-admin', [TransaksiAdminController::class, 'transaksi'])->name('trans->admin');
+Route::get('/transaksi-admin', [TransaksiAdminController::class, 'transaksi'])->name('trans-admin');
+Route::get('/admin-dashboard', [DashboardAdminController::class, 'dashboardAdmin'])->name('admin.dashboard_admin');
+Route::get('/admin-kelolaowner', [KelolaOwnerController::class, 'kelolaowner'])->name('kelola-admin');
