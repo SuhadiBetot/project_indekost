@@ -406,7 +406,7 @@
     <!--**********************************
             Sidebar start
         ***********************************-->
-        @include('layout.sidebar')
+        @include('layout.sidebarr')
 
     <!--**********************************
             Sidebar end
