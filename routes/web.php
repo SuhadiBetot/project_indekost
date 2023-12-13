@@ -28,7 +28,7 @@ use App\Http\Controllers\KelolaOwnerController;
 Route::get('/dashboard-owner', [OwnerController::class, 'dashboard'])->name('dash-owner');
 // Route::get('/data_kos-owner', [OwnerKosController::class, 'data_kos'])->name('data_kos');
 Route::get('/approval-owner', [OwnerApprovalController::class, 'approval'])->name('owner.approval_owner');
-Route::get('/data_kos', [OwnerKosController::class, 'data_kos'])->name('owner.data_kos');
+Route::get('/data-kos', [OwnerKosController::class, 'data_kos'])->name('owner.data_kos');
 
 
 // Halaman Admin

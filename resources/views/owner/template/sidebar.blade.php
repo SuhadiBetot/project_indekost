@@ -11,7 +11,7 @@
                 <span class="nav-text">Persetujuan</span>
             </a>
             </li>
-            <li><a class="has-arrow " href="javascript:void(0);" aria-expanded="false">
+            <li><a class="has-arrow " href="/data-kos" aria-expanded="false">
                 <i class="material-symbols-outlined">person</i>
                 <span class="nav-text">Kost Saya</span>
             </a>
