@@ -574,7 +574,7 @@
                     <div class="collapse navbar-collapse justify-content-between">
                         <div class="header-left">
 						<div class="dashboard_bar">
-						   Persetujuan Bembayaran
+						   Transaksi
 						</div>
                         </div>
                         <ul class="navbar-nav header-right">
@@ -963,13 +963,13 @@
 					</li>
 					<li><a class="has-arrow " href="javascript:void(0);" aria-expanded="false">
 						<i class="material-symbols-outlined">school</i>
-						<span class="nav-text">Persetujuan</span>
+						<span class="nav-text">Kelola Owner</span>
 
 					</a>
 					</li>
 					<li><a class="has-arrow " href="javascript:void(0);" aria-expanded="false">
 						<i class="material-symbols-outlined">person</i>
-						<span class="nav-text">Kos saya</span>
+						<span class="nav-text">Transaksi</span>
 					</a>
 					</li>
 				</ul>
@@ -1021,12 +1021,11 @@
 												<th>
 													<input type="checkbox" class="form-check-input" id="checkAll" required="">
 												</th>
-												<th>Nama Kos</th>
+												<th>Nama Owner</th>
 												<th>Nama User</th>
-												<th>Metode Pembanyaran</th>
-												<th>Harga</th>
-												<th>Jangka Waktu</th>
-												<th>Bukti</th>
+												<th>Nama Kos</th>
+												<th>Harga Dibayar</th>
+												<th>Keuntungan</th>
 												<th>Aksi</th>
 											</tr>
 										</thead>
@@ -1047,13 +1046,10 @@
 												</td>
 												<td><h6 class="mb-0">Mana William </h6></td>
 												<td>
-												<h6 class="mb-0">BCA</h6>
+												<h6 class="mb-0">GPA</h6>
 												</td>
 												<td><span class="mb-0">30,000.000</span></td>
-												<td><h6 class="mb-0">1 Bulan</h6></td>
-												<td>
-													<img src="images/trans/1.jpg" alt="" class="avatar avatar-sm me-3">
-												</td>
+												<td><h6 class="mb-0">50%</h6></td>
 												<td>
 													<div>
                                                         <div class="action-buttons">
