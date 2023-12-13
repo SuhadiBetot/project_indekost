@@ -1,4 +1,4 @@
-@include('admin.template.header')
+@include('owner.template.header')
 <body>
 	<div id="preloader">
 		<div class="loader">
@@ -118,6 +118,6 @@
 	</div>
 
 </body>
-@include('admin.template.script')
+@include('owner.template.script')
 
 </html>
