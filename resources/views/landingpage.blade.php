@@ -31,6 +31,38 @@
       <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+      <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Button</title>
+  <style>
+    bo
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .login-button {
+      padding: 10px 20px;
+      font-size: 16px;
+      text-align: center;
+      text-decoration: none;
+      background-color: #7E6D2E; /* Green */
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .login-button:hover {
+      background-color: #7E6D2E; /* Darker green on hover */
+    }
+  </style>
+
    </head>
    <!-- body -->
    <body class="main-layout">
@@ -62,22 +94,19 @@
                         <div class="collapse navbar-collapse" id="navbarsExample04">
                            <ul class="navbar-nav mr-auto">
                               <li class="nav-item active">
-                                 <a class="nav-link" href="index-2.html">Home</a>
+                                 <a class="nav-link" href="index-2.html">Beranda</a>
                               </li>
                               <li class="nav-item">
-                                 <a class="nav-link" href="about.html">About</a>
+                                 <a class="nav-link" href="about.html">Tentang Kami</a>
                               </li>
                               <li class="nav-item">
-                                 <a class="nav-link" href="room.html">Our room</a>
+                                 <a class="nav-link" href="room.html">Area Terpopuler</a>
                               </li>
                               <li class="nav-item">
-                                 <a class="nav-link" href="gallery.html">Gallery</a>
+                                 <a class="nav-link" href="gallery.html">Sekitar Kampus</a>
                               </li>
                               <li class="nav-item">
-                                 <a class="nav-link" href="blog.html">Blog</a>
-                              </li>
-                              <li class="nav-item">
-                                 <a class="nav-link" href="contact.html">Contact Us</a>
+                                <a href="#" class="login-button">LOG IN | SIGN IN</a>
                               </li>
                            </ul>
                         </div>
@@ -417,11 +446,11 @@
                   <div class="col-md-4">
                      <h3>Menu Link</h3>
                      <ul class="link_menu">
-                        <li class="active"><a href="#">Beranda</a></li>
-                        <li><a href="about.html"> Tentang</a></li>
-                        <li><a href="room.html">Kamar Kami</a></li>
-                        <li><a href="gallery.html">Area Terpopuler</a></li>
-                        <li><a href="blog.html">Sekitar Kampus</a></li>
+                        <li class="active"><a href="#">Home</a></li>
+                        <li><a href="about.html"> about</a></li>
+                        <li><a href="room.html">Our Room</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="blog.html">Blog</a></li>
                         <li><a href="contact.html">Contact Us</a></li>
                      </ul>
                   </div>
