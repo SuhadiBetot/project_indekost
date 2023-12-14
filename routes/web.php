@@ -7,6 +7,7 @@ use App\Http\Controllers\OwnerApprovalController;
 use App\Http\Controllers\OwnerController;
 use App\Http\Controllers\OwnerKosController;
 use App\Http\Controllers\AdminApprovalController;
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\DashboardAdminController;
 use App\Http\Controllers\KelolaOwnerController;
 use App\Http\Controllers\LandingPageController;
@@ -24,6 +25,9 @@ use App\Http\Controllers\PengajuanController;
 */
 
 // Route::get('/', function () {return view('welcome');});
+
+//Auth
+Route::get('/login', [LoginController::class, 'login'])->name('login');
 
 // Halaman Owner
 Route::get('/dashboard-owner', [OwnerController::class, 'dashboard'])->name('dash-owner');
