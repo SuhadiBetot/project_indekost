@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Auth\ForgotPasswordController;
+use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\DetailkosController;
 use App\Http\Controllers\TransaksiAdminController;
 use Illuminate\Support\Facades\Route;
@@ -28,6 +30,8 @@ use App\Http\Controllers\PengajuanController;
 
 //Auth
 Route::get('/login', [LoginController::class, 'login'])->name('login');
+Route::get('/register', [RegisterController::class, 'register'])->name('register');
+Route::get('/forget', [ForgotPasswordController::class, 'forget'])->name('forget');
 
 // Halaman Owner
 Route::get('/dashboard-owner', [OwnerController::class, 'dashboard'])->name('dash-owner');

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from brandio.io/envato/iofrm/html/login20.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 13 Dec 2023 08:34:29 GMT -->
+<!-- Mirrored from brandio.io/envato/iofrm/html/register20.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 13 Dec 2023 08:35:14 GMT -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +11,14 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('template/css/iofrm-style.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('template/css/iofrm-theme20.css') }}">
 </head>
+
+<style>
+    .center-button {
+        text-align: center; /* Atau gunakan margin: 0 auto; */
+    }
+</style>
+
+
 <body>
     <div class="form-body without-side">
         <div class="website-logo">
@@ -30,17 +38,23 @@
             <div class="form-holder">
                 <div class="form-content">
                     <div class="form-items">
-                        <h3> Halaman Login</h3>
-                        <p>jika anda sudah punya akun maka silakan login terlebih dahulu</p>
+                        <h3> Halaman Register </h3>
+                        <p> jika anda belum punya akun maka daftar  terlebih dahulu</p>
                         <form>
-                            <input class="form-control" type="text" name="username" placeholder="E-mail" required>
+                            <input class="form-control" type="text" name="name" placeholder=" Name" required>
+                            <input class="form-control" type="email" name="email" placeholder="E-mail " required>
                             <input class="form-control" type="password" name="password" placeholder="Password" required>
-                            <div class="form-button">
-                                <button id="submit" type="submit" class="ibtn">Masuk</button><a href="forget">Ganti password?</a>
+                            <input class="form-control" type="password" name="konfirmasi_password" placeholder="konfirmasi Password" required>
+                            <div class="form-button  center-button">
+                                <button id="submit" type="submit" class="ibtn btn-block">Daftar</button>
                             </div>
                         </form>
-                        <div class="page-links mt-4">
-                            <a href="register">Register dahulu</a>
+                        {{-- <div class="other-links">
+                            <div class="text">Or register with</div>
+                            <a href="#"><i class="fab fa-facebook-f"></i>Facebook</a><a href="#"><i class="fab fa-google"></i>Google</a><a href="#"><i class="fab fa-linkedin-in"></i>Linkedin</a>
+                        </div> --}}
+                        <div class="page-links center-button">
+                            <a href="login">Login </a>
                         </div>
                     </div>
                 </div>
@@ -53,5 +67,5 @@
 <script src="{{ asset('template/js/main.js') }}"></script>
 </body>
 
-<!-- Mirrored from brandio.io/envato/iofrm/html/login20.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 13 Dec 2023 08:34:33 GMT -->
+<!-- Mirrored from brandio.io/envato/iofrm/html/register20.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 13 Dec 2023 08:35:14 GMT -->
 </html>
