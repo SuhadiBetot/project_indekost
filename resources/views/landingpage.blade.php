@@ -93,7 +93,7 @@
                      <div class="full">
                         <div class="center-desk">
                            <div class="logo">
-                              <a href="index-2.html"><img src="{{asset('storage/asset/')}}" alt="#" /></a>
+                              <a href="index-2.html"><img style="width: 150px; height: auto" src="{{asset('storage/asset/logo.png')}}" alt="#" /></a>
                            </div>
                         </div>
                      </div>
