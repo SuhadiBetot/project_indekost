@@ -3,10 +3,23 @@
 @include('layout.sidebarr')
 <body>
 	<div id="preloader">
-		<div class="loader"></div>
+		<div class="loader">
+		  <div class="dots">
+				<div class="dot mainDot"></div>
+				<div class="dot"></div>
+				<div class="dot"></div>
+				<div class="dot"></div>
+				<div class="dot"></div>
+		  </div>
+  
+		  </div>
 	  </div>
 
     <div id="main-wrapper">
+		
+		@include('admin.template.navbar')
+		@include('admin.template.sidebar')
+
         <div class="content-body">
             <!-- row -->
 			<div class="container-fluid">
@@ -30,9 +43,6 @@
 											<option value="1">Oldest</option>
 											<option value="2">Recent</option>
 										</select>
-										<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-										 + New Student
-										</button>
 									</div>
 								</div>
 							</div>
@@ -41,9 +51,7 @@
 									<table class="table-responsive-lg table display dataTablesCard student-tab dataTable no-footer" id="example-student">
 										<thead>
 											<tr>
-												<th>
-													<input type="checkbox" class="form-check-input" id="checkAll" required="">
-												</th>
+												<th>No.</th>
 												<th>Nama Owner</th>
 												<th>Nama User</th>
 												<th>Nama Kos</th>
@@ -55,24 +63,21 @@
 										<tbody>
 										<tr>
 												<td>
-													<div class="checkbox me-0 align-self-center">
-														<div class="custom-control custom-checkbox ">
-															<input type="checkbox" class="form-check-input" id="check8" required="">
-															<label class="custom-control-label" for="check8"></label>
-														</div>
+													<div class="trans-list">
+														<h6>1</h6>
 													</div>
 												</td>
 												<td>
 													<div class="trans-list">
-														<h6 class="mb-0">Halu lo William </h6>
+														<h6 class="mb-0">Achmad Dendi</h6>
 													</div>
 												</td>
-												<td><h6 class="mb-0">Mana William </h6></td>
+												<td><h6 class="mb-0">Slamet Riyandi</h6></td>
 												<td>
-												<h6 class="mb-0">GPA</h6>
+												<h6 class="mb-0">Kost Murah Rejeki</h6>
 												</td>
-												<td><span class="mb-0">30,000.000</span></td>
-												<td><h6 class="mb-0">50%</h6></td>
+												<td><span class="mb-0">Rp 900.000</span></td>
+												<td><h6 class="mb-0">3%</h6></td>
 												<td>
 													<div>
                                                         <div class="action-buttons">
