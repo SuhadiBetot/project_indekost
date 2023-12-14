@@ -61,6 +61,18 @@
     .login-button:hover {
       background-color: #7E6D2E; /* Darker green on hover */
     }
+
+    figcaption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white; /* Set the text color */
+    font-size: 25px; /* Set the font size */
+    font-weight: bold; /* Set the font weight */
+    /* Add any other styles you need */
+    }
+
   </style>
 
    </head>
@@ -81,7 +93,7 @@
                      <div class="full">
                         <div class="center-desk">
                            <div class="logo">
-                              <a href="index-2.html"><img src="images/logo.png" alt="#" /></a>
+                              <a href="index-2.html"><img src="{{asset('storage/asset/')}}" alt="#" /></a>
                            </div>
                         </div>
                      </div>
@@ -128,15 +140,15 @@
             </ol>
             <div class="carousel-inner">
                <div class="carousel-item active">
-                  <img class="first-slide" src="{{asset('user in de kost/themewagon.github.io/images/banner1.jpg')}}" alt="First slide">
+                  <img class="first-slide" src="{{asset('storage/asset/banner1.png')}}" alt="First slide">
                   <div class="container">
                   </div>
                </div>
                <div class="carousel-item">
-                  <img class="second-slide" src="{{asset('user in de kost/themewagon.github.io/images/banner2.jpg')}}" alt="Second slide">
+                  <img class="second-slide" src="{{asset('storage/asset/banner2.png')}}" alt="Second slide">
                </div>
                <div class="carousel-item">
-                  <img class="third-slide" src="{{asset('user in de kost/themewagon.github.io/images/banner3.jpg')}}" alt="Third slide">
+                  <img class="third-slide" src="{{asset('storage/asset/banner3.png')}}" alt="Third slide">
                </div>
             </div>
             <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
@@ -148,34 +160,17 @@
             <span class="sr-only">Next</span>
             </a>
          </div>
-         <div class="booking_ocline">
+         {{-- <div class="booking_ocline">
             <div class="container">
                <div class="row">
                   <div class="col-md-5">
                      <div class="book_room">
                         <h1>Book a Room Online</h1>
-                        <form class="book_now">
-                           <div class="row">
-                              <div class="col-md-12">
-                                 <span>Arrival</span>
-                                 <img class="date_cua" src="images/date.png">
-                                 <input class="online_book" placeholder="dd/mm/yyyy" type="date" name="dd/mm/yyyy">
-                              </div>
-                              <div class="col-md-12">
-                                 <span>Departure</span>
-                                 <img class="date_cua" src="images/date.png">
-                                 <input class="online_book" placeholder="dd/mm/yyyy" type="date" name="dd/mm/yyyy">
-                              </div>
-                              <div class="col-md-12">
-                                 <button class="book_btn">Book Now</button>
-                              </div>
-                           </div>
-                        </form>
                      </div>
                   </div>
                </div>
             </div>
-         </div>
+         </div> --}}
       </section>
       <!-- end banner -->
       <!-- about -->
@@ -184,289 +179,198 @@
             <div class="row">
                <div class="col-md-5">
                   <div class="titlepage">
-                     <h2>About Us</h2>
+                     <h2>Tentang Kami</h2>
                      <p>The passage experienced a surge in popularity during the 1960s when Letraset used it on their dry-transfer sheets, and again during the 90s as desktop publishers bundled the text with their software. Today it's seen all around the web; on templates, websites, and stock designs. Use our generator to get your own, or read on for the authoritative history of lorem ipsum. </p>
-                     <a class="read_more" href="Javascript:void(0)"> Read More</a>
                   </div>
                </div>
                <div class="col-md-7">
                   <div class="about_img">
-                     <figure><img src="images/about.png" alt="#"/></figure>
+                     <figure><img src="{{asset('storage/asset/tentang.png')}}" alt="#"/></figure>
                   </div>
                </div>
             </div>
          </div>
       </div>
       <!-- end about -->
-      <!-- our_room -->
+      <!-- kamar -->
       <div  class="our_room">
          <div class="container">
             <div class="row">
                <div class="col-md-12">
                   <div class="titlepage">
-                     <h2>Our Room</h2>
-                     <p>Lorem Ipsum available, but the majority have suffered </p>
+                     <h2>Kamar Kami</h2>
                   </div>
                </div>
             </div>
             <div class="row">
                <div class="col-md-4 col-sm-6">
-                  <div id="serv_hover"  class="room">
+                  <div id="serv_hover" class="room">
                      <div class="room_img">
-                        <figure><img src="images/room1.jpg" alt="#"/></figure>
+                        <figure><img src="{{asset('storage/asset/kamar.png')}}" alt="#"/></figure>
                      </div>
                      <div class="bed_room">
-                        <h3>Bed Room</h3>
-                        <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there </p>
+                        <h3>Kamar 1</h3>
+                        <p>Ini adalah tampilan kost In De Kost, dalam nya ada kasur ,lemari, meja dll</p>
                      </div>
                   </div>
                </div>
                <div class="col-md-4 col-sm-6">
                   <div id="serv_hover"  class="room">
                      <div class="room_img">
-                        <figure><img src="images/room2.jpg" alt="#"/></figure>
+                        <figure><img src="{{asset('storage/asset/kamar.png')}}" alt="#"/></figure>
                      </div>
                      <div class="bed_room">
-                        <h3>Bed Room</h3>
-                        <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there </p>
+                        <h3>Kamar 2</h3>
+                        <p>Ini adalah tampilan kost In De Kost, dalam nya ada kasur ,lemari, meja dll</p>
                      </div>
                   </div>
                </div>
                <div class="col-md-4 col-sm-6">
                   <div id="serv_hover"  class="room">
                      <div class="room_img">
-                        <figure><img src="images/room3.jpg" alt="#"/></figure>
+                        <figure><img src="{{asset('storage/asset/kamar.png')}}" alt="#"/></figure>
                      </div>
                      <div class="bed_room">
-                        <h3>Bed Room</h3>
-                        <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there </p>
+                        <h3>Kamar 3</h3>
+                        <p>Ini adalah tampilan kost In De Kost, dalam nya ada kasur ,lemari, meja dll</p>
                      </div>
                   </div>
                </div>
                <div class="col-md-4 col-sm-6">
                   <div id="serv_hover"  class="room">
                      <div class="room_img">
-                        <figure><img src="images/room4.jpg" alt="#"/></figure>
+                        <figure><img src="{{asset('storage/asset/kamar.png')}}" alt="#"/></figure>
                      </div>
                      <div class="bed_room">
-                        <h3>Bed Room</h3>
-                        <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there </p>
+                        <h3>Kamar 4</h3>
+                        <p>Ini adalah tampilan kost In De Kost, dalam nya ada kasur ,lemari, meja dll</p>
                      </div>
                   </div>
                </div>
                <div class="col-md-4 col-sm-6">
                   <div id="serv_hover"  class="room">
                      <div class="room_img">
-                        <figure><img src="images/room5.jpg" alt="#"/></figure>
+                        <figure><img src="{{asset('storage/asset/kamar.png')}}" alt="#"/></figure>
                      </div>
                      <div class="bed_room">
-                        <h3>Bed Room</h3>
-                        <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there </p>
+                        <h3>Kamar 5</h3>
+                        <p>Ini adalah tampilan kost In De Kost, dalam nya ada kasur ,lemari, meja dll</p>
                      </div>
                   </div>
                </div>
                <div class="col-md-4 col-sm-6">
                   <div id="serv_hover"  class="room">
                      <div class="room_img">
-                        <figure><img src="images/room6.jpg" alt="#"/></figure>
+                        <figure><img src="{{asset('storage/asset/kamar.png')}}" alt="#"/></figure>
                      </div>
                      <div class="bed_room">
-                        <h3>Bed Room</h3>
-                        <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there </p>
+                        <h3>Kamar 6</h3>
+                        <p>Ini adalah tampilan kost In De Kost, dalam nya ada kasur ,lemari, meja dll</p>
                      </div>
                   </div>
                </div>
             </div>
          </div>
       </div>
-      <!-- end our_room -->
-      <!-- gallery -->
-      <div  class="gallery">
-         <div class="container">
+      <!-- end kamar -->
+      <!-- area -->
+      <div class="our_room">
+        <div class="container">
             <div class="row">
-               <div class="col-md-12">
-                  <div class="titlepage">
-                     <h2>gallery</h2>
-                  </div>
-               </div>
+                <div class="col-md-12">
+                    <div class="titlepage">
+                        <h2>Area Kost Terpopuler</h2>
+                    </div>
+                </div>
             </div>
             <div class="row">
-               <div class="col-md-3 col-sm-6">
-                  <div class="gallery_img">
-                     <figure><img src="images/gallery1.jpg" alt="#"/></figure>
-                  </div>
-               </div>
-               <div class="col-md-3 col-sm-6">
-                  <div class="gallery_img">
-                     <figure><img src="images/gallery2.jpg" alt="#"/></figure>
-                  </div>
-               </div>
-               <div class="col-md-3 col-sm-6">
-                  <div class="gallery_img">
-                     <figure><img src="images/gallery3.jpg" alt="#"/></figure>
-                  </div>
-               </div>
-               <div class="col-md-3 col-sm-6">
-                  <div class="gallery_img">
-                     <figure><img src="images/gallery4.jpg" alt="#"/></figure>
-                  </div>
-               </div>
-               <div class="col-md-3 col-sm-6">
-                  <div class="gallery_img">
-                     <figure><img src="images/gallery5.jpg" alt="#"/></figure>
-                  </div>
-               </div>
-               <div class="col-md-3 col-sm-6">
-                  <div class="gallery_img">
-                     <figure><img src="images/gallery6.jpg" alt="#"/></figure>
-                  </div>
-               </div>
-               <div class="col-md-3 col-sm-6">
-                  <div class="gallery_img">
-                     <figure><img src="images/gallery7.jpg" alt="#"/></figure>
-                  </div>
-               </div>
-               <div class="col-md-3 col-sm-6">
-                  <div class="gallery_img">
-                     <figure><img src="images/gallery8.jpg" alt="#"/></figure>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <!-- end gallery -->
-      <!-- blog -->
-      <div  class="blog">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-12">
-                  <div class="titlepage">
-                     <h2>Blog</h2>
-                     <p>Lorem Ipsum available, but the majority have suffered </p>
-                  </div>
-               </div>
-            </div>
-            <div class="row">
-               <div class="col-md-4">
-                  <div class="blog_box">
-                     <div class="blog_img">
-                        <figure><img src="images/blog1.jpg" alt="#"/></figure>
-                     </div>
-                     <div class="blog_room">
-                        <h3>Bed Room</h3>
-                        <span>The standard chunk </span>
-                        <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generatorsIf you are   </p>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-md-4">
-                  <div class="blog_box">
-                     <div class="blog_img">
-                        <figure><img src="images/blog2.jpg" alt="#"/></figure>
-                     </div>
-                     <div class="blog_room">
-                        <h3>Bed Room</h3>
-                        <span>The standard chunk </span>
-                        <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generatorsIf you are   </p>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-md-4">
-                  <div class="blog_box">
-                     <div class="blog_img">
-                        <figure><img src="images/blog3.jpg" alt="#"/></figure>
-                     </div>
-                     <div class="blog_room">
-                        <h3>Bed Room</h3>
-                        <span>The standard chunk </span>
-                        <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generatorsIf you are   </p>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <!-- end blog -->
-      <!--  contact -->
-      <div class="contact">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-12">
-                  <div class="titlepage">
-                     <h2>Contact Us</h2>
-                  </div>
-               </div>
-            </div>
-            <div class="row">
-               <div class="col-md-6">
-                  <form id="request" class="main_form">
-                     <div class="row">
-                        <div class="col-md-12 ">
-                           <input class="contactus" placeholder="Name" type="type" name="Name">
+                <div class="col-md-4 col-sm-6">
+                    <div id="serv_hover" class="room">
+                        <div class="room_img">
+                            <figure>
+                                <img src="{{asset('storage/asset/area.png')}}" alt="#">
+                                <figcaption>Medan</figcaption>
+                            </figure>
                         </div>
-                        <div class="col-md-12">
-                           <input class="contactus" placeholder="Email" type="type" name="Email">
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div id="serv_hover" class="room">
+                        <div class="room_img">
+                            <figure>
+                                <img src="{{asset('storage/asset/area.png')}}" alt="#">
+                                <figcaption>Jakarta</figcaption>
+                            </figure>
                         </div>
-                        <div class="col-md-12">
-                           <input class="contactus" placeholder="Phone Number" type="type" name="Phone Number">
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div id="serv_hover" class="room">
+                        <div class="room_img">
+                            <figure>
+                                <img src="{{asset('storage/asset/area.png')}}" alt="#">
+                                <figcaption>Malang</figcaption>
+                            </figure>
                         </div>
-                        <div class="col-md-12">
-                           <textarea class="textarea" placeholder="Message" type="type" Message="Name">Message</textarea>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div id="serv_hover" class="room">
+                        <div class="room_img">
+                            <figure>
+                                <img src="{{asset('storage/asset/area.png')}}" alt="#">
+                                <figcaption>Bandung</figcaption>
+                            </figure>
                         </div>
-                        <div class="col-md-12">
-                           <button class="send_btn">Send</button>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div id="serv_hover" class="room">
+                        <div class="room_img">
+                            <figure>
+                                <img src="{{asset('storage/asset/area.png')}}" alt="#">
+                                <figcaption>Probolinggo</figcaption>
+                            </figure>
                         </div>
-                     </div>
-                  </form>
-               </div>
-               <div class="col-md-6">
-                  <div class="map_main">
-                     <div class="map-responsive">
-                        <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0s1a7phLN0iaD6-UE7m4qP-z21pH0eSc&amp;q=Eiffel+Tower+Paris+France" width="600" height="400" frameborder="0" style="border:0; width: 100%;" allowfullscreen=""></iframe>
-                     </div>
-                  </div>
-               </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div id="serv_hover" class="room">
+                        <div class="room_img">
+                            <figure>
+                                <img src="{{asset('storage/asset/area.png')}}" alt="#">
+                                <figcaption>Denpasar</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
             </div>
-         </div>
-      </div>
-      <!-- end contact -->
+        </div>
+    </div>
+     <!-- end area -->
       <!--  footer -->
       <footer>
          <div class="footer">
             <div class="container">
-               <div class="row">
+               <div class="row justify-content-between">
                   <div class=" col-md-4">
-                     <h3>Contact US</h3>
+                     <h3>Hubungi Kami</h3>
                      <ul class="conta">
-                        <li><i class="fa fa-map-marker" aria-hidden="true"></i> Address</li>
-                        <li><i class="fa fa-mobile" aria-hidden="true"></i> +01 1234569540</li>
-                        <li> <i class="fa fa-envelope" aria-hidden="true"></i><a href="#"> demo@gmail.com</a></li>
+                        <li><i class="fa fa-map-marker" aria-hidden="true"></i> Alamat</li>
+                        <li><i class="fa fa-mobile" aria-hidden="true"></i> +62 085 5163 6651</li>
+                        <li> <i class="fa fa-envelope" aria-hidden="true"></i><a href="#"> aisyah@gmail.com</a></li>
                      </ul>
                   </div>
-                  <div class="col-md-4">
-                     <h3>Menu Link</h3>
-                     <ul class="link_menu">
-                        <li class="active"><a href="#">Home</a></li>
-                        <li><a href="about.html"> about</a></li>
-                        <li><a href="room.html">Our Room</a></li>
-                        <li><a href="gallery.html">Gallery</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                     </ul>
-                  </div>
-                  <div class="col-md-4">
-                     <h3>News letter</h3>
-                     <form class="bottom_form">
-                        <input class="enter" placeholder="Enter your email" type="text" name="Enter your email">
-                        <button class="sub_btn">subscribe</button>
-                     </form>
-                     <ul class="social_icon">
-                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
-                     </ul>
-                  </div>
+                <div class="col-md-4">
+                    <h3>Menu Link</h3>
+                    <ul class="link_menu custom-menu">
+                        <li class="active"><a href="#">Beranda</a></li>
+                        <li><a href="about.html"> Tentang</a></li>
+                        <li><a href="room.html">Kamar Kita</a></li>
+                        <li><a href="gallery.html">Gambar</a></li>
+                        <li><a href="contact.html">Hubungi Kami</a></li>
+                    </ul>
+                </div>
                </div>
             </div>
             <div class="copyright">
