@@ -14,6 +14,7 @@ use App\Http\Controllers\DashboardAdminController;
 use App\Http\Controllers\KelolaOwnerController;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\PengajuanController;
+use App\Http\Controllers\HalamanSelengkapnyaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,7 +42,6 @@ Route::get('/dashboard-owner', [OwnerController::class, 'dashboard'])->name('das
 Route::get('/approval-owner', [OwnerApprovalController::class, 'approval'])->name('owner.approval_owner');
 Route::get('/data-kos', [OwnerKosController::class, 'data_kos'])->name('owner.data_kos');
 
-
 // Halaman Admin
 Route::get('/admin-approval', [AdminApprovalController::class, 'approval'])->name('app-admin');
 Route::get('/transaksi-admin', [TransaksiAdminController::class, 'transaksi'])->name('trans-admin');
@@ -52,3 +52,4 @@ Route::get('/admin-kelolaowner', [KelolaOwnerController::class, 'kelolaowner'])-
 Route::get('/landingpage', [LandingPageController::class, 'landingpage'])->name('landing');
 Route::get('/detail-kos', [DetailkosController::class, 'detail'])->name('detail-kos');
 Route::get('/pengajuan_sewa', [PengajuanController::class, 'pengajuansewa'])->name('user.pengajuan_sewa');
+Route::get('/user-halamanselengkapnya', [HalamanSelengkapnyaController::class, 'detail'])->name('user.selengkapnya');
