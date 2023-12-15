@@ -1,3 +1,12 @@
+<style>
+    [data-headerbg="color_3"][data-theme-version="dark"], [data-headerbg="color_3"] {
+    --headerbg: #ffffff;
+}
+[data-headerbg="color_3"][data-theme-version="dark"] .header-left .dashboard_bar, [data-headerbg="color_3"] .header-left .dashboard_bar {
+    color: #636363;
+}
+</style>
+
 <div class="nav-header">
     <a href="index.html" class="brand-logo">
         <svg class="logo-abbr" width="40" height="40" viewBox="0 0 48 54" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -60,7 +69,7 @@
 
                                     </div>
                                     <div class="card-body p-3">
-                                        <a href="#" class="dropdown-item ai-icon" data-bs-toggle="modal" data-bs-target="#modalProfil">
+                                        <a href="#" class="dropdown-item ai-icon" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="svg-main-icon">
                                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                                     <polygon points="0 0 24 0 24 24 0 24"/>
@@ -71,14 +80,23 @@
                                             <span class="ms-2">Profile</span>
                                         </a>
                                     </div>
-                                    <div class="modal" id="modalProfil">
-                                        <div class="modal-header">
-                                            <h4>Hallo</h4>
+                                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                          <div class="modal-content">
+                                            <div class="modal-header">
+                                              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                              ...
+                                            </div>
+                                            <div class="modal-footer">
+                                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                              <button type="button" class="btn btn-primary">Save changes</button>
+                                            </div>
+                                          </div>
                                         </div>
-                                        <div class="modal-body">
-                                            ...
-                                        </div>
-                                    </div>
+                                      </div>
                                     <div class="card-footer text-center p-3">
                                         <a href="page-login.html" class="dropdown-item ai-icon btn btn-primary light">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>

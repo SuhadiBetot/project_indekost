@@ -1,4 +1,4 @@
-<script src="{{ asset('Dashboard Admin Siswa/vendor/global/global.min.js') }}"></script>
+	<script src="{{ asset('Dashboard Admin Siswa/vendor/global/global.min.js') }}"></script>
 	<script src="{{ asset('Dashboard Admin Siswa/vendor/chart.js/Chart.bundle.min.js') }}"></script>
 	<script src="{{ asset('Dashboard Admin Siswa/vendor/bootstrap-select/dist/js/bootstrap-select.min.js') }}"></script>
 	<!-- Apex Chart -->
