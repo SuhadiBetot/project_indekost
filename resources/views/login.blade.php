@@ -32,8 +32,9 @@
                     <div class="form-items">
                         <h3> Halaman Login</h3>
                         <p>jika anda sudah punya akun maka silakan login terlebih dahulu</p>
-                        <form>
-                            <input class="form-control" type="text" name="username" placeholder="E-mail" required>
+                        <form action="/loginproses" method="POST">
+                            @csrf
+                            <input class="form-control" type="text" name="email" placeholder="E-mail" required>
                             <input class="form-control" type="password" name="password" placeholder="Password" required>
                             <div class="form-button">
                                 <button id="submit" type="submit" class="ibtn">Masuk</button><a href="forget">Ganti password?</a>

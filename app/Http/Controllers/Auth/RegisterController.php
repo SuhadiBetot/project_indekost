@@ -9,6 +9,8 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+
 
 class RegisterController extends Controller
 {
@@ -72,8 +74,34 @@ class RegisterController extends Controller
         ]);
     }
 
+    
+
+    //register
+
     public function register(Request $reguest)
     {
         return view('register');
     }
+
+    public function registeruser(Request $request)
+{
+    $request->validate([
+        'name' => 'required',
+        'email' => 'required|unique:users',
+    ], [
+        'name.required' => 'Nama wajib diisi.',
+        'email.required' => 'Email wajib diisi.',
+        'email.unique' => 'Email sudah pernah digunakan, silakan pilih yang lain.',
+    ]);
+
+    User::create([
+        'name' => $request->name,
+        'email' => $request->email,
+        'password' => bcrypt($request->password),
+        'confirmasi_password' => bcrypt($request->confirmasi_password),
+        'remember_token' => Str::random(60),
+    ]);
+
+    return redirect('/login')->with('reg', 'Berhasil Register');
+}
 }

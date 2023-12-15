@@ -30,7 +30,9 @@ use App\Http\Controllers\PengajuanController;
 
 //Auth
 Route::get('/login', [LoginController::class, 'login'])->name('login');
+Route::post('/loginproses', [LoginController::class, 'loginproses'])->name('loginproses');
 Route::get('/register', [RegisterController::class, 'register'])->name('register');
+Route::post('/registeruser', [RegisterController::class, 'registeruser'])->name('registeruser');
 Route::get('/forget', [ForgotPasswordController::class, 'forget'])->name('forget');
 
 // Halaman Owner

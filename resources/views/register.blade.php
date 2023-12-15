@@ -40,7 +40,8 @@
                     <div class="form-items">
                         <h3> Halaman Register </h3>
                         <p> jika anda belum punya akun maka daftar  terlebih dahulu</p>
-                        <form>
+                        <form action="/registeruser" method="post">
+                            @csrf
                             <input class="form-control" type="text" name="name" placeholder=" Name" required>
                             <input class="form-control" type="email" name="email" placeholder="E-mail " required>
                             <input class="form-control" type="password" name="password" placeholder="Password" required>
