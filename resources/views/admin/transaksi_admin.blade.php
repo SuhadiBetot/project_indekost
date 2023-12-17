@@ -1,5 +1,5 @@
+@include('layout.navbarr')
 @include('admin.template.header')
-@include('layout.navbar')
 @include('layout.sidebarr')
 <body>
 	<div id="preloader">
@@ -11,14 +11,13 @@
 				<div class="dot"></div>
 				<div class="dot"></div>
 		  </div>
-  
+
 		  </div>
 	  </div>
 
     <div id="main-wrapper">
-		
-		@include('admin.template.navbar')
-		@include('admin.template.sidebar')
+
+		@include('layout.sidebarr')
 
         <div class="content-body">
             <!-- row -->

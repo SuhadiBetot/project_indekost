@@ -16,8 +16,8 @@
 
     <div id="main-wrapper">
 
-        @include('admin.template.navbar')
-        @include('admin.template.sidebar')
+        @include('layout.navbarr')
+        @include('layout.sidebarr')
 
             <div class="nav-control">
                 <div class="hamburger">

@@ -16,7 +16,7 @@
 
   <div id="main-wrapper" class="wallet-open active">
 
-        @include('admin.template.navbar')
+        @include('layout.navbarr')
         @include('layout.sidebarr')
 
     <div class="content-body">

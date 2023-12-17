@@ -10,15 +10,15 @@
 				<div class="dot"></div>
 				<div class="dot"></div>
 		  </div>
-  
+
 		  </div>
 	  </div>
 
     <div id="main-wrapper">
 
-		@include('layout.navbar')
+		@include('layout.navbarr')
 		@include('layout.sidebarr')
-		
+
             <div class="nav-control">
                 <div class="hamburger">
                     <span class="line"></span><span class="line"></span><span class="line"></span>
@@ -36,30 +36,6 @@
                 </div>
             </div>
         </div>
-			<div class="dlabnav-scroll">
-				<ul class="metismenu" id="menu">
-					<li><a class="has-arrow " href="javascript:void(0);" aria-expanded="false">
-							<i class="material-symbols-outlined">home</i>
-							<span class="nav-text">Dashboard</span>
-						</a>
-					</li>
-					<li><a class="has-arrow " href="javascript:void(0);" aria-expanded="false">
-						<i class="material-symbols-outlined">school</i>
-						<span class="nav-text">Approval Kost</span>
-					</a>
-					</li>
-					<li><a class="has-arrow " href="javascript:void(0);" aria-expanded="false">
-						<i class="material-symbols-outlined">person</i>
-						<span class="nav-text">Kelola Owner</span>
-					</a>
-					</li>
-					<li><a class="has-arrow " href="javascript:void(0);" aria-expanded="false">
-						<i class="material-symbols-outlined">restaurant_menu</i>
-						<span class="nav-text">Transaksi</span>
-					</a>
-					</li>
-			    </div>
-            </div>
         <div class="content-body">
             <!-- row -->
 			<div class="container-fluid">

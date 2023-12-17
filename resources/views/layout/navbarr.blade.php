@@ -10,6 +10,45 @@
     background-color: #7E6D2E;
     border-color: #7E6D2E;
 }
+
+element.style {
+}
+[data-headerbg="color_3"][data-theme-version="dark"] .header, [data-headerbg="color_3"] .header {
+    border: 0;
+}
+[data-header-position="fixed"] .header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+@media only screen and (max-width: 87.5rem)
+[data-sidebar-style="full"] .header, [data-sidebar-style="overlay"] .header {
+    width: 100%;
+    padding-left: 17rem;
+}
+[data-sidebar-style="full"] .header, [data-sidebar-style="overlay"] .header {
+    width: 100%;
+    padding-left: 0;
+}
+.header {
+    z-index: 1;
+    position: relative;
+    padding: 0rem;
+    background: #ffffff;
+    z-index: 3;
+    padding-left: 17rem;
+    transition: all .2s ease;
+    background-position: center;
+    background-size: cover;
+    box-sizing: border-box;
+}
+/* [data-headerbg="color_3"][data-theme-version="dark"], [data-headerbg="color_3"] {
+    --headerbg: #fff;
+} */
+
+[data-headerbg="color_3"][data-theme-version="dark"], [data-headerbg="color_3"] {
+    --headerbg: #FFF;
+}
 </style>
 <div class="header">
     <div class="header-content">
@@ -17,7 +56,7 @@
         <div class="collapse navbar-collapse justify-content-between">
           <div class="header-left">
             <div class="dashboard_bar" style="color: #000;">
-             Selamat Datang Owner!
+             Selamat Datang Admin!
             </div>
           </div>
           <ul class="navbar-nav header-right">

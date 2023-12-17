@@ -48,7 +48,7 @@
   </div>
   <!-- end loader -->
   <!-- header -->
-  <header>
+  {{-- <header>
     <!-- header inner -->
     <div class="header">
       <div class="container">
@@ -58,7 +58,7 @@
               <div class="center-desk">
                 <div class="logo">
                   <a href="{{ asset('user in de kost/themewagon.github.io/index-2.html') }}"><img
-                      src="{{ asset('images/logo.png') }}" alt="#" /></a>
+                      src="i{{ asset('images/logo.png') }}" alt="#" /></a>
                 </div>
               </div>
             </div>
@@ -96,14 +96,14 @@
         </div>
       </div>
     </div>
-  </header>
+  </header> --}}
   <!-- our_room -->
   <div class="our_room" style="margin: 0">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <div class="titlepage">
-            <h2>Pengajuan Sewa</h2>
+            <div class="titlepage">
+              <h2>Edit Profile</h2>
           </div>
         </div>
       </div>
