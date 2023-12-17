@@ -14,6 +14,8 @@ use App\Http\Controllers\DashboardAdminController;
 use App\Http\Controllers\KelolaOwnerController;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\PengajuanController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\HalamanSelengkapnyaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,3 +54,8 @@ Route::get('/admin-kelolaowner', [KelolaOwnerController::class, 'kelolaowner'])-
 Route::get('/landingpage', [LandingPageController::class, 'landingpage'])->name('landing');
 Route::get('/detail-kos', [DetailkosController::class, 'detail'])->name('detail-kos');
 Route::get('/pengajuan_sewa', [PengajuanController::class, 'pengajuansewa'])->name('user.pengajuan_sewa');
+Route::get('/profile', [ProfileController::class, 'profile'])->name('user.profile');
+Route::get('/editprofile', [ProfileController::class, 'editprofile'])->name('user.editprofile');
+
+
+Route::get('/user-halamanselengkapnya', [HalamanSelengkapnyaController::class, 'detail'])->name('user.selengkapnya');
