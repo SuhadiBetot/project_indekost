@@ -42,6 +42,11 @@ Route::get('/dashboard-owner', [OwnerController::class, 'dashboard'])->name('das
 // Route::get('/data_kos-owner', [OwnerKosController::class, 'data_kos'])->name('data_kos');
 Route::get('/approval-owner', [OwnerApprovalController::class, 'approval'])->name('owner.approval_owner');
 Route::get('/data-kos', [OwnerKosController::class, 'data_kos'])->name('owner.data_kos');
+Route::get('/data-kos/create', [OwnerKosController::class, 'create'])->name('owner.data_kos_create');
+Route::post('/data-kos/store', [OwnerKosController::class, 'store'])->name('owner.data_kos_store');
+Route::get('/data-kos/edit/{OwnerDataKosts}', [OwnerKosController::class, 'edit'])->name('owner.data_kos_edit');
+Route::put('/data-kos/update/{OwnerDataKosts}', [OwnerKosController::class, 'update'])->name('owner.data_kos_update');
+Route::get('/data-kos/delete/{OwnerDataKosts}', [OwnerKosController::class, 'delete'])->name('owner.data_kos_delete');
 
 // Halaman Admin
 Route::get('/admin-approval', [AdminApprovalController::class, 'approval'])->name('app-admin');

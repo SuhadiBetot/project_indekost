@@ -1,10 +1,11 @@
 @include('owner.template.header')
 <style>
-    table.dataTable thead th {
-        color: #000;
-        font-weight: 200px;
-    }
+  table.dataTable thead th {
+    color: #000;
+    font-weight: 200px;
+  }
 </style>
+
 <body>
 
   <div id="preloader">
@@ -20,85 +21,117 @@
   </div>
 
   <div id="main-wrapper" class="wallet-open active">
-  @include('owner.template.navbar')
-  @include('layout.sidebar')
+    @include('owner.template.navbar')
+    @include('layout.sidebar')
 
-  <div class="content-body">
-    <div class="container-fluid">
+    <div class="content-body">
+      <div class="container-fluid">
 
-        <div class="col-xl-12">
-            <div class="page-title flex-wrap">
-                <div class="input-group search-area mb-md-0 mb-3">
-                    <input type="text" class="form-control" placeholder="Search here...">
-                    <span class="input-group-text"><a href="javascript:void(0)">
-                        <svg width="15" height="15" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M17.5605 15.4395L13.7527 11.6317C14.5395 10.446 15 9.02625 15 7.5C15 3.3645 11.6355 0 7.5 0C3.3645 0 0 3.3645 0 7.5C0 11.6355 3.3645 15 7.5 15C9.02625 15 10.446 14.5395 11.6317 13.7527L15.4395 17.5605C16.0245 18.1462 16.9755 18.1462 17.5605 17.5605C18.1462 16.9747 18.1462 16.0252 17.5605 15.4395V15.4395ZM2.25 7.5C2.25 4.605 4.605 2.25 7.5 2.25C10.395 2.25 12.75 4.605 12.75 7.5C12.75 10.395 10.395 12.75 7.5 12.75C4.605 12.75 2.25 10.395 2.25 7.5V7.5Z" fill="#01A3FF"/>
-                        </svg>
-                    </a></span>
-                </div>
-                <div>
-                    <select class="image-select bs-select dashboard-select me-3" aria-label="Default">
-                        <option selected>Newest</option>
-                        <option value="1">Oldest</option>
-                        <option value="2">Recent</option>
-                    </select>
-                </div>
+        <div class="card">
+          <div class="card-body">
+            <h3>Data Kos Saya</h3>
+            <div class="col-xl-12 text-end">
+              <a href="{{ route('owner.data_kos_create') }}" class="btn btn-primary">+</a>
             </div>
+
+            <div class="col-xl-12 wow fadeInUp mt-5" data-wow-delay="1.5s">
+              <div class="table-responsive full-data">
+                <table class="table-responsive-lg table display dataTablesCard student-tab dataTable no-footer"
+                  id="example-student">
+                  <thead>
+                    <tr>
+                      <th>No</th>
+                      <th>Nama Kost</th>
+                      <th>Ketentuan</th>
+                      <th>Alamat</th>
+                      <th>Harga</th>
+                      <th>Bukti</th>
+                      <th>Aksi</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    @foreach ($datas as $data)
+                      <tr>
+                        <td>{{ $loop->iteration }}</td>
+                        <td class="text-truncate" style="max-width: 150px;">{{ $data->nama_kost }}</td>
+                        <td class="text-truncate" style="max-width: 150px;">{{ $data->ketentuan }}</td>
+                        <td class="text-truncate" style="max-width: 150px;">{{ $data->lokasi }}</td>
+                        <td>Rp. {{ number_format($data->harga, 0, ',', '.') }}</td>
+                        <td>
+                          <img class="rounded-circle" width="50" height="50"
+                            src="{{ asset('ownerkos/' . $data->foto_depan) }}" alt="">
+                          <img class="rounded-circle" width="50" height="50"
+                            src="{{ asset('ownerkos/' . $data->foto_dalam) }}" alt="">
+                        </td>
+                        <td>
+                          <div class="d-flex">
+                            <a href="#" class="btn btn-primary shadow btn-xs sharp me-1" data-bs-toggle="modal"
+                              data-bs-target="#exampleModal{{ $data->id }}"><i class="fas fa-eye"></i></a>
+                            <a href="{{ route('owner.data_kos_edit', $data->id) }}"
+                              class="btn btn-warning shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
+                            <a href="{{ route('owner.data_kos_delete', $data->id) }}"
+                              class="btn btn-danger shadow btn-xs sharp"
+                              onclick="return confirm('yakin mau menghapus data ini')"><i class="fa fa-trash"></i></a>
+                          </div>
+                        </td>
+                      </tr>
+
+                      <!-- Modal -->
+                      <div class="modal fade text-black" id="exampleModal{{ $data->id }}" tabindex="-1"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="d-flex align-items-center p-2">
+                                <div class="offset-xl-2 col-xl-8 text-center">
+                                    <h1>Griya Permata Alam Regency 2</h1>
+                                </div>
+                                <div class="col-xl-2 text-end align-self-start">
+                                    <button type="button" class="btn-close fs-3" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                            </div>
+
+                            <div class="modal-body row">
+                              <div class="col-xl-12">
+                                <div class="row text-break">
+                                  <h5 class="col-xl-3">KETENTUAN</h5>
+                                  <span class="col-xl-9">:{{ $data->ketentuan }}</span>
+                                </div>
+                              </div>
+                              <div class="col-xl-12">
+                                <div class="row text-break">
+                                  <h5 class="col-xl-3">LOKASI</h5>
+                                  <span class="col-xl-9">:{{ $data->lokasi }}</span>
+                                </div>
+                              </div>
+                              <div class="col-xl-12">
+                                <div class="row">
+                                  <h5 class="col-xl-3">HARGA</h5>
+                                  <span class="col-xl-9">:{{ 'Rp.' . number_format($data->harga, 0, ',', '.') }}</span>
+                                </div>
+                              </div>
+                              <div class="col-xl-12">
+                                <div class="row">
+                                  <h5 class="col-xl-4">GAMBAR</h5>
+                                  :<img src="{{ 'ownerkos/' . $data->foto_depan }}" alt="" class="mb-3">
+                                  <img src="{{ 'ownerkos/' . $data->foto_dalam }}" alt="">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    @endforeach
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
         </div>
+        <!-- row -->
 
-        <div class="col-xl-12 wow fadeInUp mt-5" data-wow-delay="1.5s">
-            <div class="table-responsive full-data">
-            <table class="table-responsive-lg table display dataTablesCard student-tab dataTable no-footer" id="example-student">
-            <thead>
-                <tr>
-                    <th>No</th>
-                    <th>Nama Kost</th>
-                    <th>Alamat</th>
-                    <th>Ketentuan</th>
-                    <th>Harga</th>
-                    <th>Bukti</th>
-                    <th>Aksi</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Kost Cahaya Mahasiswa</td>
-                    <td>Jl. Kenanga Asri No.26</td>
-                    <td>Kost Cewek</td>
-                    <td>Rp 1.000.000</td>
-                    <td><img class="rounded-circle" width="35" src="images/profile/small/pic1.jpg" alt=""></td>
-                    <td>
-                        <div class="d-flex">
-                            <a href="#" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-eye"></i></a>
-                            <a href="#" class="btn btn-warning shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
-                            <a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Kost Mantep</td>
-                    <td>Jl. Kenduri No.43</td>
-                    <td>Kost Cowok</td>
-                    <td>Rp 750.000</td>
-                    <td><img class="rounded-circle" width="35" src="images/profile/small/pic1.jpg" alt=""></td>
-                    <td>
-                        <div class="d-flex">
-                            <a href="#" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-eye"></i></a>
-                            <a href="#" class="btn btn-warning shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
-                            <a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-            </table>
-            </div>
-            </div>
-      <!-- row -->
+      </div>
+    </div>
 
-    </div>
-    </div>
     <div class="footer footer-outer">
       <div class="copyright">
         <p>Copyright © Designed &amp; Developed by <a href="https://dexignlab.com/" target="_blank">DexignLab</a>
