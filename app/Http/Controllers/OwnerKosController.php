@@ -31,12 +31,15 @@ class OwnerKosController extends Controller
             'peraturan' => 'required|string',
             'spesifikasi' => 'required|string',
             'harga' => 'required|numeric',
+            'diskon' => 'nullable|numeric',
             'fasilitas_kamar' => 'required|array',
             'fasilitas_kamar.*' => 'required|string',
             'fasilitas_kamar_mandi' => 'required|string',
             'fasilitas_tempat_parkir' => 'required|string',
             'foto_depan' => 'required|image|mimes:jpeg,png,jpg',
             'foto_dalam' => 'required|image|mimes:jpeg,png,jpg',
+            'foto_tambahan' => 'nullable|array',
+            'foto_tambahan.*' => 'nullable|image|mimes:jpeg,png,jpg',
         ], [
             'nama_kost.required' => 'Nama kost wajib diisi.',
             'nama_kost.string' => 'Nama kost harus berupa teks.',
@@ -70,6 +73,24 @@ class OwnerKosController extends Controller
         // Mengonversi array fasilitas_kamar menjadi JSON
         $fasilitasKamar = json_encode($request->fasilitas_kamar);
 
+        // Simpan foto_tambahan
+        if ($request->hasFile('foto_tambahan')) {
+            $fotoTambahanPaths = [];
+
+            foreach ($request->file('foto_tambahan') as $fotoTambahan) {
+                $fotoTambahanPath = Str::random(40) . '.' . $fotoTambahan->getClientOriginalExtension();
+                $fotoTambahan->move(public_path('ownerkos'), $fotoTambahanPath);
+
+                $fotoTambahanPaths[] = $fotoTambahanPath;
+            }
+
+            $jsonEncodedPaths = json_encode($fotoTambahanPaths);
+
+            // Anda dapat menyimpan $fotoTambahanPaths di database atau melakukan operasi lainnya
+        } else {
+            $jsonEncodedPaths = null;
+        }
+
         // Simpan foto_depan
         $fotodepan = $request->file('foto_depan');
         $fotoDepanPath = Str::random(40) . '.' . $fotodepan->getClientOriginalExtension();
@@ -88,12 +109,15 @@ class OwnerKosController extends Controller
             'peraturan' => $request->peraturan,
             'spesifikasi' => $request->spesifikasi,
             'harga' => $request->harga,
+            'diskon' => $request->diskon,
             'fasilitas_kamar' => $fasilitasKamar,
             'fasilitas_kamar_mandi' => $request->fasilitas_kamar_mandi,
             'fasilitas_tempat_parkir' => $request->fasilitas_tempat_parkir,
             'foto_depan' => $fotoDepanPath,
             'foto_dalam' => $fotoDalamPath,
+            'foto_tambahan' => $jsonEncodedPaths,
         ]);
+        // dd($result);
 
         return redirect()->route('owner.data_kos');
     }
@@ -118,6 +142,8 @@ class OwnerKosController extends Controller
             'fasilitas_tempat_parkir' => 'required|string',
             'foto_depan' => 'nullable|image|mimes:jpeg,png,jpg',
             'foto_dalam' => 'nullable|image|mimes:jpeg,png,jpg',
+            'foto_tambahan' => 'nullable|array',
+            'foto_tambahan.*' => 'nullable|image|mimes:jpeg,png,jpg',
         ], [
             'nama_kost.required' => 'Nama kost wajib diisi.',
             'nama_kost.string' => 'Nama kost harus berupa teks.',
@@ -151,17 +177,36 @@ class OwnerKosController extends Controller
         // Mengonversi array fasilitas_kamar menjadi JSON
         $fasilitasKamar = json_encode($request->fasilitas_kamar);
 
+        if ($request->hasFile('foto_tambahan')) {
+            $fotoTambahanPaths = [];
+
+            foreach ($request->file('foto_tambahan') as $fotoTambahan) {
+                $fotoTambahanPath = Str::random(40) . '.' . $fotoTambahan->getClientOriginalExtension();
+                $fotoTambahan->move(public_path('ownerkos'), $fotoTambahanPath);
+
+                $fotoTambahanPaths[] = $fotoTambahanPath;
+            }
+
+            $jsonEncodedPaths = json_encode($fotoTambahanPaths);
+            if ($OwnerDataKosts->foto_tambahan) {
+                foreach (json_decode($OwnerDataKosts->foto_tambahan) as $oldFotoTambahan) {
+                    File::delete(public_path('ownerkos') . '/' . $oldFotoTambahan);
+                }
+            }
+            // Anda dapat menyimpan $fotoTambahanPaths di database atau melakukan operasi lainnya
+        } else {
+            $jsonEncodedPaths = null;
+        }
+
         if ($request->hasFile('foto_depan')) {
             $fotodepan = $request->file('foto_depan');
             $fotoDepanPath = Str::random(40) . '.' . $fotodepan->getClientOriginalExtension();
             $fotodepan->move(public_path('ownerkos'), $fotoDepanPath);
 
-            // Hapus foto depan yang lama jika ada
             if ($OwnerDataKosts->foto_depan) {
                 File::delete(public_path('ownerkos') . '/' . $OwnerDataKosts->foto_depan);
             }
         } else {
-            // Jika tidak ada foto depan yang diunggah, gunakan foto lama
             $fotoDepanPath = $OwnerDataKosts->foto_depan;
         }
 
@@ -171,12 +216,10 @@ class OwnerKosController extends Controller
             $fotoDalamPath = Str::random(40) . '.' . $fotodalam->getClientOriginalExtension();
             $fotodalam->move(public_path('ownerkos'), $fotoDalamPath);
 
-            // Hapus foto dalam yang lama jika ada
             if ($OwnerDataKosts->foto_dalam) {
                 File::delete(public_path('ownerkos') . '/' . $OwnerDataKosts->foto_dalam);
             }
         } else {
-            // Jika tidak ada foto dalam yang diunggah, gunakan foto lama
             $fotoDalamPath = $OwnerDataKosts->foto_dalam;
         }
 
@@ -187,13 +230,16 @@ class OwnerKosController extends Controller
             'peraturan' => $request->peraturan,
             'spesifikasi' => $request->spesifikasi,
             'harga' => $request->harga,
+            'diskon' => $request->diskon,
             'fasilitas_kamar' => $fasilitasKamar,
             'fasilitas_kamar_mandi' => $request->fasilitas_kamar_mandi,
             'fasilitas_tempat_parkir' => $request->fasilitas_tempat_parkir,
             'foto_depan' => $fotoDepanPath,
             'foto_dalam' => $fotoDalamPath,
+            'foto_tambahan' => $jsonEncodedPaths,
         ]);
 
+        // dd($result);
         return redirect()->route('owner.data_kos');
     }
 
@@ -203,12 +249,15 @@ class OwnerKosController extends Controller
         // Hapus entitas dari database
         $OwnerDataKosts->delete();
         if ($OwnerDataKosts->foto_depan) {
-            # code...
-            Storage::disk('public')->delete($OwnerDataKosts->foto_depan);
+            File::delete(public_path('ownerkos') . '/' . $OwnerDataKosts->foto_depan);
         }
         if ($OwnerDataKosts->foto_dalam) {
-            # code...
-            Storage::disk('public')->delete($OwnerDataKosts->foto_dalam);
+            File::delete(public_path('ownerkos') . '/' . $OwnerDataKosts->foto_dalam);
+        }
+        if ($OwnerDataKosts->foto_tambahan) {
+            foreach (json_decode($OwnerDataKosts->foto_tambahan) as $oldFotoTambahan) {
+                File::delete(public_path('ownerkos') . '/' . $oldFotoTambahan);
+            }
         }
 
         return redirect()->back()->with('success', 'Data berhasil dihapus.');

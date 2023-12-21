@@ -17,10 +17,12 @@ class OwnerDataKosts extends Model
         'peraturan',
         'spesifikasi',
         'harga',
+        'diskon',
         'fasilitas_kamar',
         'fasilitas_kamar_mandi',
         'fasilitas_tempat_parkir',
         'foto_depan',
         'foto_dalam',
+        'foto_tambahan',
     ];
 }
