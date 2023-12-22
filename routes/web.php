@@ -39,7 +39,6 @@ Route::get('/forget', [ForgotPasswordController::class, 'forget'])->name('forget
 
 // Halaman Owner
 Route::get('/dashboard-owner', [OwnerController::class, 'dashboard'])->name('dash-owner');
-// Route::get('/data_kos-owner', [OwnerKosController::class, 'data_kos'])->name('data_kos');
 Route::get('/approval-owner', [OwnerApprovalController::class, 'approval'])->name('owner.approval_owner');
 Route::get('/data-kos', [OwnerKosController::class, 'data_kos'])->name('owner.data_kos');
 Route::get('/data-kos/create', [OwnerKosController::class, 'create'])->name('owner.data_kos_create');
@@ -49,18 +48,30 @@ Route::put('/data-kos/update/{OwnerDataKosts}', [OwnerKosController::class, 'upd
 Route::get('/data-kos/delete/{OwnerDataKosts}', [OwnerKosController::class, 'delete'])->name('owner.data_kos_delete');
 
 // Halaman Admin
-Route::get('/admin-approval', [AdminApprovalController::class, 'approval'])->name('app-admin');
-Route::get('/transaksi-admin', [TransaksiAdminController::class, 'transaksi'])->name('trans-admin');
-Route::get('/admin-dashboard', [DashboardAdminController::class, 'dashboardAdmin'])->name('admin.dashboard_admin');
-Route::get('/admin-kelolaowner', [KelolaOwnerController::class, 'kelolaowner'])->name('kelola-admin');
+Route::middleware(['Admin'])->group(function () {
+    Route::get('/admin-approval', [AdminApprovalController::class, 'approval'])->name('app-admin');
+    Route::get('/transaksi-admin', [TransaksiAdminController::class, 'transaksi'])->name('trans-admin');
+    Route::get('/admin-dashboard', [DashboardAdminController::class, 'dashboardAdmin'])->name('admin.dashboard_admin');
+    Route::get('/admin-kelolaowner', [KelolaOwnerController::class, 'kelolaowner'])->name('kelola-admin');
+});
+
 
 
 // Halaman user
 Route::get('/landingpage', [LandingPageController::class, 'landingpage'])->name('landing');
 Route::get('/detail-kos', [DetailkosController::class, 'detail'])->name('detail-kos');
 Route::get('/pengajuan_sewa', [PengajuanController::class, 'pengajuansewa'])->name('user.pengajuan_sewa');
+<<<<<<< Updated upstream
 Route::get('/profile', [ProfileController::class, 'profile'])->name('user.profile');
 Route::get('/editprofile', [ProfileController::class, 'editprofile'])->name('user.editprofile');
 
 
 Route::get('/user-halamanselengkapnya', [HalamanSelengkapnyaController::class, 'detail'])->name('user.selengkapnya');
+=======
+
+
+Route::post('/logout',[LoginController::class,'logout'])->name('logout')->middleware('verified');
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('verified');
+Auth::routes(['verify'=>true]);
+>>>>>>> Stashed changes

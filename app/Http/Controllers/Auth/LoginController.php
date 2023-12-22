@@ -51,8 +51,18 @@ class LoginController extends Controller
     }
 
     public function loginproses(Request $request){
-        if(Auth::attempt($request->only('email','password'))){
+        // dd($request);
+        $user = User::where('email', $request->email)->first();
+        if(Auth::attempt($request->only('email','password')) && $user->role == 'admin' ){
+            return redirect('/admin-dashboard')->with('success', 'Berhasil Login');
+
+        }
+        if(Auth::attempt($request->only('email','password')) && $user->role == 'user' ){
+            return redirect('/landingpage')->with('success', 'Berhasil Login');
+        }
+        if(Auth::attempt($request->only('email','password')) && $user->role == 'owner' ){
             return redirect('/dashboard-owner')->with('success', 'Berhasil Login');
+
         }
 
         $credentials = $request->only('email', 'password');
