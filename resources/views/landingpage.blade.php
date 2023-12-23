@@ -118,7 +118,7 @@
                                  <a class="nav-link" href="gallery.html">Sekitar Kampus</a>
                               </li>
                               <li class="nav-item">
-                                <a href="#" class="login-button">LOG IN | SIGN IN</a>
+                                <a href="{{route('login')}}" class="login-button">LOG IN | SIGN IN</a>
                               </li>
                            </ul>
                         </div>

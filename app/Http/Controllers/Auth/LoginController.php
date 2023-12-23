@@ -6,8 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use App\Models\User;
 
 class LoginController extends Controller
 {
@@ -21,16 +19,13 @@ class LoginController extends Controller
     | to conveniently provide its functionality to your applications.
     |
     */
-
     use AuthenticatesUsers;
-
     /**
      * Where to redirect users after login.
      *
      * @var string
      */
     protected $redirectTo = RouteServiceProvider::HOME;
-
     /**
      * Create a new controller instance.
      *
@@ -38,46 +33,25 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-        // $this->middleware('guest')->except('logout');
+        $this->middleware('guest')->except('logout');
     }
-
-
-
-    //login
-
     public function login(Request $request)
     {
-        return view('login');
-    }
-
-    public function loginproses(Request $request){
-        // dd($request);
-        $user = User::where('email', $request->email)->first();
-        if(Auth::attempt($request->only('email','password')) && $user->role == 'admin' ){
-            return redirect('/admin-dashboard')->with('success', 'Berhasil Login');
-
-        }
-        if(Auth::attempt($request->only('email','password')) && $user->role == 'user' ){
-            return redirect('/landingpage')->with('success', 'Berhasil Login');
-        }
-        if(Auth::attempt($request->only('email','password')) && $user->role == 'owner' ){
-            return redirect('/dashboard-owner')->with('success', 'Berhasil Login');
-
-        }
-
+        $request->validate([
+            'email'     => 'required|email',
+            'password'  => 'required'
+        ]);
         $credentials = $request->only('email', 'password');
-
-        // Check if the email does not match any registered email
-        $user = User::where('email', $credentials['email'])->first();
-        if (!$user) {
-            return redirect('login')->with('error', 'Email tidak terdaftar.');
+        if (!auth()->attempt($credentials)) {
+            return redirect()->route('login')
+                ->with('error', 'Email-Address And Password Are Wrong.');
         }
-
-        return redirect('login')->with('error', 'Kata sandi salah atau tidak sesuai.');
-
-        // return redirect('login');
+        if (auth()->user()->role == 'admin') {
+            return redirect()->route('admin.dashboard_admin');
+        }
+        if (auth()->user()->role == 'owner') {
+            return redirect()->route('dash-owner');
+        }
+        return redirect()->route('home');
     }
-
-
-
 }
