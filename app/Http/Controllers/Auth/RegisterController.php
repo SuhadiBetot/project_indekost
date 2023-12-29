@@ -2,15 +2,13 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
-use App\Providers\RouteServiceProvider;
 use App\Models\User;
-use Illuminate\Foundation\Auth\RegistersUsers;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
-
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Hash;
+use App\Providers\RouteServiceProvider;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Foundation\Auth\RegistersUsers;
 
 class RegisterController extends Controller
 {
@@ -32,7 +30,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo;
 
     /**
      * Create a new controller instance.
@@ -50,12 +48,21 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
+    public function registerUser(){
+        return view('auth.registeruser');
+    }
+
+    public function registerOwner(){
+        return view('auth.registerowner');
+    }
+
     protected function validator(array $data)
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'role' => ['required', 'string', 'in:user,owner'],
         ]);
     }
 
@@ -71,37 +78,17 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'role' => $data['role'],
         ]);
     }
 
-    
-
-    //register
-
-    public function register(Request $reguest)
+    protected function registered(Request $request, $user)
     {
-        return view('register');
+        // Redirect berdasarkan peran (role) pengguna setelah registrasi
+        if ($user->role === 'owner') {
+            $this->redirectTo = '/dashboard-owner';
+        } else {
+            $this->redirectTo = '/home';
+        }
     }
-
-    public function registeruser(Request $request)
-{
-    $request->validate([
-        'name' => 'required',
-        'email' => 'required|unique:users',
-    ], [
-        'name.required' => 'Nama wajib diisi.',
-        'email.required' => 'Email wajib diisi.',
-        'email.unique' => 'Email sudah pernah digunakan, silakan pilih yang lain.',
-    ]);
-
-    User::create([
-        'name' => $request->name,
-        'email' => $request->email,
-        'password' => bcrypt($request->password),
-        'confirmasi_password' => bcrypt($request->confirmasi_password),
-        'remember_token' => Str::random(60),
-    ]);
-
-    return redirect('/login')->with('reg', 'Berhasil Register');
-}
 }
