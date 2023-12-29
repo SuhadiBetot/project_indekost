@@ -8,6 +8,6 @@ class DetailkosController extends Controller
 {
     public function detail()
     {
-        return view('detail.kos');
+        return view('detail_kost');
     }
 }

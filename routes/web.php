@@ -28,7 +28,7 @@ use App\Http\Controllers\HalamanSelengkapnyaController;
 |
 */
 
-// Route::get('/', function () {return view('welcome');});
+Route::get('/', function () {return view('welcome');});
 
 //Auth
 Route::get('/login', [LoginController::class, 'login'])->name('login');
@@ -57,7 +57,7 @@ Route::get('/admin-kelolaowner', [KelolaOwnerController::class, 'kelolaowner'])-
 
 // Halaman user
 Route::get('/landingpage', [LandingPageController::class, 'landingpage'])->name('landing');
-Route::get('/detail-kos', [DetailkosController::class, 'detail'])->name('detail-kos');
+Route::get('/detail-kost', [DetailkosController::class, 'detail'])->name('detail-kos');
 Route::get('/pengajuan_sewa', [PengajuanController::class, 'pengajuansewa'])->name('user.pengajuan_sewa');
 Route::get('/profile', [ProfileController::class, 'profile'])->name('user.profile');
 Route::get('/editprofile', [ProfileController::class, 'editprofile'])->name('user.editprofile');
