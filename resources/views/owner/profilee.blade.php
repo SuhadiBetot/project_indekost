@@ -96,9 +96,10 @@
       display: inline-block;
       filter: invert(60%) sepia(93%) saturate(7015%) hue-rotate(235deg) brightness(98%) contrast(100%);
     }
+
     .bio {
-        padding-top: 65px;
-        text-align: left; /* Align text to the left */
+      padding-top: 65px;
+      text-align: center;
     }
 
 
@@ -545,269 +546,76 @@
     }
         }
 
-        /* table hehehehhhhhhhhh */
-        @import url('https://fonts.googleapis.com/css?family=Amarante');
-
-    html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
-      margin: 0;
-      padding: 0;
-      border: 0;
-      font-size: 100%;
-      font: inherit;
-      vertical-align: baseline;
-      outline: none;
-      -webkit-font-smoothing: antialiased;
-      -webkit-text-size-adjust: 100%;
-      -ms-text-size-adjust: 100%;
-      -webkit-box-sizing: border-box;
-      -moz-box-sizing: border-box;
-      box-sizing: border-box;
-    }
-    html { overflow-y: scroll; }
-    body {
-      background: #eee url('https://i.imgur.com/eeQeRmk.png'); /* https://subtlepatterns.com/weave/ */
-      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      font-size: 62.5%;
-      line-height: 1;
-      color: #585858;
-      padding: 22px 10px;
-      padding-bottom: 55px;
     }
 
-    ::selection { background: #5f74a0; color: #fff; }
-    ::-moz-selection { background: #5f74a0; color: #fff; }
-    ::-webkit-selection { background: #5f74a0; color: #fff; }
-
-    br { display: block; line-height: 1.6em; }
-
-    article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
-    ol, ul { list-style: none; }
-
-    input, textarea {
-      -webkit-font-smoothing: antialiased;
-      -webkit-text-size-adjust: 100%;
-      -ms-text-size-adjust: 100%;
-      -webkit-box-sizing: border-box;
-      -moz-box-sizing: border-box;
-      box-sizing: border-box;
-      outline: none;
-    }
-
-    blockquote, q { quotes: none; }
-    blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
-    strong, b { font-weight: bold; }
-
-    table { border-collapse: collapse; border-spacing: 0; width: 100%}
-    img { border: 0; max-width: 100%; }
-
-    h1 {
-      font-family: 'Amarante', Tahoma, sans-serif;
-      font-weight: bold;
-      font-size: 3.6em;
-      line-height: 1.7em;
-      margin-bottom: 10px;
-      text-align: center;
-    }
-
-
-    /** page structure **/
-    /* #wrapper {
-      display: block;
-      width: 850px;
-      background: #fff;
-      margin: 0 auto;
-      padding: 10px 17px;
-      -webkit-box-shadow: 2px 2px 3px -1px rgba(0,0,0,0.35);
-    } */
-
-    #keywords {
-      margin: 0 auto;
-      font-size: 15px;
-      margin-bottom: 15px;
-    }
-
-
-    #keywords thead {
-      cursor: pointer;
-      background: #c9dff0;
-    }
-    #keywords thead tr th {
-      font-weight: bold;
-      padding: 12px 30px;
-      padding-left: 42px;
-    }
-    #keywords thead tr th span {
-      padding-right: 20px;
-      background-repeat: no-repeat;
-      background-position: 100% 100%;
-    }
-
-    #keywords thead tr th.headerSortUp, #keywords thead tr th.headerSortDown {
-      background: #acc8dd;
-    }
-
-    #keywords thead tr th.headerSortUp span {
-      background-image: url('https://i.imgur.com/SP99ZPJ.png');
-    }
-    #keywords thead tr th.headerSortDown span {
-      background-image: url('https://i.imgur.com/RkA9MBo.png');
-    }
-
-
-    #keywords tbody tr {
-      color: #555;
-    }
-    #keywords tbody tr td {
-      text-align: center;
-      padding: 15px 10px;
-    }
-    #keywords tbody tr td.lalign {
-      text-align: left;
-    }
-    }
-
-
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&family=RocknRoll+One&display=swap');
-
-        *,
-        *::before,
-        *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background: rgb(255, 255, 255);
-            width: 100vw;
-            height: 100vh;
-            font-family: 'Roboto', sans-serif;
-            font-size: 16px;
-        }
-
-        .card {
-            width: 1200px;
-            height: 718px;
-            padding: 20px;
-            background: #ffffff;
-            margin: calc(50vh - 359px) auto;
-        }
-
-        /* ... (other styles remain unchanged) ... */
-
-        .form-group {
-    margin-bottom: 20px;
-}
-
-label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-}
-
-.form-control {
-    width: 100%; /* Set the width to 100% */
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 200px;
-    box-sizing: border-box;
-    font-size: 16px;
-    display: block; /* Ensure the input is displayed as a block element */
-    margin: 0 auto; /* Center-align the input within its parent container */
-}
-
-.follow-btn a {
-    display: inline-block;
-    font-size: 20px;
-    padding: 15px 30px;
-    background: #ffffff;
-    text-align: center;
-    color: white;
-    border-radius: 10px;
-    text-decoration: none;
-    margin: 0 auto; /* Center-align the button */
-    width: 100%; /* Set the width to 100% */
-    max-width: 200px; /* Set a maximum width if needed */
-}
-
-.follow-btn a:hover {
-    background: #ffffff;
-    color: #5451FA;
-}
-
-textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 20px;
-    box-sizing: border-box;
-    font-size: 16px;
-    display: block;
-    margin: 0 auto;
-}
-
-button[type="submit"] {
-    background-color: #5451FA;
-    color: #fff;
-    padding: 10px 140px;
-    border-radius: 20px;
-    border: none;
-    cursor: pointer;
-    font-size: 18px;
-    transition: background-color 0.3s ease-in-out;
-}
-
-button[type="submit"]:hover {
-    background-color: #4541e1;
-}
     </style>
 
-<div class="card">
-    <div class="card-wrapper">
-        <div class="card-header">
+
+    <div class="card">
+        <div class="card-wrapper">
+          <div class="card-header">
             <img src="https://www.svgrepo.com/show/14071/search.svg" alt="">
             <img src="https://www.svgrepo.com/show/390426/alarm-alert-attention-bell-notification-timer.svg" alt="">
 
-        </div>
-        <h1 style="color: #000; font-weight:1000;">Edit Profile</h1>
-        <form method="POST" action="{{ route('edit.profile', ['id' => $user->id]) }}">
-            @method('PUT')
-            @csrf
-            <div class="card-hero">
-                <div class="hero-bg"></div>
+          </div>
+          <div class="card-hero">
+            <div class="hero-bg"></div>
             <img class="main-img" src="https://images.unsplash.com/photo-1492127042590-8094c493b510?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
             <div class="bio">
-                {{-- <span><h1>Syerli Nindi Pratiwi</h1></span> <span><img class="span-img" src="https://www.svgrepo.com/show/347880/verified.svg" ></span> --}}
-                <div class="form-group">
-                    <center>
-
-                    </center>
-                  <label for="foto">Foto</label>
-                  <input type="file" class="form-control" id="foto" placeholder="Enter your user name">
-                </div>
-                <div class="form-group">
-                  <label for="nama">Nama</label>
-                  <input type="text" class="form-control" id="nama" placeholder="user123">
-                </div>
-                <div class="form-group">
-                  <label for="email">Email</label>
-                  <input type="text" class="form-control" id="email" placeholder="email@gmail.com">
-                </div>
-                <div class="form-group">
-                  <label for="lokasi">Lokasi</label>
-                  <textarea name="lokasi" id="lokasi" cols="30" rows="5" placeholder="Jl.P.Sudirman"></textarea>
-                </div>
-                <br>
-                <button type="submit" style="background: #000; border-radius:20px; color:#fff;"> Simpan</button>
+              <span><h1>Syerli Nindi Pratiwi</h1></span> <span><img class="span-img" src="https://www.svgrepo.com/show/347880/verified.svg" ></span>
             </div>
-        </form>
-        </div>
-    </div>
-      </div>
+          </div>
+          <div class="stats">
+            <div class="stat">
+              <h1>19</h1>
+              <p style="font-size: 15px;">Transaksi</p>
+            </div>
+          </div>
+          <div class="footer">
+            <div class="footer-item">
+              <img class="footer-img" src="https://www.svgrepo.com/show/129908/location.svg" alt=""/> <p style="font-size: 15px;"></p> <strong style="font-size: 15px;">Budapest</strong>
+            </div>
+            <div class="footer-item">
+              <img class="footer-img" src="https://www.svgrepo.com/show/870/suitcase.svg" alt=""/> <p style="font-size: 15px;">serlynindi680@gmail.com</p>
+            </div>
 
+          </div>
+         <center>
+            <div class="follow-btn">
+                <a href="{{ route('edit.profile', ['id' => $user->id]) }}" style="width: 500; height:70;" >Edit Profil</a>
+            </div>
+         </center>
+        </div>
+      </div>
+    <br><br><br>
+    <main>
+    <br><br><br>
+
+
+        <!-- End of container -->
+
+    </main>
     <script>
+
+    // const button = document.querySelector(".follow-btn a");
+    // const userName = document.querySelector(".bio h2");
+
+
+    // button.addEventListener("click", () => {
+    //   let input = prompt("Profile Name");
+
+    //   if (!input) {
+    //     input = prompt("Profile Name is required, Set now or cancel for 'Anonymous'");
+    //     !input && (input = "Anonymous");
+    //     userName.innerText = input;
+    //   } else {
+    //     userName.innerText = input;
+    //   }
+    // });
+
+
+    // table
+
     $(function(){
       $('#keywords').tablesorter();
     });

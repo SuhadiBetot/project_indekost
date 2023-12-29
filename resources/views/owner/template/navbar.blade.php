@@ -28,7 +28,7 @@
     </a>
 
     <div class="nav-control">
-        <div class="hamburger">
+        <div class="hamburger" >
             <span class="line"></span><span class="line"></span><span class="line"></span>
             <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect x="22" y="11" width="4" height="4" rx="2" fill="#2A353A" />
@@ -71,14 +71,13 @@
                                                 <img src="images/user.jpg" class="ms-0" alt="">
                                             </li>
                                             <li class="ms-2">
-                                                <h4 class="mb-0">Admin</h4>
+                                                <h4 class="mb-0">Owner</h4>
                                             </li>
                                         </ul>
 
                                     </div>
                                     <div class="card-body p-3">
-                                        <a href="#" class="dropdown-item ai-icon" data-bs-toggle="modal"
-                                            data-bs-target="#modalProfil">
+                                        <a href="{{ route('user.profile') }}" class="dropdown-item ai-icon" >
                                             <svg xmlns="http://www.w3.org/2000/svg"
                                                 xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
                                                 height="24px" viewBox="0 0 24 24" version="1.1"
@@ -97,28 +96,7 @@
                                             <span class="ms-2">Profile</span>
                                         </a>
                                     </div>
-                                    <div class="modal fade" id="modalProfil" tabindex="-1"
-                                        aria-labelledby="modalProfilLabel" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title
-                                                    </h1>
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                        aria-label="Close"></button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    ...
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary"
-                                                        data-bs-dismiss="modal">Close</button>
-                                                    <button type="button" class="btn btn-primary">Save
-                                                        changes</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                   
                                     <div class="card-footer text-center p-3">
                                         <a class="dropdown-item ai-icon btn btn-primary light"
                                             href="{{ route('logout') }}"
@@ -139,7 +117,7 @@
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST"
                                             class="d-none">
                                             @csrf
-                                        </form> 
+                                        </form>
                                     </div>
                                 </div>
                             </div>

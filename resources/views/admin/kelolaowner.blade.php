@@ -78,279 +78,51 @@
                                                         <div class="user-img">
                                                             <img src="images/contacts/1.jpg" alt="" class="avatar avatar-xl">
                                                         </div>
-                                                        <div class="user-details">
-                                                            <h4 class="user-name mb-0">Nama Owner : Siti Aisyah</h4>
-                                                            <h4 class="user-name mb-0">Email :aisyahfeny2019</h4>
-                                                        </div>
+                                                            @foreach($owners as $owner)
+                                                            <div class="user-details">
+                                                                <h4 class="user-name mb-0">{{ $owner->name}}</h4>
+                                                                <h4 class="user-name mb-0">{{ $owner->email}}</h4>
+                                                            </div>
+                                                            @endforeach
                                                     </div>
                                                 </div>
                                                 <br>
 												<div class="d-flex justify-content-center">
-													<a href="app-profile.html" class="btn  btn-primary btn-sm w-30 me-2"></i>Edit</a>
+													<a href="app-profile.html" class="btn  btn-primary btn-sm w-30 me-2"></i>Lihat</a>
 												</div>
                                             </div>
                                         </div>
                                     </div>
                                     <!--/column-->
-                                    <!--column-->
-                                    <div class="col-xl-4 col-lg-4 col-sm-6">
-                                        <div class="card contact_list text-center">
-                                            <div class="card-body">
-                                                <div class="user-content">
-                                                    <div class="user-info">
-                                                        <div class="user-img">
-                                                            <img src="images/contacts/1.jpg" alt="" class="avatar avatar-xl">
-                                                        </div>
-                                                        <div class="user-details">
-                                                            <h4 class="user-name mb-0">Nama Owner : Siti Aisyah</h4>
-                                                            <h4 class="user-name mb-0">Email :aisyahfeny2019</h4>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <br>
-												<div class="d-flex justify-content-center">
-													<a href="app-profile.html" class="btn  btn-primary btn-sm w-30 me-2"></i>Edit</a>
-												</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--/column-->
-                                    <!--column-->
-                                    <div class="col-xl-4 col-lg-4 col-sm-6">
-                                        <div class="card contact_list text-center">
-                                            <div class="card-body">
-                                                <div class="user-content">
-                                                    <div class="user-info">
-                                                        <div class="user-img">
-                                                            <img src="images/contacts/1.jpg" alt="" class="avatar avatar-xl">
-                                                        </div>
-                                                        <div class="user-details">
-                                                            <h4 class="user-name mb-0">Nama Owner : Siti Aisyah</h4>
-                                                            <h4 class="user-name mb-0">Email :aisyahfeny2019</h4>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <br>
-												<div class="d-flex justify-content-center">
-													<a href="app-profile.html" class="btn  btn-primary btn-sm w-30 me-2"></i>Edit</a>
-												</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--/column-->
-									<!--column-->
-									<div class="col-xl-4 col-lg-4 col-sm-6">
-                                        <div class="card contact_list text-center">
-                                            <div class="card-body">
-                                                <div class="user-content">
-                                                    <div class="user-info">
-                                                        <div class="user-img">
-                                                            <img src="images/contacts/1.jpg" alt="" class="avatar avatar-xl">
-                                                        </div>
-                                                        <div class="user-details">
-                                                            <h4 class="user-name mb-0">Nama Owner : Siti Aisyah</h4>
-                                                            <h4 class="user-name mb-0">Email :aisyahfeny2019</h4>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <br>
-												<div class="d-flex justify-content-center">
-													<a href="app-profile.html" class="btn  btn-primary btn-sm w-30 me-2"></i>Edit</a>
-												</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--/column-->
-									<!--column-->
-									<div class="col-xl-4 col-lg-4 col-sm-6">
-                                        <div class="card contact_list text-center">
-                                            <div class="card-body">
-                                                <div class="user-content">
-                                                    <div class="user-info">
-                                                        <div class="user-img">
-                                                            <img src="images/contacts/1.jpg" alt="" class="avatar avatar-xl">
-                                                        </div>
-                                                        <div class="user-details">
-                                                            <h4 class="user-name mb-0">Nama Owner : Siti Aisyah</h4>
-                                                            <h4 class="user-name mb-0">Email :aisyahfeny2019</h4>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <br>
-												<div class="d-flex justify-content-center">
-													<a href="app-profile.html" class="btn  btn-primary btn-sm w-30 me-2"></i>Edit</a>
-												</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--/column-->
-                                    <!--column-->
-                                    <div class="col-xl-4 col-lg-4 col-sm-6">
-                                        <div class="card contact_list text-center">
-                                            <div class="card-body">
-                                                <div class="user-content">
-                                                    <div class="user-info">
-                                                        <div class="user-img">
-                                                            <img src="images/contacts/1.jpg" alt="" class="avatar avatar-xl">
-                                                        </div>
-                                                        <div class="user-details">
-                                                            <h4 class="user-name mb-0">Nama Owner : Siti Aisyah</h4>
-                                                            <h4 class="user-name mb-0">Email :aisyahfeny2019</h4>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <br>
-												<div class="d-flex justify-content-center">
-													<a href="app-profile.html" class="btn  btn-primary btn-sm w-30 me-2"></i>Edit</a>
-												</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--/column-->
-									<!--column-->
-									<div class="col-xl-4 col-lg-4 col-sm-6">
-                                        <div class="card contact_list text-center">
-                                            <div class="card-body">
-                                                <div class="user-content">
-                                                    <div class="user-info">
-                                                        <div class="user-img">
-                                                            <img src="images/contacts/1.jpg" alt="" class="avatar avatar-xl">
-                                                        </div>
-                                                        <div class="user-details">
-                                                            <h4 class="user-name mb-0">Nama Owner : Siti Aisyah</h4>
-                                                            <h4 class="user-name mb-0">Email :aisyahfeny2019</h4>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <br>
-												<div class="d-flex justify-content-center">
-													<a href="app-profile.html" class="btn  btn-primary btn-sm w-30 me-2"></i>Edit</a>
-												</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--/column-->
-                                    <!--column-->
-                                    <div class="col-xl-4 col-lg-4 col-sm-6">
-                                        <div class="card contact_list text-center">
-                                            <div class="card-body">
-                                                <div class="user-content">
-                                                    <div class="user-info">
-                                                        <div class="user-img">
-                                                            <img src="images/contacts/1.jpg" alt="" class="avatar avatar-xl">
-                                                        </div>
-                                                        <div class="user-details">
-                                                            <h4 class="user-name mb-0">Nama Owner : Siti Aisyah</h4>
-                                                            <h4 class="user-name mb-0">Email :aisyahfeny2019</h4>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <br>
-												<div class="d-flex justify-content-center">
-													<a href="app-profile.html" class="btn  btn-primary btn-sm w-30 me-2"></i>Edit</a>
-												</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--/column-->
-									<!--column-->
-									<div class="col-xl-4 col-lg-4 col-sm-6">
-                                        <div class="card contact_list text-center">
-                                            <div class="card-body">
-                                                <div class="user-content">
-                                                    <div class="user-info">
-                                                        <div class="user-img">
-                                                            <img src="images/contacts/1.jpg" alt="" class="avatar avatar-xl">
-                                                        </div>
-                                                        <div class="user-details">
-                                                            <h4 class="user-name mb-0">Nama Owner : Siti Aisyah</h4>
-                                                            <h4 class="user-name mb-0">Email :aisyahfeny2019</h4>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <br>
-												<div class="d-flex justify-content-center">
-													<a href="app-profile.html" class="btn  btn-primary btn-sm w-30 me-2"></i>Edit</a>
-												</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--/column-->
-									<!--column-->
-									<div class="col-xl-4 col-lg-4 col-sm-6">
-                                        <div class="card contact_list text-center">
-                                            <div class="card-body">
-                                                <div class="user-content">
-                                                    <div class="user-info">
-                                                        <div class="user-img">
-                                                            <img src="images/contacts/1.jpg" alt="" class="avatar avatar-xl">
-                                                        </div>
-                                                        <div class="user-details">
-                                                            <h4 class="user-name mb-0">Nama Owner : Siti Aisyah</h4>
-                                                            <h4 class="user-name mb-0">Email :aisyahfeny2019</h4>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <br>
-												<div class="d-flex justify-content-center">
-													<a href="app-profile.html" class="btn  btn-primary btn-sm w-30 me-2"></i>Edit</a>
-												</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--/column-->
-									<!--column-->
-                                    <div class="col-xl-4 col-lg-4 col-sm-6">
-                                        <div class="card contact_list text-center">
-                                            <div class="card-body">
-                                                <div class="user-content">
-                                                    <div class="user-info">
-                                                        <div class="user-img">
-                                                            <img src="images/contacts/1.jpg" alt="" class="avatar avatar-xl">
-                                                        </div>
-                                                        <div class="user-details">
-                                                            <h4 class="user-name mb-0">Nama Owner : Siti Aisyah</h4>
-                                                            <h4 class="user-name mb-0">Email :aisyahfeny2019</h4>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <br>
-												<div class="d-flex justify-content-center">
-													<a href="app-profile.html" class="btn  btn-primary btn-sm w-30 me-2"></i>Edit</a>
-												</div>
-                                            </div>
-                                        </div>
-                                    </div>
-							<!--/column-->
 							</div>
 
                         	<!--/Row -->
 						</div>
 
-						<div class="table-pagenation teach">
-							<small>Showing <span>1-5</span>from <span>100</span>data</small>
-							<nav>
-								<ul class="pagination pagination-gutter pagination-primary no-bg">
-									<li class="page-item page-indicator">
-										<a class="page-link" href="javascript:void(0)">
-										<i class="fa-solid fa-chevron-left"></i></a>
-									</li>
-									<li class="page-item "><a class="page-link" href="javascript:void(0)">1</a>
-									</li>
-									<li class="page-item active"><a class="page-link" href="javascript:void(0)">2</a></li>
-									<li class="page-item"><a class="page-link" href="javascript:void(0)">3</a></li>
-									<li class="page-item page-indicator">
-										<a class="page-link" href="javascript:void(0)">
-										<i class="fa-solid fa-chevron-right"></i></a>
-									</li>
-								</ul>
-							</nav>
-						</div>
 
 					</div>
 				</div>
 			</div>
 		</div>
+        <div class="table-pagenation teach">
+            <small>Showing <span>1-5</span>from <span>100</span>data</small>
+            <nav>
+                <ul class="pagination pagination-gutter pagination-primary no-bg">
+                    <li class="page-item page-indicator">
+                        <a class="page-link" href="javascript:void(0)">
+                        <i class="fa-solid fa-chevron-left"></i></a>
+                    </li>
+                    <li class="page-item "><a class="page-link" href="javascript:void(0)">1</a>
+                    </li>
+                    <li class="page-item active"><a class="page-link" href="javascript:void(0)">2</a></li>
+                    <li class="page-item"><a class="page-link" href="javascript:void(0)">3</a></li>
+                    <li class="page-item page-indicator">
+                        <a class="page-link" href="javascript:void(0)">
+                        <i class="fa-solid fa-chevron-right"></i></a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
 
 		<div class="footer out-footer style-2">
 			<div class="copyright">

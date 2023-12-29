@@ -701,10 +701,9 @@ h1 {
       </div>
      <center>
         <div class="follow-btn">
-            <a href="{{ url('/editprofile') }}" style="width: 500;heigth:100;" >Edit Profil</a>
-          </div>
+            <a href="{{ route('edit.profile', ['id' => $user->id]) }}" style="width: 500; height:70;" >Edit Profil</a>
+        </div>
      </center>
-
     </div>
   </div>
 <br><br><br>
@@ -713,7 +712,7 @@ h1 {
         <div class="card">
             <div class="card-wrapper">
                 <div id="wrapper">
-                    <h1>History Pemesanan</h1>
+                    <h1>Profile</h1>
 
                     <table id="keywords" cellspacing="0" cellpadding="0">
                       <thead>

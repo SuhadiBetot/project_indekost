@@ -15,7 +15,7 @@
 
     <div id="main-wrapper">
 
-        @include('owner.template.navbar')
+        @include('layout.navbar')
         @include('layout.sidebar')
 
         <div class="content-body">
