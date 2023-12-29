@@ -95,8 +95,6 @@ Route::put('/profile/update/{id}', [ProfileController::class, 'editProfile'])->n
 
 // Halaman user
 // Route::get('/landingpage', [LandingPageController::class, 'landingpage'])->name('landing');
-Route::middleware(['auth', 'verified', 'user-access:user'])->group(function () {
-    Route::get('/profile', [ProfileController::class, 'profile'])->name('user.profile');
 
 Route::get('/detail-kos', [DetailkosController::class, 'detail'])->name('detail-kos');
 Route::get('/pengajuan_sewa', [PengajuanController::class, 'pengajuansewa'])->name('user.pengajuan_sewa');
@@ -138,4 +136,3 @@ Route::post('/logout',[LoginController::class,'logout'])->name('logout')->middle
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('verified');
 Auth::routes(['verify'=>true]);
 
-}
