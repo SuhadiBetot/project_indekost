@@ -171,21 +171,21 @@
                                 <h4>Rp.{{ number_format($ownerDataKosts->harga, 0 ,',', '.') }}/bulan</h4>
                                 <div class="d-flex gap-3">
                                     <input class="form-control" type="date" name="mulai_kos" id="">
-                                    <select class="form-control" name="bulan" id="">
+                                    <select class="form-control" name="bulan" id="select-bulan">
                                         <option selected disabled>pilih bulanan</option>
                                         <option value="1">per bulan</option>
                                         <option value="6">per 6 bulan</option>
                                         <option value="12">per tahun</option>
                                     </select>
                                 </div>
-                                <div class="mt-1">
-                                    Pembayaran Penuh :
+                                <div class="mt-1" id="harga-sewa">
+                                    Bayar Sewa :
                                 </div>
-                                <div class="">
+                                <div id="biaya-admin">
                                     Biaya Admin(5%) :
                                 </div>
                                 <hr>
-                                <div class="">
+                                <div id="total">
                                     Pembayaran Total :
                                 </div>
                                 <div class="text-end">
@@ -202,4 +202,42 @@
             </div>
         </div>
     </div>
+    <script>
+        function kalkulator() {
+            var pack = document.getElementById("select-bulan");
+            var packselect = pack.value;
+    
+            var hargaSewa = 0;
+    
+            var biayaAdmin = 0;
+    
+            var total = 0;
+    
+            if (packselect == 1) {
+                hargaSewa = parseInt("{{ $ownerDataKosts->harga }}");
+                biayaAdmin = 0.05 * hargaSewa;
+                total = hargaSewa + biayaAdmin;
+            } else if (packselect == 6) {
+                hargaSewa = parseInt("{{ $ownerDataKosts->harga }}") * 6;
+                biayaAdmin = 0.05 * hargaSewa;
+                total =hargaSewa + biayaAdmin;
+            } else if (packselect == 12) {
+                hargaSewa = parseInt("{{ $ownerDataKosts->harga }}") * 12;
+                biayaAdmin = 0.05 * hargaSewa;
+                total =hargaSewa + biayaAdmin;
+            }
+    
+            document.getElementById("harga-sewa").innerText = "Bayar Sewa : Rp. " + hargaSewa.toLocaleString();
+            document.getElementById("biaya-admin").innerText = "Biaya Admin(5%) : Rp. " + biayaAdmin.toLocaleString();
+            document.getElementById("total").innerText = "Pembayaran Total : Rp. " + total.toLocaleString();
+        }
+    
+        // Pemanggilan fungsi kalkulator() saat ada perubahan pada elemen select-bulan
+        document.getElementById("select-bulan").addEventListener("change", kalkulator);
+    
+        // Pemanggilan fungsi kalkulator() pada saat halaman dimuat
+        kalkulator();
+    </script>
+    
+    
 @endsection
