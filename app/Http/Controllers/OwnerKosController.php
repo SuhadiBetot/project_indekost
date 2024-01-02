@@ -103,6 +103,7 @@ class OwnerKosController extends Controller
 
         // Gunakan create untuk menyimpan data ke dalam database
         $result = OwnerDataKosts::create([
+            'user_id' => auth()->user()->id,
             'nama_kost' => $request->nama_kost,
             'ketentuan' => $request->ketentuan,
             'lokasi' => $request->lokasi,
@@ -224,6 +225,7 @@ class OwnerKosController extends Controller
         }
 
         $result = $OwnerDataKosts->update([
+            'user_id' => auth()->user()->id,
             'nama_kost' => $request->nama_kost,
             'ketentuan' => $request->ketentuan,
             'lokasi' => $request->lokasi,
@@ -245,7 +247,6 @@ class OwnerKosController extends Controller
 
     public function delete(OwnerDataKosts $OwnerDataKosts)
     {
-
         // Hapus entitas dari database
         $OwnerDataKosts->delete();
         if ($OwnerDataKosts->foto_depan) {
@@ -259,7 +260,6 @@ class OwnerKosController extends Controller
                 File::delete(public_path('ownerkos') . '/' . $oldFotoTambahan);
             }
         }
-
         return redirect()->back()->with('success', 'Data berhasil dihapus.');
     }
 }

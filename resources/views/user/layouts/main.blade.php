@@ -49,6 +49,18 @@
             align-items: center;
             height: 100vh;
             margin: 0;
+            background: #F4F5F7;
+        }
+
+        .coklat {
+            border-radius: 8px;
+            border: 1px solid #D7D9DE;
+            background: #7E6D2E;
+            color: #fff;
+        }
+        .coklat:hover {
+            background: #7E6D1E;
+            color: #fff;
         }
 
         .navbar-nav .nav-link.active,
@@ -122,10 +134,9 @@
     <!-- end loader -->
     <!-- header -->
     <header>
-        <!-- header inner -->
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <nav class="navbar navbar-expand-lg" style="background-color: #fff;">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Navbar</a>
+                <img src="{{asset('asset/indekost.png')}}" alt="" style="width: 50px">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -134,13 +145,15 @@
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav text-uppercase fw-medium text-dark ms-auto gap-3">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="/">Beranda</a>
+                            <a class="nav-link {{ request()->is('/') ? 'active' : '' }}" aria-current="page"
+                                href="/">Beranda</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#tentang">Tentang</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#kamar">Kamar Kami</a>
+                            <a class="nav-link {{ request()->is('kamar-kami') ? 'active' : '' }}"
+                                href="{{ route('kamar-kami') }}">Kamar Kami</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#area">Area Kos Terpopuler</a>
@@ -187,230 +200,8 @@
             </div>
         </nav>
     </header>
-    <!-- end header inner -->
     <!-- end header -->
-    <!-- banner -->
-    <section class="banner_main">
-        <div id="myCarousel" class="carousel slide banner" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1"></li>
-                <li data-target="#myCarousel" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="first-slide" src="{{ asset('asset/banner1.jpg') }}" alt="First slide">
-                    <div class="container">
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img class="second-slide" src="{{ asset('asset/banner2.jpg') }}" alt="Second slide">
-                </div>
-                <div class="carousel-item">
-                    <img class="third-slide" src="{{ asset('asset/banner3.jpg') }}" alt="Third slide">
-                </div>
-            </div>
-            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>
-        {{-- <div class="booking_ocline">
-            <div class="container">
-               <div class="row">
-                  <div class="col-md-5">
-                     <div class="book_room">
-                        <h1>Book a Room Online</h1>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div> --}}
-    </section>
-    <!-- end banner -->
-    <!-- about -->
-    <div class="about" id="tentang">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-5">
-                    <div class="titlepage">
-                        <h2>Tentang Kami</h2>
-                        <p>The passage experienced a surge in popularity during the 1960s when Letraset used it on their
-                            dry-transfer sheets, and again during the 90s as desktop publishers bundled the text with
-                            their software. Today it's seen all around the web; on templates, websites, and stock
-                            designs. Use our generator to get your own, or read on for the authoritative history of
-                            lorem ipsum. </p>
-                    </div>
-                </div>
-                <div class="col-md-7">
-                    <div class="about_img">
-                        <figure><img src="{{ asset('asset/tentang.jpg') }}" alt="#" /></figure>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- end about -->
-    <!-- kamar -->
-    <div class="our_room" id="kamar">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="titlepage">
-                        <h2>Kamar Kami</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4 col-sm-6">
-                    <div id="serv_hover" class="room">
-                        <div class="room_img">
-                            <figure><img src="{{ asset('asset/kamar.jpg') }}" alt="#" /></figure>
-                        </div>
-                        <div class="bed_room">
-                            <h3>Kamar 1</h3>
-                            <p>Ini adalah tampilan kost In De Kost, dalam nya ada kasur ,lemari, meja dll</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div id="serv_hover" class="room">
-                        <div class="room_img">
-                            <figure><img src="{{ asset('asset/kamar.jpg') }}" alt="#" /></figure>
-                        </div>
-                        <div class="bed_room">
-                            <h3>Kamar 2</h3>
-                            <p>Ini adalah tampilan kost In De Kost, dalam nya ada kasur ,lemari, meja dll</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div id="serv_hover" class="room">
-                        <div class="room_img">
-                            <figure><img src="{{ asset('asset/kamar.jpg') }}" alt="#" /></figure>
-                        </div>
-                        <div class="bed_room">
-                            <h3>Kamar 3</h3>
-                            <p>Ini adalah tampilan kost In De Kost, dalam nya ada kasur ,lemari, meja dll</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div id="serv_hover" class="room">
-                        <div class="room_img">
-                            <figure><img src="{{ asset('asset/kamar.jpg') }}" alt="#" /></figure>
-                        </div>
-                        <div class="bed_room">
-                            <h3>Kamar 4</h3>
-                            <p>Ini adalah tampilan kost In De Kost, dalam nya ada kasur ,lemari, meja dll</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div id="serv_hover" class="room">
-                        <div class="room_img">
-                            <figure><img src="{{ asset('asset/kamar.jpg') }}" alt="#" /></figure>
-                        </div>
-                        <div class="bed_room">
-                            <h3>Kamar 5</h3>
-                            <p>Ini adalah tampilan kost In De Kost, dalam nya ada kasur ,lemari, meja dll</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div id="serv_hover" class="room">
-                        <div class="room_img">
-                            <figure><img src="{{ asset('asset/kamar.jpg') }}" alt="#" /></figure>
-                        </div>
-                        <div class="bed_room">
-                            <h3>Kamar 6</h3>
-                            <p>Ini adalah tampilan kost In De Kost, dalam nya ada kasur ,lemari, meja dll</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- end kamar -->
-    <!-- area -->
-    <div class="our_room" id="area">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="titlepage">
-                        <h2>Area Kost Terpopuler</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4 col-sm-6">
-                    <div id="serv_hover" class="room">
-                        <div class="room_img">
-                            <figure>
-                                <img src="{{ asset('asset/area.jpg') }}" alt="#">
-                                <figcaption>Medan</figcaption>
-                            </figure>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div id="serv_hover" class="room">
-                        <div class="room_img">
-                            <figure>
-                                <img src="{{ asset('asset/area.jpg') }}" alt="#">
-                                <figcaption>Jakarta</figcaption>
-                            </figure>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div id="serv_hover" class="room">
-                        <div class="room_img">
-                            <figure>
-                                <img src="{{ asset('asset/area.jpg') }}" alt="#">
-                                <figcaption>Malang</figcaption>
-                            </figure>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div id="serv_hover" class="room">
-                        <div class="room_img">
-                            <figure>
-                                <img src="{{ asset('asset/area.jpg') }}" alt="#">
-                                <figcaption>Bandung</figcaption>
-                            </figure>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div id="serv_hover" class="room">
-                        <div class="room_img">
-                            <figure>
-                                <img src="{{ asset('asset/area.jpg') }}" alt="#">
-                                <figcaption>Probolinggo</figcaption>
-                            </figure>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div id="serv_hover" class="room">
-                        <div class="room_img">
-                            <figure>
-                                <img src="{{ asset('asset/area.jpg') }}" alt="#">
-                                <figcaption>Denpasar</figcaption>
-                            </figure>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- end area -->
+    @yield('kamar-kami')
     <!--  footer -->
     <footer>
         <div class="footer">

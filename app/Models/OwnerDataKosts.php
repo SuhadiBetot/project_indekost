@@ -4,13 +4,15 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class OwnerDataKosts extends Model
 {
     use HasFactory;
     protected $table = 'owner_data_kosts';
-
+    protected $primaryKey = 'id';
     protected $fillable = [
+        'user_id',
         'nama_kost',
         'ketentuan',
         'lokasi',
@@ -24,5 +26,11 @@ class OwnerDataKosts extends Model
         'foto_depan',
         'foto_dalam',
         'foto_tambahan',
+        'status',
     ];
+
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
 }
