@@ -43,8 +43,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Button</title>
     <style>
-      bo
-         body {
+        bo body {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -237,7 +236,10 @@
                 <div class="col-md-5">
                     <div class="titlepage">
                         <h2>Tentang Kami</h2>
-                        <p>Selamat datang di IN DE KOST, tempat di mana kenyamanan bertemu dengan kehangatan. Kami adalah platform yang menyediakan solusi kost terbaik untuk kebutuhan Anda. Dengan layanan yang ramah dan fasilitas yang modern, IN DE KOST siap menjadi rumah kedua bagi Anda. Temukan pengalaman hidup baru yang penuh kenyamanan dan keamanan bersama kami.</p>
+                        <p>Selamat datang di IN DE KOST, tempat di mana kenyamanan bertemu dengan kehangatan. Kami
+                            adalah platform yang menyediakan solusi kost terbaik untuk kebutuhan Anda. Dengan layanan
+                            yang ramah dan fasilitas yang modern, IN DE KOST siap menjadi rumah kedua bagi Anda. Temukan
+                            pengalaman hidup baru yang penuh kenyamanan dan keamanan bersama kami.</p>
                     </div>
                 </div>
                 <div class="col-md-7">
@@ -255,7 +257,25 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="titlepage">
-                        <h2>Kamar Kami</h2>
+                        <h3>Rekomendasi Kost</h3>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="col"><h5 class="text-end" style="margin-top: 3px;">Rekomendasi Kost :</h5></div>
+                                    <div class="col justify-start">
+                                        <select class="form-select" aria-label="Default select example">
+                                            <option selected disabled>Pilih Daerah</option>
+                                            <option value="1">Karang Ploso</option>
+                                            <option value="2">Blimbing</option>
+                                            <option value="3">Klojen</option>
+                                        </select>
+                                    </div>
+                                </div>                                
+                            </div>
+                            <div class="col-md-6 text-end">
+                                <a href="" type="button" class="btn" style="background-color: #7E6D2E; color:#FFF;">Lihat Semua</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -283,46 +303,48 @@
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6">
-                    <div id="serv_hover" class="room">
+                  <div id="serv_hover" class="room">
+                     <div class="room_img">
+                        <figure><img src="{{ asset('asset/kamar.jpg') }}" alt="#" /></figure>
+                     </div>
+                     <div class="bed_room">
+                        <h3>Kamar 3</h3>
+                        <p>Ini adalah tampilan kost In De Kost, dalam nya ada kasur ,lemari, meja dll</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-4 col-sm-6">
+                  <div id="serv_hover" class="room">
+                     <div class="room_img">
+                        <figure><img src="{{ asset('asset/kamar.jpg') }}" alt="#" /></figure>
+                     </div>
+                     <div class="bed_room">
+                        <h3>Kamar 4</h3>
+                        <p>Ini adalah tampilan kost In De Kost, dalam nya ada kasur ,lemari, meja dll</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-4 col-sm-6">
+                  <div id="serv_hover" class="room">
+                     <div class="room_img">
+                        <figure><img src="{{ asset('asset/kamar.jpg') }}" alt="#" /></figure>
+                     </div>
+                     <div class="bed_room">
+                        <h3>Kamar 5</h3>
+                        <p>Ini adalah tampilan kost In De Kost, dalam nya ada kasur ,lemari, meja
+                           dlliubvdsovildvzsopio;vnaoSDEVb;svsbdl;jvbnsdovbsdv;isenbs;lvn;skjdv;speiubvsdjv sp:
+                           D:LJS Fdpisdbuvjk v</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-4 col-sm-6">
+                  <div id="serv_hover" class="room">
                         <div class="room_img">
-                            <figure><img src="{{ asset('asset/kamar.jpg') }}" alt="#" /></figure>
+                           <figure><img src="{{ asset('asset/kamar.jpg') }}" alt="#" /></figure>
                         </div>
                         <div class="bed_room">
-                            <h3>Kamar 3</h3>
-                            <p>Ini adalah tampilan kost In De Kost, dalam nya ada kasur ,lemari, meja dll</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div id="serv_hover" class="room">
-                        <div class="room_img">
-                            <figure><img src="{{ asset('asset/kamar.jpg') }}" alt="#" /></figure>
-                        </div>
-                        <div class="bed_room">
-                            <h3>Kamar 4</h3>
-                            <p>Ini adalah tampilan kost In De Kost, dalam nya ada kasur ,lemari, meja dll</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div id="serv_hover" class="room">
-                        <div class="room_img">
-                            <figure><img src="{{ asset('asset/kamar.jpg') }}" alt="#" /></figure>
-                        </div>
-                        <div class="bed_room">
-                            <h3>Kamar 5</h3>
-                            <p>Ini adalah tampilan kost In De Kost, dalam nya ada kasur ,lemari, meja dll</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div id="serv_hover" class="room">
-                        <div class="room_img">
-                            <figure><img src="{{ asset('asset/kamar.jpg') }}" alt="#" /></figure>
-                        </div>
-                        <div class="bed_room">
-                            <h3>Kamar 6</h3>
-                            <p>Ini adalah tampilan kost In De Kost, dalam nya ada kasur ,lemari, meja dll</p>
+                           <h3>Kamar 6</h3>
+                           <p>Ini adalah tampilan kost In De Kost, dalam nya ada kasur ,lemari, meja dll</p>
                         </div>
                     </div>
                 </div>
