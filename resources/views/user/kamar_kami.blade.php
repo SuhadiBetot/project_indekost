@@ -2,11 +2,25 @@
 
 @section('kamar-kami')
     <div class="container">
-        <form class="form-inline">
-            <label class="sr-only" for="namaLokasi">Nama Lokasi</label>
-            <input type="text" class="form-control mb-2 mr-sm-2" id="namaLokasi" placeholder="Masukkan nama lokasi">
-            <button type="submit" class="btn coklat mb-2">Cari</button>
-        </form>
+        <div class="row my-3">
+            <div class="col">
+                <form class="form-inline">
+                    <label class="sr-only" for="namaLokasi">Nama Lokasi</label>
+                    <input type="text" class="form-control mb-2 mr-sm-2" id="namaLokasi" placeholder="Masukkan nama Lokasi">
+                    <button type="submit" class="btn coklat mb-2">Cari</button>
+                </form>
+            </div>
+            <div class="col">
+                <form class="form-inline mt-1">
+                    <select class="form-select" aria-label="Default select example" style="width: 150px;">
+                        <option selected disabled>Pilih Lokasi</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                </form>
+            </div>
+        </div>
         <div class="card">
             <div class="card-body">
                 @foreach ($kosts as $kost)
@@ -17,10 +31,11 @@
                                 style="width: 581px; height: 319px">
                         </div>
                         <div class="col-xl-6">
-                            <span class="badge" style="background-color: #D6EEFF; color: #666666;">Cowok</span>
-                            <h3 class="fw-medium">{{ $kost->nama_kost }}</h3>
-                            <h4 style="color: #675656;">{{ $kost->lokasi }}</h4>
-                            <p>
+                            <span class="rounded-pill" style="background-color: #D6EEFF; color: #666666; padding-top:10px; padding-bottom:10px; padding-left:20px; padding-right:20px; 
+                            margin-top: 15px:">Cowok</span>
+                            <h2 class="fw-medium mt-3">{{ $kost->nama_kost }}</h2>
+                            <h3 style="color: #675656;">{{ $kost->lokasi }}</h3>
+                            <p style="font-size: 20px;">
                                 @php
                                     $fasilitas_kamar = json_decode($kost->fasilitas_kamar);
                                 @endphp
@@ -29,8 +44,11 @@
                                 @endforeach
                             </p>
                             <div class="d-flex justify-content-between">
-                                <h5>⭐⭐⭐⭐⭐/100</h5>
-                                <h5>Rp.{{number_format($kost->harga, 0 , ',', '.')}}</h5>
+                                <h3>⭐⭐⭐⭐⭐/100</h3>
+                                <div>
+                                    <h5 style="color: red;">Rp.{{number_format(($kost->harga - $kost->diskon), 0 , ',', '.')}}</h5>
+                                    <h5 style="text-decoration: line-through;">Rp.{{number_format($kost->harga, 0 , ',', '.')}}</h5>
+                                </div>
                             </div>
                         </div>
                     </div>
