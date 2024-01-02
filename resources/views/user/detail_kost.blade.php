@@ -164,7 +164,7 @@
                         @endforeach
                     @endif
 
-                    <div class="card mt-4">
+                    <div class="card mt-4" style="border-color: black;">
                         <div class="card-body">
                             <form action="#" method="post">
                                 @csrf
@@ -178,18 +178,33 @@
                                         <option value="12">per tahun</option>
                                     </select>
                                 </div>
-                                <div class="mt-1" id="harga-sewa">
-                                    Bayar Sewa :
+                                <div class="row mt-1">
+                                    <div class="col">
+                                        <div>
+                                            Bayar Sewa 
+                                        </div>
+                                    </div>
+                                    <div class="col" id="harga-sewa">
+                                       
+                                    </div>
                                 </div>
-                                <div id="biaya-admin">
-                                    Biaya Admin(5%) :
+                                <div class="row">
+                                    <div class="col">
+                                        Biaya Admin(5%)
+                                    </div>
+                                    <div class="col" id="biaya-admin">
+                                        
+                                    </div>
                                 </div>
-                                <hr>
-                                <div id="total">
-                                    Pembayaran Total :
+                                <hr style="border-color: black;">
+                                <div class="row mb-3">
+                                    <div class="col">Pembayaran Total</div>
+                                    <div class="col" id="total">
+                                        
+                                    </div>
                                 </div>
-                                <div class="text-end">
-                                    <button type="submit" name="submit" class="btn btn-secondary">ajukan sewa</button>
+                                <div class="d-grid">
+                                    <button type="submit" name="submit" class="btn border-dark rounded-pill">Ajukan Sewa</button>
                                 </div>
                             </form>
                         </div>
@@ -204,14 +219,12 @@
     </div>
     <script>
         function kalkulator() {
-            var pack = document.getElementById("select-bulan");
-            var packselect = pack.value;
+            let pack = document.getElementById("select-bulan");
+            let packselect = pack.value;
     
-            var hargaSewa = 0;
-    
-            var biayaAdmin = 0;
-    
-            var total = 0;
+            let hargaSewa = 0;
+            let biayaAdmin = 0;
+            let total = 0;
     
             if (packselect == 1) {
                 hargaSewa = parseInt("{{ $ownerDataKosts->harga }}");
@@ -225,11 +238,15 @@
                 hargaSewa = parseInt("{{ $ownerDataKosts->harga }}") * 12;
                 biayaAdmin = 0.05 * hargaSewa;
                 total =hargaSewa + biayaAdmin;
+            }else{
+                hargaSewa = 0;
+                biayaAdmin = 0;
+                total = 0;
             }
     
-            document.getElementById("harga-sewa").innerText = "Bayar Sewa : Rp. " + hargaSewa.toLocaleString();
-            document.getElementById("biaya-admin").innerText = "Biaya Admin(5%) : Rp. " + biayaAdmin.toLocaleString();
-            document.getElementById("total").innerText = "Pembayaran Total : Rp. " + total.toLocaleString();
+            document.getElementById("harga-sewa").innerText = " : Rp. " + hargaSewa.toLocaleString();
+            document.getElementById("biaya-admin").innerText = " : Rp. " + biayaAdmin.toLocaleString();
+            document.getElementById("total").innerText = " : Rp. " + total.toLocaleString();
         }
     
         // Pemanggilan fungsi kalkulator() saat ada perubahan pada elemen select-bulan
