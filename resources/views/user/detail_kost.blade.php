@@ -168,7 +168,8 @@
                         <div class="card-body">
                             <form action="#" method="post">
                                 @csrf
-                                <h4>Rp.{{ number_format($ownerDataKosts->harga, 0 ,',', '.') }}/bulan</h4>
+                                {{$promo = $ownerDataKosts->harga - $ownerDataKosts->diskon; }}
+                                <h4>Rp.{{ number_format($promo, 0 ,',', '.') }}/bulan</h4>
                                 <div class="d-flex gap-3">
                                     <input class="form-control" type="date" name="mulai_kos" id="">
                                     <select class="form-control" name="bulan" id="select-bulan">
@@ -228,15 +229,15 @@
             let total = 0;
     
             if (packselect == 1) {
-                hargaSewa = parseInt("{{ $ownerDataKosts->harga }}");
+                hargaSewa = parseInt("{{ $promo }}");
                 biayaAdmin = 0.05 * hargaSewa;
                 total = hargaSewa + biayaAdmin;
             } else if (packselect == 6) {
-                hargaSewa = parseInt("{{ $ownerDataKosts->harga }}") * 6;
+                hargaSewa = parseInt("{{ $promo }}") * 6;
                 biayaAdmin = 0.05 * hargaSewa;
                 total =hargaSewa + biayaAdmin;
             } else if (packselect == 12) {
-                hargaSewa = parseInt("{{ $ownerDataKosts->harga }}") * 12;
+                hargaSewa = parseInt("{{ $promo }}") * 12;
                 biayaAdmin = 0.05 * hargaSewa;
                 total =hargaSewa + biayaAdmin;
             }else{
