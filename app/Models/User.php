@@ -23,8 +23,10 @@ class User extends Authenticatable implements MustVerifyEmail
         'name',
         'email',
         'password',
-        'role'
+        'role',
+        'foto', // Add the 'foto' column to the $fillable array
     ];
+
 
     /**
      * The attributes that should be hidden for serialization.

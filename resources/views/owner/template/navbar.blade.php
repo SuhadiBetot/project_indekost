@@ -77,7 +77,7 @@
 
                                     </div>
                                     <div class="card-body p-3">
-                                        <a href="{{ route('user.profile') }}" class="dropdown-item ai-icon" >
+                                        <a href="{{ route('profile') }}" class="dropdown-item ai-icon" >
                                             <svg xmlns="http://www.w3.org/2000/svg"
                                                 xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
                                                 height="24px" viewBox="0 0 24 24" version="1.1"

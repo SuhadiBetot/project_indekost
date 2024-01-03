@@ -37,7 +37,6 @@
             </div>
         </div>
 
-        @include('layout.navbar')
 
         <div class="content-body">
 			<div class="container-fluid">
@@ -53,13 +52,13 @@
                                     </svg>
                                 </a></span>
                             </div>
-                            <div>
+                            {{-- <div>
                                 <select class="image-select bs-select dashboard-select me-3" aria-label="Default">
                                     <option selected>Newest</option>
                                     <option value="1">Oldest</option>
                                     <option value="2">Recent</option>
                                 </select>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
 					<div class="col-xl-12">
@@ -75,10 +74,10 @@
                                             <div class="card-body">
                                                 <div class="user-content">
                                                     <div class="user-info">
+                                                        @foreach($owners as $owner)
                                                         <div class="user-img">
-                                                            <img src="images/contacts/1.jpg" alt="" class="avatar avatar-xl">
-                                                        </div>
-                                                            @foreach($owners as $owner)
+                                                            <img src="{{ asset('asset/banner2.jpg') }}" alt="" class="avatar avatar-xl">
+                                                             {{-- <img src="{{ asset('storage/' . $owner->foto) }}" alt="Profile Picture" height="53" width="50" style="border-radius:25%;">    </div> --}}
                                                             <div class="user-details">
                                                                 <h4 class="user-name mb-0">{{ $owner->name}}</h4>
                                                                 <h4 class="user-name mb-0">{{ $owner->email}}</h4>
@@ -87,9 +86,36 @@
                                                     </div>
                                                 </div>
                                                 <br>
-												<div class="d-flex justify-content-center">
-													<a href="app-profile.html" class="btn  btn-primary btn-sm w-30 me-2"></i>Lihat</a>
+												<div class="d-flex justify-content-center gap-2" >
+                                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                                       <span><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"><path fill="currentColor" d="M10 14q-1.25 0-2.125-.875T7 11q0-.55.175-1.037t.525-.888q-.1-.25-.15-.525T7.5 8q0-.95.513-1.687T9.35 5.225q.5-.575 1.175-.9T12 4q.8 0 1.475.325t1.175.9q.825.35 1.338 1.088T16.5 8q0 .275-.05.55t-.15.525q.35.4.525.888T17 11q0 1.25-.875 2.125T14 14zm-6 8v-2.8q0-.85.438-1.562T5.6 16.55q1.55-.775 3.15-1.162T12 15q1.65 0 3.25.388t3.15 1.162q.725.375 1.163 1.088T20 19.2V22z"/></svg></span>Detail
+                                                      </button>
+													{{-- <a href="app-profile.html" class="btn  btn-primary btn-sm w-30 me-2" ></i><span><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"><path fill="currentColor" d="M10 14q-1.25 0-2.125-.875T7 11q0-.55.175-1.037t.525-.888q-.1-.25-.15-.525T7.5 8q0-.95.513-1.687T9.35 5.225q.5-.575 1.175-.9T12 4q.8 0 1.475.325t1.175.9q.825.35 1.338 1.088T16.5 8q0 .275-.05.55t-.15.525q.35.4.525.888T17 11q0 1.25-.875 2.125T14 14zm-6 8v-2.8q0-.85.438-1.562T5.6 16.55q1.55-.775 3.15-1.162T12 15q1.65 0 3.25.388t3.15 1.162q.725.375 1.163 1.088T20 19.2V22z"/></svg></span>Detail</a> --}}
+                                                    <a href="#" class="btn  btn-danger btn-sm w-30 me-2"></i><span><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"><path fill="currentColor" d="M7 21q-.825 0-1.412-.587T5 19V6q-.425 0-.712-.288T4 5q0-.425.288-.712T5 4h4q0-.425.288-.712T10 3h4q.425 0 .713.288T15 4h4q.425 0 .713.288T20 5q0 .425-.288.713T19 6v13q0 .825-.587 1.413T17 21zm3-4q.425 0 .713-.288T11 16V9q0-.425-.288-.712T10 8q-.425 0-.712.288T9 9v7q0 .425.288.713T10 17m4 0q.425 0 .713-.288T15 16V9q0-.425-.288-.712T14 8q-.425 0-.712.288T13 9v7q0 .425.288.713T14 17"/></svg></span>Hapus</a>
 												</div>
+
+                                                    {{-- MODAL --}}
+                                                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                        <div class="modal-dialog">
+                                                          <div class="modal-content">
+                                                            <div class="modal-header">
+                                                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <img src="{{ asset('asset/banner2.jpg') }}" alt="" class="avatar avatar-xl">
+                                                                <br><br><br>
+                                                                <h2>{{ $owner->name}}</h2>
+                                                                <h5>{{ $owner->email}}</h5>
+                                                                <br>
+                                                                <h5>Kost tersedia : <span>18</span></h5>
+                                                                <h5>Kost ditempati : <span>12</span></h5>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                      </div>
                                             </div>
                                         </div>
                                     </div>

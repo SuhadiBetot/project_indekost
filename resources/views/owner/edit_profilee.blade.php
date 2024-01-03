@@ -764,6 +764,12 @@ button[type="submit"]:hover {
 }
     </style>
 
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
 <div class="card">
     <div class="card-wrapper">
         <div class="card-header">
@@ -771,10 +777,25 @@ button[type="submit"]:hover {
             <img src="https://www.svgrepo.com/show/390426/alarm-alert-attention-bell-notification-timer.svg" alt="">
 
         </div>
+        <div class="row">
+            <div class="col text-end">
+                <a href="javascript:history.back()" class="btn btn-danger btn-lg" style="border-radius: 100px; height: 40px; width: 100px; margin-right: 500px;">Kembali</a>
+            </div>
+            <div class="col text-start">
+                <a href="{{ route('edit.profile.form', ['id' => $user->id]) }}" class="btn btn-secondary btn-lg" style="border-radius: 100px; height: 40px; width: 100px; margin-left: 410px;">Selanjutnya</a>
+            </div>
+        </div>
+
         <h1 style="color: #000; font-weight:1000;">Edit Profile</h1>
-        <form method="POST" action="{{ route('edit.profile', ['id' => $user->id]) }}">
+        <form action="{{ route('edit.profile', ['id' => $user->id]) }}" method="POST" enctype="multipart/form-data">
             @method('PUT')
             @csrf
+
+            <!-- Konten formulir lainnya -->
+
+            <button type="submit" style="background: #000; border-radius:20px; color:#fff;">Simpan</button>
+        </form>
+
             <div class="card-hero">
                 <div class="hero-bg"></div>
             <img class="main-img" src="https://images.unsplash.com/photo-1492127042590-8094c493b510?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
@@ -789,15 +810,15 @@ button[type="submit"]:hover {
                 </div>
                 <div class="form-group">
                   <label for="nama">Nama</label>
-                  <input type="text" class="form-control" id="nama" placeholder="user123">
+                  <input type="text" class="form-control" id="nama" value="{{ $user->nama }}">
                 </div>
                 <div class="form-group">
                   <label for="email">Email</label>
-                  <input type="text" class="form-control" id="email" placeholder="email@gmail.com">
+                  <input type="text" class="form-control" id="email"value="{{ $user->email }}">>
                 </div>
                 <div class="form-group">
                   <label for="lokasi">Lokasi</label>
-                  <textarea name="lokasi" id="lokasi" cols="30" rows="5" placeholder="Jl.P.Sudirman"></textarea>
+                  <textarea name="lokasi" id="lokasi" cols="30" rows="5" value="{{ $user->lokasi }}">></textarea>
                 </div>
                 <br>
                 <button type="submit" style="background: #000; border-radius:20px; color:#fff;"> Simpan</button>

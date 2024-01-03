@@ -119,7 +119,8 @@
 
         .form-select,
         .form-control {
-          border-color: #ccc;
+          border-color: #000000;
+          background-color: #B9B393;
         }
 
         #fileInput {
@@ -139,16 +140,27 @@
           /* Ukuran font */
         }
 
-        .input,
-        .file-label {
-          cursor: pointer;
-          font-size: 16px;
-          padding: 14px;
-          border: 1px solid #000;
-          border-radius: 5px;
-          background-color: #7E6D2E;
-          color: #ffffff;
-        }
+      .input, .file-label {
+        width: 100%;
+    /* Lebar input 100% untuk mengisi seluruh form */
+    padding: 5px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 0;
+    border-bottom: 0px dashed #7a32c1;
+    /* Tambahkan garis bawah putus-putus */
+    background-color: #ffffff;
+    /* Warna ungu */
+    color: #121212;
+    /* Warna teks putih */
+    /* border-radius: 200px; */
+    border-radius: 3px;
+}
+.input::-webkit-file-upload-button{
+background-color: #7E6D2E;
+}
+
+
       </style>
       <section class="space-top space-extra-bottom" data-bg-src="{{asset('storage/asset/')}}">
         <div class="container">
@@ -159,7 +171,7 @@
                   {{-- <form action="{{ route('pengajuan.store') }}" method="POST" enctype="multipart/form-data"> --}}
                   @csrf
                   <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-8">
                       <div class="mb-3 d-flex justify-content-between">
                         <label for="nama" class="form-label" style="width: 15%; color: rgb(0, 0, 0);">Nama</label>
                         <input type="text" name="nama" value="{{ old('nama') }}"
@@ -193,20 +205,19 @@
                       </div>
                       <div class="mb-3 d-flex justify-content-between">
                         <label for="email" class="form-label" style="width: 15%; color: #000;">Email</label>
-                        <textarea name="email" class="form-control @error('email') is-invalid @enderror" id="email"
-                          style="width: 70%; border-radius: 8px;"></textarea>
+                        <input type="username" name="email" class="form-control @error('email') is-invalid @enderror" id="email"
+                        style="width: 70%; border-radius: 8px;">
                       </div>
                       <div class="mb-3 d-flex justify-content-between">
                         <label for="pembayaran" class="form-label" style="width: 15%; color: #000;">Metode</label>
                         <select name="pembayaran" class="form-select @error('pembayaran') is-invalid @enderror"
                           id="pembayaran" style="width: 70%; border-radius: 8px;">
                           <option value="" disabled selected>Pilih Metode Pembayaran </option>
-                          <option value="ml" {{ old('ml') == 'ml' ? 'selected' : '' }}>Bank BRI</option>
-                          <option value=dota_2" {{ old('dota_2') == 'dota_2' ? 'selected' : '' }}>Bank BCA</option>
-                          <option value=ff" {{ old('ff') == 'ff' ? 'selected' : '' }}>FF</option>
-                          <option value=pubg_mobile" {{ old('pubg_mobile') == 'pubg_mobile' ? 'selected' : '' }}>Bank
-                            Mandiri</option>
-                          <option value=pubg" {{ old('pubg') == 'pubg' ? 'selected' : '' }}>Bank Jatim</option>
+                          <option value="bank-mandiri" {{ old('bank-mandiri') == 'bank-mandiri' ? 'selected' : '' }}>Bank BRI</option>
+                          <option value="bank-bca" {{ old('bank-bca') == 'bank-bca' ? 'selected' : '' }}>Bank BCA</option>
+                          <option value="bank-bri" {{ old('bank-bri') == 'bank-bri' ? 'selected' : '' }}>Bank BRI</option>
+                          <option value="bank-mandiri" {{ old('bank-mandiri') == 'bank-mandiri' ? 'selected' : '' }}>Bank Mandiri</option>
+                          <option value="bank-jatim" {{ old('bank-jatim') == 'bank-jatim' ? 'selected' : '' }}>Bank Jatim</option>
                         </select>
                       </div>
                       <div class="mb-3 d-flex align-items-center" style="width:200%">
@@ -220,13 +231,13 @@
                       <div class="mb-3 d-flex align-items-center" style="width:200%">
                         <label for="" class="form-label" style="width: 15%; color:#000;">Foto:</label>
                         <div class="d-flex align-items-center" style="width: 35%; ">
-                          <input type="file" id="fileInput" style="display:none; ">
+                          <input type="file" id="fileInput" style="display:none; background-color:#7E6D2E; border">
                           <input class="input" type="file" name="foto" id="foto"
                             placeholder="contoh:081652371232" style="border-radius: 8px;">
                         </div>
                       </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                       <div class="card">
                         <div class="card-body"
                           style="display: flex; justify-content: space-between; align-items: flex-start;  margin-top: 10px; margin-bottom: 10px;">
@@ -241,7 +252,8 @@
                             <br>
                             <p class="card-text" style="color: #000;">750.000</p>
                             <p class="card-text" style="color: #000;">22.500</p>
-                            <hr class="custom-hr">
+                            <hr class="custom-hr" style=" margin-top: 10px; margin-bottom: 10px;">
+
                             <p class="card-text" style="color: #000;">772.500</p>
                           </div>
                         </div>

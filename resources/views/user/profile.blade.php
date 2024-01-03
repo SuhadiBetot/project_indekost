@@ -35,7 +35,7 @@ body {
    */
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  /* justify-content: space-between; */
 }
 
 .card-header img{
@@ -70,12 +70,15 @@ body {
 }
 
 .card-hero {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    /* margin-bottom: -200px;  */
+    margin-bottom: 0; /* Remove margin */
+    
 }
+
 
 .main-img {
   width: 120px; height: 120px;
@@ -98,20 +101,19 @@ img.span-img {
 }
 
 .bio {
-  padding-top: 65px;
-  text-align: center;
+    padding-top: 28px;
+    text-align: center;
 }
 
 
 
 .stats {
-  padding: 25px 0;
-  text-align: center;
-  width: 100%;
-
-  display: flex;
-  justify-content: center;
-  gap: 25px;
+    padding: 0px 0;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
 }
 
 .stat:nth-child(2) h1 {
@@ -610,7 +612,10 @@ h1 {
   text-align: center;
 }
 
-
+img {
+      border: 0;
+      max-width: 100%;
+    }
 /** page structure **/
 /* #wrapper {
   display: block;
@@ -667,23 +672,74 @@ h1 {
 }
 }
 
+
+
+.default-photo-container {
+    width: 115px;
+    height: 115px;
+    border-radius: 50%;
+    overflow: hidden;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 115px;
+    object-fit: cover;
+    margin-top: -70px; /* Adjust the margin-top value as needed */
+}
+
+
 </style>
 
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
 
-<div class="card">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<div>
     <div class="card-wrapper">
       <div class="card-header">
         <img src="https://www.svgrepo.com/show/14071/search.svg" alt="">
         <img src="https://www.svgrepo.com/show/390426/alarm-alert-attention-bell-notification-timer.svg" alt="">
-
       </div>
+      <br>
+      <div class="row">
+        <div class="col-md text-start mb-2 mb-md-0">
+            <a href="javascript:history.back()" class="btn btn-danger btn-sm" style="border-radius:100px; height:40px; width:100px; font-size:16px; font-weight:700;">
+                <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="m7.825 13l5.6 5.6L12 20l-8-8l8-8l1.425 1.4l-5.6 5.6H20v2z"/>
+                    </svg>
+                </span>
+                Kembali
+            </a>
+        </div>
+        <div class="col-md text-end">
+            <a href="{{ route('edit.profile.form', ['id' => $user->id]) }}" class="btn btn-secondary btn-sm" style="border-radius:100px; height:40px; width:100px; font-size:16px; font-weight:700;">
+                <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"><path fill="currentColor" d="m14 18l-1.4-1.45L16.15 13H4v-2h12.15L12.6 7.45L14 6l6 6z"/></svg>
+                </span>
+                Selanjutnya
+            </a>
+        </div>
+    </div>
+    </div>
+    </div>
+
       <div class="card-hero">
         <div class="hero-bg"></div>
-        <img class="main-img" src="https://images.unsplash.com/photo-1492127042590-8094c493b510?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
-        <div class="bio">
-          <span><h1>Syerli Nindi Pratiwi</h1></span> <span><img class="span-img" src="https://www.svgrepo.com/show/347880/verified.svg" ></span>
+        @if (Auth::user()->foto == null)
+        <div class="default-photo-container" style="border-radius: 50%;">
+            <img src="{{ asset('asset/images/default/default.png') }}" alt="" />
         </div>
-      </div>
+        @else
+        <div class="default-photo-container" style="border-radius: 50%;">
+             <img src="{{ asset('storage/' . $user->foto) }}" alt=""/>
+        </div>
+        @endif
+        <div class="bio">
+            <span><h1>{{ $user->name }}</h1></span> <span><img class="span-img" src="https://www.svgrepo.com/show/347880/verified.svg"></span>
+        </div>
+    </div>
+
       <div class="stats">
         <div class="stat">
           <h1>19</h1>
@@ -701,7 +757,7 @@ h1 {
       </div>
      <center>
         <div class="follow-btn">
-            <a href="{{ route('edit.profile', ['id' => $user->id]) }}" style="width: 500; height:70;" >Edit Profil</a>
+            <a href="{{ route('edit.profile.form', ['id' => $user->id]) }}" style="width: 500; height:70;" >Edit Profil</a>
         </div>
      </center>
     </div>

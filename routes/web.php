@@ -54,7 +54,7 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::post('/admin-approval/delete/{ownerDataKosts}', [AdminApprovalController::class, 'destroy'])->name('app-admin-delete');
     Route::get('/transaksi-admin', [TransaksiAdminController::class, 'transaksi'])->name('trans-admin');
     Route::get('/admin-kelolaowner', [KelolaOwnerController::class, 'kelolaowner'])->name('kelola-admin');
-    Route::get('/admin-kelolaowner{owner}', [KelolaOwnerController::class, 'show'])->name('kelolaowner.show');
+    Route::get('/admin-kelolaowner/{owner}', [KelolaOwnerController::class, 'show'])->name('kelolaowner.show');
 
     // Route::get('/siswa_admin', [SiswaController::class, 'siswa_admin'])->name('siswa');
     // Route::get('/siswa_admin{siswa}', [SiswaController::class, 'show'])->name('siswa.show');
@@ -73,14 +73,14 @@ Route::middleware(['auth', 'user-access:owner', 'verified'])->group(function () 
     Route::get('/data-kos/edit/{OwnerDataKosts}', [OwnerKosController::class, 'edit'])->name('owner.data_kos_edit');
     Route::put('/data-kos/update/{OwnerDataKosts}', [OwnerKosController::class, 'update'])->name('owner.data_kos_update');
     Route::get('/data-kos/delete/{OwnerDataKosts}', [OwnerKosController::class, 'delete'])->name('owner.data_kos_delete');
+});
 
-    Route::get('/profile', [ProfileController::class, 'profile'])->name('owner.profile');
-    Route::put('/profile/update/{id}', [ProfileController::class, 'editProfile'])->name('edit.profile');
+// Route Profile untuk user dan owner
 
-
-    Route::put('/profile/edit/{id}', [ProfileController::class, 'ngubah_profile_form'])->name('edit.profile.form');
-
-    Route::put('/profile/update/{id}', [ProfileController::class, 'editProfile'])->name('edit.profile');
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::get('/profile', [ProfileController::class, 'profile'])->name('profile');
+    Route::get('/profile/edit/{id}', [ProfileController::class, 'editProfile'])->name('edit.profile.form');
+    Route::put('/profile/edit/{id}', [ProfileController::class, 'updateProfile'])->name('edit.profile');
 });
 
 
@@ -89,9 +89,6 @@ Route::middleware(['auth', 'verified', 'user-access:user'])->group(function () {
     Route::get('/kamar-kami', [KamarKamiController::class, 'index'])->name('kamar-kami');
     Route::get('/detail-kos/{ownerDataKosts}', [KamarKamiController::class, 'detail'])->name('detail-kos');
     Route::get('/pengajuan_sewa', [PengajuanController::class, 'pengajuansewa'])->name('user.pengajuan_sewa');
-    Route::get('/profile', [ProfileController::class, 'profile'])->name('user.profile');
-    Route::put('/profile/edit/{id}', [ProfileController::class, 'ngubah_profile_form'])->name('edit.profile.form');
-    Route::put('/profile/update/{id}', [ProfileController::class, 'editProfile'])->name('edit.profile');
     Route::get('/user-halamanselengkapnya', [HalamanSelengkapnyaController::class, 'detail'])->name('user.selengkapnya');
     Route::post('/logout', [LoginController::class, 'logout'])->name('logout')->middleware('verified');
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('verified');

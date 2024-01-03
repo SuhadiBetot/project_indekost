@@ -1,5 +1,7 @@
-@include('layout.navbarr')
+
 @include('admin.template.header')
+
+@include('layout.navbarr')
 @include('layout.sidebarr')
 <body>
 	<div id="preloader">
