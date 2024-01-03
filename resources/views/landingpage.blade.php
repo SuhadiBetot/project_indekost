@@ -14,6 +14,7 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <!-- site metas -->
     <title>In De Kost</title>
+    <script src="https://kit.fontawesome.com/3703331060.js" crossorigin="anonymous"></script>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -125,7 +126,7 @@
         <!-- header inner -->
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
-                <img src="{{ asset('asset/indeekost.png') }}" style="width: 100px;" alt="#" /></a>
+                <img src="{{ asset('asset/inilogo.png') }}" style="width: 100px;" alt="#" /></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -258,24 +259,6 @@
                 <div class="col-md-12">
                     <div class="titlepage">
                         <h3>Rekomendasi Kost</h3>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="row">
-                                    <div class="col"><h5 class="text-end" style="margin-top: 3px;">Rekomendasi Kost :</h5></div>
-                                    <div class="col justify-start">
-                                        <select class="form-select" aria-label="Default select example">
-                                            <option selected disabled>Pilih Daerah</option>
-                                            <option value="1">Karang Ploso</option>
-                                            <option value="2">Blimbing</option>
-                                            <option value="3">Klojen</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 text-end">
-                                <a href="" type="button" class="btn" style="background-color: #7E6D2E; color:#FFF;">Lihat Semua</a>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -332,8 +315,7 @@
                      <div class="bed_room">
                         <h3>Kamar 5</h3>
                         <p>Ini adalah tampilan kost In De Kost, dalam nya ada kasur ,lemari, meja
-                           dlliubvdsovildvzsopio;vnaoSDEVb;svsbdl;jvbnsdovbsdv;isenbs;lvn;skjdv;speiubvsdjv sp:
-                           D:LJS Fdpisdbuvjk v</p>
+                           dll</p>
                      </div>
                   </div>
                </div>
@@ -348,6 +330,9 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="d-flex justify-content-center">
+                <a href="{{ route('kamar-kami') }}" type="button" class="btn" style="background-color: #7E6D2E; color:#FFFF;">Lihat Semua</a>
             </div>
         </div>
     </div>

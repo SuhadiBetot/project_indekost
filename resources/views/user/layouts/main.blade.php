@@ -137,7 +137,7 @@
     <header>
         <nav class="navbar navbar-expand-lg" style="background-color: #fff;">
             <div class="container-fluid">
-                <img src="{{asset('asset/indekost.png')}}" alt="" style="width: 50px">
+                <img src="{{asset('asset/inilogo.png')}}" alt="" style="width: 50px">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
                     aria-label="Toggle navigation">

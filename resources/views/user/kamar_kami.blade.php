@@ -2,15 +2,15 @@
 
 @section('kamar-kami')
     <div class="container">
-        <div class="filterisasi mt-3 mb-2 d-flex justify-content-between">
+        <div class="filterisasi mt-3 mb-2 d-flex">
             <form class="form-inline">
                 <label class="sr-only" for="namaLokasi">Nama Lokasi</label>
                 <input type="text" class="form-control mb-2 mr-sm-2" id="namaLokasi" placeholder="Masukkan nama Lokasi">
                 <button type="submit" class="btn coklat mb-2">Cari</button>
             </form>
             <!-- Button trigger modal -->
-            <button type="button" class="btn coklat py-0" data-bs-toggle="modal" data-bs-target="#filter-modal">
-                Filter
+            <button type="button" class="btn coklat py-0 ms-2" data-bs-toggle="modal" data-bs-target="#filter-modal">
+                <i class="fa-solid fa-filter" style="color: #ffff;"></i>
             </button>
 
             <!-- Modal -->
