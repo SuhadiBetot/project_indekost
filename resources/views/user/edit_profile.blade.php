@@ -28,18 +28,30 @@
     margin: calc(50vh - 359px) auto;
   }
 
-  .card-wrapper {
+  .card-wrapper form {
+    max-width: 1000px; /* Set maximum width for the form */
+    margin: 0 auto;
+}
+
+.card-wrapper form .form-group {
+    margin-bottom: 30px; /* Increase margin between form groups */
+}
+
+.card-wrapper form .form-control {
     width: 100%;
-    height: 100%;
-    background: white;
-    border-radius: 25px;
-    padding: 15px;
-    /*   background: skyblue;
-       */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
+    padding: 5px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 18px;
+}
+
+.card-wrapper form button[type="submit"] {
+    padding: 8px 15px;
+    font-size: 20px;
+}
+
 
   .card-header img {
     max-width: 25px;
@@ -850,6 +862,7 @@
     display: block;
     margin-bottom: 8px;
     font-weight: bold;
+    font-size: 15;
   }
 
   .form-control {
@@ -1003,7 +1016,8 @@
             <input type="text" class="form-control" id="email" name="email" value="{{ $user->email }}">
         </div>
           <br>
-          <button type="submit" style="background: #000; border-radius:20px; color:#fff;"> Simpan</button>
+          <button type="submit" style="background: #128716; border-radius:20px; color:#fff;"> Simpan</button>
+          <br><br><br>
         </div>
     </form>
   </div>
