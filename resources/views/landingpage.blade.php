@@ -125,7 +125,7 @@
         <!-- header inner -->
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Navbar</a>
+                <img src="{{ asset('asset/indeekost.png') }}" style="width: 100px;" alt="#" /></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -270,7 +270,7 @@
                                             <option value="3">Klojen</option>
                                         </select>
                                     </div>
-                                </div>                                
+                                </div>
                             </div>
                             <div class="col-md-6 text-end">
                                 <a href="" type="button" class="btn" style="background-color: #7E6D2E; color:#FFF;">Lihat Semua</a>
