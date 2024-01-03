@@ -168,7 +168,9 @@
                         <div class="card-body">
                             <form action="#" method="post">
                                 @csrf
-                                {{$promo = $ownerDataKosts->harga - $ownerDataKosts->diskon; }}
+                                @php
+                                    $promo = $ownerDataKosts->harga - $ownerDataKosts->diskon;
+                                @endphp
                                 <h4>Rp.{{ number_format($promo, 0 ,',', '.') }}/bulan</h4>
                                 <div class="d-flex gap-3">
                                     <input class="form-control" type="date" name="mulai_kos" id="">

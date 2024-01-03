@@ -158,6 +158,7 @@
                                 </div>
                             </div>
                         </div>
+                        <hr>
                     </a>
                 @endforeach
             </div>
