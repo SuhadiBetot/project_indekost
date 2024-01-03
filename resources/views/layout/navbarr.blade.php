@@ -67,9 +67,7 @@
         <nav class="navbar navbar-expand">
             <div class="collapse navbar-collapse justify-content-between">
                 <div class="header-left">
-                    <div class="dashboard_bar" style="color: #000;">
-                        Selamat Datang Admin!
-                    </div>
+                    <img src="{{ asset('asset/indeekost.png') }}" style="width: 13%" alt="#" /></a>
                 </div>
                 <ul class="navbar-nav header-right">
                     <li class="nav-item dropdown notification_dropdown all">
@@ -335,7 +333,7 @@
                                     <div class="d-flex align-items-center sidebar-info">
 
                                     </div>
-                                    <img src="images/user.jpg" alt="">
+                                    <img src="{{ asset('asset/kamar.jpg') }}" style="width: 80%; border-radius: 200%; transform: translateY(-20%);" alt="#" /></a>
                                 </div>
                             </a>
                             <div class="dropdown-menu dropdown-menu-end pb-0" style="">

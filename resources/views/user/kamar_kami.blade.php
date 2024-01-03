@@ -89,6 +89,40 @@
                     </div>
                 </div>
             </div>
+
+            <button type="button" class="btn btn-primary" style="width: 100px;" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                pilih ini
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Filter</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="container text-center">
+                            <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+                            <div class="col-md-6">
+                                    <label for="namaLokasi">Cari</label>
+                                    <input type="text" class="form-control mb-2 mr-sm-2" id="namaLokasi" placeholder="Masukkan nama Lokasi">
+                                    <button type="submit" class="btn coklat mb-2">Cari</button>
+                            </div>
+                            <div class="col">
+                                <button type="submit" class="btn coklat mb-2">Cowok</button>
+                              </div>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
         <div class="card p-4">
             <div class="card-body" style="padding-top: 10px; padding-bottom:10px; padding-left: 7px; padding-right:7px;">

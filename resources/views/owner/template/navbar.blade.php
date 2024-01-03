@@ -96,7 +96,7 @@
                                             <span class="ms-2">Profile</span>
                                         </a>
                                     </div>
-                                   
+
                                     <div class="card-footer text-center p-3">
                                         <a class="dropdown-item ai-icon btn btn-primary light"
                                             href="{{ route('logout') }}"
