@@ -28,12 +28,6 @@
                         </p>
                     </div>
                     <h4>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"
-                            fill="none">
-                            <path
-                                d="M9.30176 1.42822L10.3857 0.344238C10.8447 -0.114746 11.5869 -0.114746 12.041 0.344238L21.5332 9.83154C21.9922 10.2905 21.9922 11.0327 21.5332 11.4868L12.041 20.979C11.582 21.438 10.8398 21.438 10.3857 20.979L9.30176 19.895C8.83789 19.4312 8.84766 18.6743 9.32129 18.2202L15.2051 12.6147H1.17188C0.522461 12.6147 0 12.0923 0 11.4429V9.88037C0 9.23096 0.522461 8.7085 1.17188 8.7085H15.2051L9.32129 3.10303C8.84277 2.64893 8.83301 1.89209 9.30176 1.42822Z"
-                                fill="black" />
-                        </svg>
                         Kost disewakan oleh {{ $ownerDataKosts->user->name }}
                     </h4>
                     <p class="text-black">
@@ -57,12 +51,6 @@
                     </p>
                     <hr>
                     <h4>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"
-                            fill="none">
-                            <path
-                                d="M9.30176 1.42822L10.3857 0.344238C10.8447 -0.114746 11.5869 -0.114746 12.041 0.344238L21.5332 9.83154C21.9922 10.2905 21.9922 11.0327 21.5332 11.4868L12.041 20.979C11.582 21.438 10.8398 21.438 10.3857 20.979L9.30176 19.895C8.83789 19.4312 8.84766 18.6743 9.32129 18.2202L15.2051 12.6147H1.17188C0.522461 12.6147 0 12.0923 0 11.4429V9.88037C0 9.23096 0.522461 8.7085 1.17188 8.7085H15.2051L9.32129 3.10303C8.84277 2.64893 8.83301 1.89209 9.30176 1.42822Z"
-                                fill="black" />
-                        </svg>
                         Spesifikasi Kamar
                     </h4>
                     <p class="text-black">
@@ -70,12 +58,6 @@
                     </p>
                     <hr>
                     <h4>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"
-                            fill="none">
-                            <path
-                                d="M9.30176 1.42822L10.3857 0.344238C10.8447 -0.114746 11.5869 -0.114746 12.041 0.344238L21.5332 9.83154C21.9922 10.2905 21.9922 11.0327 21.5332 11.4868L12.041 20.979C11.582 21.438 10.8398 21.438 10.3857 20.979L9.30176 19.895C8.83789 19.4312 8.84766 18.6743 9.32129 18.2202L15.2051 12.6147H1.17188C0.522461 12.6147 0 12.0923 0 11.4429V9.88037C0 9.23096 0.522461 8.7085 1.17188 8.7085H15.2051L9.32129 3.10303C8.84277 2.64893 8.83301 1.89209 9.30176 1.42822Z"
-                                fill="black" />
-                        </svg>
                         Fasilitas Kamar
                     </h4>
                     <p class="text-black">
@@ -88,12 +70,6 @@
                     </p>
                     <hr>
                     <h4>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"
-                            fill="none">
-                            <path
-                                d="M9.30176 1.42822L10.3857 0.344238C10.8447 -0.114746 11.5869 -0.114746 12.041 0.344238L21.5332 9.83154C21.9922 10.2905 21.9922 11.0327 21.5332 11.4868L12.041 20.979C11.582 21.438 10.8398 21.438 10.3857 20.979L9.30176 19.895C8.83789 19.4312 8.84766 18.6743 9.32129 18.2202L15.2051 12.6147H1.17188C0.522461 12.6147 0 12.0923 0 11.4429V9.88037C0 9.23096 0.522461 8.7085 1.17188 8.7085H15.2051L9.32129 3.10303C8.84277 2.64893 8.83301 1.89209 9.30176 1.42822Z"
-                                fill="black" />
-                        </svg>
                         Fasilitas Kamar Mandi
                     </h4>
                     <p class="text-black">
@@ -101,25 +77,13 @@
                     </p>
                     <hr>
                     <h4>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"
-                            fill="none">
-                            <path
-                                d="M9.30176 1.42822L10.3857 0.344238C10.8447 -0.114746 11.5869 -0.114746 12.041 0.344238L21.5332 9.83154C21.9922 10.2905 21.9922 11.0327 21.5332 11.4868L12.041 20.979C11.582 21.438 10.8398 21.438 10.3857 20.979L9.30176 19.895C8.83789 19.4312 8.84766 18.6743 9.32129 18.2202L15.2051 12.6147H1.17188C0.522461 12.6147 0 12.0923 0 11.4429V9.88037C0 9.23096 0.522461 8.7085 1.17188 8.7085H15.2051L9.32129 3.10303C8.84277 2.64893 8.83301 1.89209 9.30176 1.42822Z"
-                                fill="black" />
-                        </svg>
-                        Peraturan Khusus Kamar Ini
+                        Peraturan Kos
                     </h4>
                     <p class="text-black">
-                        {{ $ownerDataKosts->ketentuan }}
+
                     </p>
                     <hr>
                     <h4>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"
-                            fill="none">
-                            <path
-                                d="M9.30176 1.42822L10.3857 0.344238C10.8447 -0.114746 11.5869 -0.114746 12.041 0.344238L21.5332 9.83154C21.9922 10.2905 21.9922 11.0327 21.5332 11.4868L12.041 20.979C11.582 21.438 10.8398 21.438 10.3857 20.979L9.30176 19.895C8.83789 19.4312 8.84766 18.6743 9.32129 18.2202L15.2051 12.6147H1.17188C0.522461 12.6147 0 12.0923 0 11.4429V9.88037C0 9.23096 0.522461 8.7085 1.17188 8.7085H15.2051L9.32129 3.10303C8.84277 2.64893 8.83301 1.89209 9.30176 1.42822Z"
-                                fill="black" />
-                        </svg>
                         Fasilitas Umum
                     </h4>
                     <p class="text-black">
@@ -127,30 +91,55 @@
                     </p>
                     <hr>
                     <h4>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"
-                            fill="none">
-                            <path
-                                d="M9.30176 1.42822L10.3857 0.344238C10.8447 -0.114746 11.5869 -0.114746 12.041 0.344238L21.5332 9.83154C21.9922 10.2905 21.9922 11.0327 21.5332 11.4868L12.041 20.979C11.582 21.438 10.8398 21.438 10.3857 20.979L9.30176 19.895C8.83789 19.4312 8.84766 18.6743 9.32129 18.2202L15.2051 12.6147H1.17188C0.522461 12.6147 0 12.0923 0 11.4429V9.88037C0 9.23096 0.522461 8.7085 1.17188 8.7085H15.2051L9.32129 3.10303C8.84277 2.64893 8.83301 1.89209 9.30176 1.42822Z"
-                                fill="black" />
-                        </svg>
                         Fasilitas Parkir
                     </h4>
                     <p class="text-black">
                         {{ $ownerDataKosts->fasilitas_tempat_parkir }}
                     </p>
                     <hr>
-                    <h4>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"
-                            fill="none">
-                            <path
-                                d="M9.30176 1.42822L10.3857 0.344238C10.8447 -0.114746 11.5869 -0.114746 12.041 0.344238L21.5332 9.83154C21.9922 10.2905 21.9922 11.0327 21.5332 11.4868L12.041 20.979C11.582 21.438 10.8398 21.438 10.3857 20.979L9.30176 19.895C8.83789 19.4312 8.84766 18.6743 9.32129 18.2202L15.2051 12.6147H1.17188C0.522461 12.6147 0 12.0923 0 11.4429V9.88037C0 9.23096 0.522461 8.7085 1.17188 8.7085H15.2051L9.32129 3.10303C8.84277 2.64893 8.83301 1.89209 9.30176 1.42822Z"
-                                fill="black" />
-                        </svg>
-                        Peraturan Umum Kost
-                    </h4>
-                    <p class="text-black">
-
-                    </p>
+                    <h4 class="mb-0">Ulasan Terhadap Kost</h4>
+                    <style>
+                        .rating .fa-star {
+                            color: rgb(218, 218, 4);
+                            cursor: pointer;
+                        }
+                    
+                        .fa-star:hover {
+                            transform: scale(1.1);
+                        }
+                    </style>
+                    
+                    <form action="">
+                        <div class="rating mb-3">
+                            <input type="number" name="rating" hidden>
+                            <i class="far fa-star fa-lg"></i>
+                            <i class="far fa-star fa-lg"></i>
+                            <i class="far fa-star fa-lg"></i>
+                            <i class="far fa-star fa-lg"></i>
+                            <i class="far fa-star fa-lg"></i>
+                        </div>
+                        <textarea name="Ulasan" class="form-control" id="" cols="150" rows="5" placeholder="Tulis Ulasan Anda Mengenai Kost Ini"></textarea>
+                        <button type="submit" class="btn coklat my-3">Kirim</button>
+                    </form>
+                    
+                    <script>
+                        const allstr = document.querySelectorAll('.rating .fa-star');
+                        const ratingInput = document.querySelector('.rating input[name="rating"]');
+                    
+                        allstr.forEach((item, idx) => {
+                            item.addEventListener('click', function () {
+                                for (let i = 0; i < allstr.length; i++) {
+                                    if (i <= idx) {
+                                        allstr[i].classList.replace('far', 'fas');
+                                    } else {
+                                        allstr[i].classList.replace('fas', 'far');
+                                    }
+                                }
+                                ratingInput.value = idx + 1;
+                            });
+                        });
+                    </script>
+                    
                 </div>
                 <div class="col-xl-4">
                     <img src="{{ asset('ownerkos/' . $ownerDataKosts->foto_dalam) }}" alt="" class="w-100">
@@ -171,7 +160,7 @@
                                 @php
                                     $promo = $ownerDataKosts->harga - $ownerDataKosts->diskon;
                                 @endphp
-                                <h4>Rp.{{ number_format($promo, 0 ,',', '.') }}/bulan</h4>
+                                <h4>Rp.{{ number_format($promo, 0, ',', '.') }}/bulan</h4>
                                 <div class="d-flex gap-3">
                                     <input class="form-control" type="date" name="mulai_kos" id="">
                                     <select class="form-control" name="bulan" id="select-bulan">
@@ -184,11 +173,11 @@
                                 <div class="row mt-1">
                                     <div class="col">
                                         <div>
-                                            Bayar Sewa 
+                                            Bayar Sewa
                                         </div>
                                     </div>
                                     <div class="col" id="harga-sewa">
-                                       
+
                                     </div>
                                 </div>
                                 <div class="row">
@@ -196,23 +185,27 @@
                                         Biaya Admin(5%)
                                     </div>
                                     <div class="col" id="biaya-admin">
-                                        
+
                                     </div>
                                 </div>
                                 <hr style="border-color: black;">
                                 <div class="row mb-3">
                                     <div class="col">Pembayaran Total</div>
                                     <div class="col" id="total">
-                                        
+
                                     </div>
                                 </div>
                                 <div class="d-grid">
-                                    <button type="submit" name="submit" class="btn border-dark rounded-pill">Ajukan Sewa</button>
+                                    <button type="submit" name="submit" class="btn border-dark rounded-pill">Ajukan
+                                        Sewa</button>
                                 </div>
                             </form>
                         </div>
                     </div>
-                    <iframe class="rounded" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d247.000878217937!2d112.61032568807774!3d-7.893598040022315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sid!2sid!4v1704182611591!5m2!1sid!2sid" width="470" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe class="rounded"
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d247.000878217937!2d112.61032568807774!3d-7.893598040022315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sid!2sid!4v1704182611591!5m2!1sid!2sid"
+                        width="470" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
                 <div class="justify-content-end d-flex gap-3">
                     <a href="{{ route('kamar-kami') }}" class="btn text-white fw-bold"
@@ -225,11 +218,11 @@
         function kalkulator() {
             let pack = document.getElementById("select-bulan");
             let packselect = pack.value;
-    
+
             let hargaSewa = 0;
             let biayaAdmin = 0;
             let total = 0;
-    
+
             if (packselect == 1) {
                 hargaSewa = parseInt("{{ $promo }}");
                 biayaAdmin = 0.05 * hargaSewa;
@@ -237,28 +230,28 @@
             } else if (packselect == 6) {
                 hargaSewa = parseInt("{{ $promo }}") * 6;
                 biayaAdmin = 0.05 * hargaSewa;
-                total =hargaSewa + biayaAdmin;
+                total = hargaSewa + biayaAdmin;
             } else if (packselect == 12) {
                 hargaSewa = parseInt("{{ $promo }}") * 12;
                 biayaAdmin = 0.05 * hargaSewa;
-                total =hargaSewa + biayaAdmin;
-            }else{
+                total = hargaSewa + biayaAdmin;
+            } else {
                 hargaSewa = 0;
                 biayaAdmin = 0;
                 total = 0;
             }
-    
+
             document.getElementById("harga-sewa").innerText = " : Rp. " + hargaSewa.toLocaleString();
             document.getElementById("biaya-admin").innerText = " : Rp. " + biayaAdmin.toLocaleString();
             document.getElementById("total").innerText = " : Rp. " + total.toLocaleString();
         }
-    
+
         // Pemanggilan fungsi kalkulator() saat ada perubahan pada elemen select-bulan
         document.getElementById("select-bulan").addEventListener("change", kalkulator);
-    
+
         // Pemanggilan fungsi kalkulator() pada saat halaman dimuat
         kalkulator();
     </script>
-    
-    
+
+
 @endsection
