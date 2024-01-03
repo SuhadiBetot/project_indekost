@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <!-- site metas -->
-    <title>keto</title>
+    <title>IN DE KOST</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -235,10 +235,7 @@
                         <div class="col-md-10 offset-md-1">
 
                             <p>
-                                © 2019 All Rights Reserved. Design by <a href="https://html.design/"> Free Html
-                                    Templates</a>
-                                <br><br>
-                                Distributed by <a href="https://themewagon.com/" target="_blank">ThemeWagon</a>
+                                © 2023 All Rights Reserved. Design by team In de kost
                             </p>
 
                         </div>
