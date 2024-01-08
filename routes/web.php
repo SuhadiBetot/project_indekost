@@ -20,6 +20,7 @@ use App\Http\Controllers\Auth\VerificationController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\HalamanSelengkapnyaController;
 use App\Http\Controllers\KamarKamiController;
+use App\Http\Controllers\SewaController;
 use Symfony\Component\HttpKernel\Profiler\Profile;
 
 /*
@@ -64,8 +65,8 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
 Route::middleware(['auth', 'user-access:owner', 'verified'])->group(function () {
     Route::get('/dashboard-owner', [OwnerController::class, 'dashboard'])->name('dash-owner');
     Route::get('/approval-owner', [OwnerApprovalController::class, 'approval'])->name('owner.approval_owner');
-    Route::patch('/approval-owner_approve/{bonus}', [OwnerApprovalController::class, 'Approve'])->name('approve.bonus');
-    Route::patch('/approval-owner_reject/{bonus}', [OwnerApprovalController::class, 'Reject'])->name('reject.bonus');
+    Route::patch('/approval-owner/approval/konfirmasi/{sewa}', [OwnerApprovalController::class, 'konfirmasi'])->name('owner.approval_owner_konfirmasi');
+    Route::patch('/approval-owner/approval/tertolak/{sewa}', [OwnerApprovalController::class, 'tolak'])->name('owner.approval_owner_tertolak');
 
     Route::get('/data-kos', [OwnerKosController::class, 'data_kos'])->name('owner.data_kos');
     Route::get('/data-kos/create', [OwnerKosController::class, 'create'])->name('owner.data_kos_create');
@@ -88,8 +89,18 @@ Route::middleware(['auth', 'verified'])->group(function () {
 Route::middleware(['auth', 'verified', 'user-access:user'])->group(function () {
     Route::get('/kamar-kami', [KamarKamiController::class, 'index'])->name('kamar-kami');
     Route::get('/detail-kos/{ownerDataKosts}', [KamarKamiController::class, 'detail'])->name('detail-kos');
-    Route::get('/pengajuan_sewa', [PengajuanController::class, 'pengajuansewa'])->name('user.pengajuan_sewa');
+    Route::post('/pengajuan-sewa/proses', [SewaController::class, 'process'])->name('pengajuan-sewa-proses');
+    Route::get('/pengajuan_sewa/checkout/{sewa}', [SewaController::class, 'checkout'])->name('pengajuan-sewa-checkout');
+    Route::get('/pengajuan_sewa/checkout/success/{sewa}', [SewaController::class, 'success'])->name('pengajuan-sewa-success');
+    // Route::post('/pengajuan_sewa/checkout/success/finishing/{sewa}', [SewaController::class, 'finishing'])->name('pengajuan-sewa-finishing');
+    // Route::post('/simpan-data-transaksi', [SewaController::class, 'simpanDataTransaksi'])->name('simpan-data-transaksi');
+
+    // Route::get('/profile', [ProfileController::class, 'profile'])->name('user.profile');
+    // Route::put('/profile/edit/{id}', [ProfileController::class, 'ngubah_profile_form'])->name('edit.profile.form');
+    // Route::put('/profile/update/{id}', [ProfileController::class, 'editProfile'])->name('edit.profile');
+
     Route::get('/user-halamanselengkapnya', [HalamanSelengkapnyaController::class, 'detail'])->name('user.selengkapnya');
+
     Route::post('/logout', [LoginController::class, 'logout'])->name('logout')->middleware('verified');
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('verified');
 });

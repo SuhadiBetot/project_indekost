@@ -49,7 +49,7 @@
                             alt="foto depan">
                         <h4 class="mt-5">Kost Perumahan Bina Asri Malang Pusat</h4>
                         <div class=" d-flex align-items-center gap-3">
-                            <p class="py-1 px-3 text-black fw-semibold" style="background-color: #D9D9D9">kost putri</p>
+                            <p class="py-1 px-3 text-black fw-semibold" style="background-color: #D9D9D9">kost {{$ownerDataKosts->tipe_kost}}</p>
                             <p class="text-black fw-semibold">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
                                     viewBox="0 0 30 30" fill="none">
@@ -64,7 +64,7 @@
                                         </clipPath>
                                     </defs>
                                 </svg>
-                                Kota Malang
+                                Kec.{{$ownerDataKosts->kecamatan}}
                             </p>
                         </div>
                         <h4>
@@ -160,36 +160,10 @@
                                     d="M9.30176 1.42822L10.3857 0.344238C10.8447 -0.114746 11.5869 -0.114746 12.041 0.344238L21.5332 9.83154C21.9922 10.2905 21.9922 11.0327 21.5332 11.4868L12.041 20.979C11.582 21.438 10.8398 21.438 10.3857 20.979L9.30176 19.895C8.83789 19.4312 8.84766 18.6743 9.32129 18.2202L15.2051 12.6147H1.17188C0.522461 12.6147 0 12.0923 0 11.4429V9.88037C0 9.23096 0.522461 8.7085 1.17188 8.7085H15.2051L9.32129 3.10303C8.84277 2.64893 8.83301 1.89209 9.30176 1.42822Z"
                                     fill="black" />
                             </svg>
-                            Fasilitas Umum
-                        </h4>
-                        <p class="text-black">
-
-                        </p>
-                        <hr>
-                        <h4>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
-                                viewBox="0 0 22 22" fill="none">
-                                <path
-                                    d="M9.30176 1.42822L10.3857 0.344238C10.8447 -0.114746 11.5869 -0.114746 12.041 0.344238L21.5332 9.83154C21.9922 10.2905 21.9922 11.0327 21.5332 11.4868L12.041 20.979C11.582 21.438 10.8398 21.438 10.3857 20.979L9.30176 19.895C8.83789 19.4312 8.84766 18.6743 9.32129 18.2202L15.2051 12.6147H1.17188C0.522461 12.6147 0 12.0923 0 11.4429V9.88037C0 9.23096 0.522461 8.7085 1.17188 8.7085H15.2051L9.32129 3.10303C8.84277 2.64893 8.83301 1.89209 9.30176 1.42822Z"
-                                    fill="black" />
-                            </svg>
                             Fasilitas Parkir
                         </h4>
                         <p class="text-black">
                             {{ $ownerDataKosts->fasilitas_tempat_parkir }}
-                        </p>
-                        <hr>
-                        <h4>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
-                                viewBox="0 0 22 22" fill="none">
-                                <path
-                                    d="M9.30176 1.42822L10.3857 0.344238C10.8447 -0.114746 11.5869 -0.114746 12.041 0.344238L21.5332 9.83154C21.9922 10.2905 21.9922 11.0327 21.5332 11.4868L12.041 20.979C11.582 21.438 10.8398 21.438 10.3857 20.979L9.30176 19.895C8.83789 19.4312 8.84766 18.6743 9.32129 18.2202L15.2051 12.6147H1.17188C0.522461 12.6147 0 12.0923 0 11.4429V9.88037C0 9.23096 0.522461 8.7085 1.17188 8.7085H15.2051L9.32129 3.10303C8.84277 2.64893 8.83301 1.89209 9.30176 1.42822Z"
-                                    fill="black" />
-                            </svg>
-                            Peraturan Umum Kost
-                        </h4>
-                        <p class="text-black">
-
                         </p>
                     </div>
                     <div class="col-xl-4">

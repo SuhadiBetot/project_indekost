@@ -85,44 +85,50 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($datakosts as $kosts)
-                                            <tr>
-                                                <td>
-                                                    <div class="trans-list">
-                                                        <h4>{{ $loop->iteration }}</h4>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="trans-list">
-                                                        <h4>{{ $kosts->user->name }}</h4>
-                                                    </div>
-                                                </td>
-                                                <td><span class="text-primary font-w600">{{ $kosts->nama_kost }}</span>
-                                                </td>
-                                                <td>
-                                                    <div class="date">
-                                                        {{ 'Rp' . number_format($kosts->harga, 0, ',', '.') }}</div>
-                                                </td>
-                                                <td><img src="images/trans/1.jpg" alt=""
-                                                        class="avatar avatar-sm me-3"></td>
-                                                <td>
-                                                    <h6 class="mb-0">{{ $kosts->lokasi }}</h6>
-                                                </td>
-                                                <td>
-                                                    <div>
-                                                        <div class="action-buttons">
-                                                            <a type="detail-button"
-                                                                href="{{ route('app-admin-detail', $kosts->id) }}"
-                                                                class="btn btn-primary"><i class="fas fa-eye"></i></a>
-                                                            <a href="{{ route('app-admin-delete', $kosts->id) }}"
-                                                                type="submit" class="btn btn-danger" id=""
-                                                                onclick="return confirm('apakah anda yakin ingin menghapus data ini')"><i
-                                                                    class="fas fa-trash-alt"></i></a>
+                                        @if (count($datakosts) > 0)
+                                            @foreach ($datakosts as $kosts)
+                                                <tr>
+                                                    <td>
+                                                        <div class="trans-list">
+                                                            <h4>{{ $loop->iteration }}</h4>
                                                         </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        @endforeach
+                                                    </td>
+                                                    <td>
+                                                        <div class="trans-list">
+                                                            <h4>{{ $kosts->user->name }}</h4>
+                                                        </div>
+                                                    </td>
+                                                    <td><span
+                                                            class="text-primary font-w600">{{ $kosts->nama_kost }}</span>
+                                                    </td>
+                                                    <td>
+                                                        <div class="date">
+                                                            {{ 'Rp' . number_format($kosts->harga, 0, ',', '.') }}</div>
+                                                    </td>
+                                                    <td><img src="images/trans/1.jpg" alt=""
+                                                            class="avatar avatar-sm me-3"></td>
+                                                    <td>
+                                                        <h6 class="mb-0">{{ $kosts->lokasi }}</h6>
+                                                    </td>
+                                                    <td>
+                                                        <div>
+                                                            <div class="action-buttons">
+                                                                <a type="detail-button"
+                                                                    href="{{ route('app-admin-detail', $kosts->id) }}"
+                                                                    class="btn btn-primary"><i
+                                                                        class="fas fa-eye"></i></a>
+                                                                <a href="{{ route('app-admin-delete', $kosts->id) }}"
+                                                                    type="submit" class="btn btn-danger" id=""
+                                                                    onclick="return confirm('apakah anda yakin ingin menghapus data ini')"><i
+                                                                        class="fas fa-trash-alt"></i></a>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+                                            @else
+                                            tidak ada data
+                                        @endif
                                     </tbody>
                                 </table>
                             </div>
