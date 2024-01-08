@@ -67,10 +67,66 @@
                                                     @enderror
                                                 </div>
                                                 <div class="col-xl-12 mb-4">
+                                                    <label for="" class="form-label">Tipe kost<span
+                                                            class="text-danger">*</span></label>
+                                                    <select name="tipe_kost" id="" class="form-control">
+                                                        <option selected disabled>pilih tipe kost</option>
+                                                        <option value="laki-laki">laki-laki</option>
+                                                        <option value="perempuan">perempuan</option>
+                                                        <option value="campur">campur</option>
+                                                    </select>
+                                                    @error('tipe_kost')
+                                                        <div class="invalid-feedback">{{ $message }}</div>
+                                                    @enderror
+                                                </div>
+                                                <div class="col-xl-12 mb-4">
                                                     <label for="" class="form-label">Ketentuan<span
                                                             class="text-danger">*</span></label>
                                                     <textarea rows="3" class="form-control" name="ketentuan" placeholder="Cth: Perempuan">{{ old('ketentuan') }}</textarea>
                                                     @error('ketentuan')
+                                                        <div class="invalid-feedback">{{ $message }}</div>
+                                                    @enderror
+                                                </div>
+                                                <div class="col-xl-12 mb-4">
+                                                    <label for="" class="form-label">kecamatan<span
+                                                            class="text-danger">*</span></label>
+                                                    <select name="kecamatan" id="" class="form-control">
+                                                        <option selected disabled>pilih kecamatan</option>
+                                                        <option value="Ampelgading">Ampelgading</option>
+                                                        <option value="Bantur">Bantur</option>
+                                                        <option value="Bululawang">Bululawang</option>
+                                                        <option value="Dampit">Dampit</option>
+                                                        <option value="Dau">Dau</option>
+                                                        <option value="Donomulyo">Donomulyo</option>
+                                                        <option value="Gedangan">Gedangan</option>
+                                                        <option value="Gondanglegi">Gondanglegi</option>
+                                                        <option value="Jabung">Jabung</option>
+                                                        <option value="Kalipare">Kalipare</option>
+                                                        <option value="Karangploso">Karangploso</option>
+                                                        <option value="Kasembon">Kasembon</option>
+                                                        <option value="Kepanjen">Kepanjen</option>
+                                                        <option value="Kromengan">Kromengan</option>
+                                                        <option value="Lawang">Lawang</option>
+                                                        <option value="Ngajum">Ngajum</option>
+                                                        <option value="Ngantang">Ngantang</option>
+                                                        <option value="Pagak">Pagak</option>
+                                                        <option value="Pagelaran">Pagelaran</option>
+                                                        <option value="Pakis">Pakis</option>
+                                                        <option value="Pakisaji">Pakisaji</option>
+                                                        <option value="Poncokusumo">Poncokusumo</option>
+                                                        <option value="Pujon">Pujon</option>
+                                                        <option value="Singosari">Singosari</option>
+                                                        <option value="Sumbermanjing Wetan">Sumbermanjing Wetan</option>
+                                                        <option value="Sumberpucung">Sumberpucung</option>
+                                                        <option value="Tajinan">Tajinan</option>
+                                                        <option value="Tirtoyudo">Tirtoyudo</option>
+                                                        <option value="Tumpang">Tumpang</option>
+                                                        <option value="Turen">Turen</option>
+                                                        <option value="Wagir">Wagir</option>
+                                                        <option value="Wajak">Wajak</option>
+                                                        <option value="Wonosari">Wonosari</option>
+                                                    </select>
+                                                    @error('kecamatan')
                                                         <div class="invalid-feedback">{{ $message }}</div>
                                                     @enderror
                                                 </div>
@@ -107,14 +163,6 @@
                                                     <input type="number" class="form-control" name="harga"
                                                         placeholder="1.000.000" value="{{ old('harga') }}">
                                                     @error('harga')
-                                                        <div class="invalid-feedback">{{ $message }}</div>
-                                                    @enderror
-                                                </div>
-                                                <div class="col-xl-12 mb-4">
-                                                    <label for="" class="form-label">diskon (opsional)</label>
-                                                    <input type="number" class="form-control" name="diskon"
-                                                        placeholder="100.000" value="{{ old('diskon') }}">
-                                                    @error('diskon')
                                                         <div class="invalid-feedback">{{ $message }}</div>
                                                     @enderror
                                                 </div>

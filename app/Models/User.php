@@ -25,6 +25,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'password',
         'role',
         'foto', // Add the 'foto' column to the $fillable array
+        'pendapatan',
     ];
 
 

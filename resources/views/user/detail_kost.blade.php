@@ -7,9 +7,10 @@
             <div class="row">
                 <div class="col-xl-8 text-black">
                     <img src="{{ asset('ownerkos/' . $ownerDataKosts->foto_depan) }}" class="w-100" alt="foto depan">
-                    <h4 class="mt-5">Kost Perumahan Bina Asri Malang Pusat</h4>
+                    <h4 class="mt-5">{{ $ownerDataKosts->nama_kost }}</h4>
                     <div class=" d-flex align-items-center gap-3">
-                        <p class="py-1 px-3 text-black fw-semibold" style="background-color: #D9D9D9">kost putri</p>
+                        <p class="py-1 px-3 text-black fw-semibold" style="background-color: #D9D9D9">kost
+                            {{ $ownerDataKosts->tipe_kost }}</p>
                         <p class="text-black fw-semibold">
                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"
                                 fill="none">
@@ -24,7 +25,7 @@
                                     </clipPath>
                                 </defs>
                             </svg>
-                            Kota Malang
+                            Kec.{{ $ownerDataKosts->kecamatan }}
                         </p>
                     </div>
                     <h4>
@@ -103,12 +104,12 @@
                             color: rgb(218, 218, 4);
                             cursor: pointer;
                         }
-                    
+
                         .fa-star:hover {
                             transform: scale(1.1);
                         }
                     </style>
-                    
+
                     <form action="">
                         <div class="rating mb-3">
                             <input type="number" name="rating" hidden>
@@ -121,11 +122,11 @@
                         <textarea name="Ulasan" class="form-control" id="" cols="150" rows="5" placeholder="Tulis Ulasan Anda Mengenai Kost Ini"></textarea>
                         <button type="submit" class="btn coklat my-3">Kirim</button>
                     </form>
-                    
+
                     <script>
                         const allstr = document.querySelectorAll('.rating .fa-star');
                         const ratingInput = document.querySelector('.rating input[name="rating"]');
-                    
+
                         allstr.forEach((item, idx) => {
                             item.addEventListener('click', function () {
                                 for (let i = 0; i < allstr.length; i++) {
@@ -139,7 +140,7 @@
                             });
                         });
                     </script>
-                    
+
                 </div>
                 <div class="col-xl-4">
                     <img src="{{ asset('ownerkos/' . $ownerDataKosts->foto_dalam) }}" alt="" class="w-100">
@@ -155,21 +156,29 @@
 
                     <div class="card my-4" style="border-color: black;">
                         <div class="card-body">
-                            <form action="#" method="post">
+                            <form action="{{ route('pengajuan-sewa-proses') }}" method="post">
                                 @csrf
                                 @php
                                     $promo = $ownerDataKosts->harga - $ownerDataKosts->diskon;
                                 @endphp
                                 <h4>Rp.{{ number_format($promo, 0, ',', '.') }}/bulan</h4>
                                 <div class="d-flex gap-3">
-                                    <input class="form-control" type="date" name="mulai_kos" id="">
+                                    <input class="form-control" type="date" name="mulai_kos">
+                                    @error('mulai_kos')
+                                        <p>{{ $message }}</p>
+                                    @enderror
                                     <select class="form-control" name="bulan" id="select-bulan">
                                         <option selected disabled>pilih bulanan</option>
                                         <option value="1">per bulan</option>
                                         <option value="6">per 6 bulan</option>
                                         <option value="12">per tahun</option>
                                     </select>
+                                    @error('bulan')
+                                        <p>{{ $message }}</p>
+                                    @enderror
                                 </div>
+                                <input type="number" name="user_id" value="{{ auth()->user()->id }}">
+                                <input type="number" name="owner_data_kosts_id" value="{{ $ownerDataKosts->id }}">
                                 <div class="row mt-1">
                                     <div class="col">
                                         <div>
@@ -196,7 +205,7 @@
                                     </div>
                                 </div>
                                 <div class="d-grid">
-                                    <button type="submit" name="submit" class="btn border-dark rounded-pill">Ajukan
+                                    <button type="submit" class="btn border-dark rounded-pill">Ajukan
                                         Sewa</button>
                                 </div>
                             </form>
@@ -214,6 +223,7 @@
             </div>
         </div>
     </div>
+    <!-- Add this script section after your existing script section -->
     <script>
         function kalkulator() {
             let pack = document.getElementById("select-bulan");
@@ -224,15 +234,15 @@
             let total = 0;
 
             if (packselect == 1) {
-                hargaSewa = parseInt("{{ $promo }}");
+                hargaSewa = parseInt("{{ $ownerDataKosts->harga }}");
                 biayaAdmin = 0.05 * hargaSewa;
                 total = hargaSewa + biayaAdmin;
             } else if (packselect == 6) {
-                hargaSewa = parseInt("{{ $promo }}") * 6;
+                hargaSewa = parseInt("{{ $ownerDataKosts->harga }}") * 6;
                 biayaAdmin = 0.05 * hargaSewa;
                 total = hargaSewa + biayaAdmin;
             } else if (packselect == 12) {
-                hargaSewa = parseInt("{{ $promo }}") * 12;
+                hargaSewa = parseInt("{{ $ownerDataKosts->harga }}") * 12;
                 biayaAdmin = 0.05 * hargaSewa;
                 total = hargaSewa + biayaAdmin;
             } else {
@@ -252,6 +262,5 @@
         // Pemanggilan fungsi kalkulator() pada saat halaman dimuat
         kalkulator();
     </script>
-
 
 @endsection

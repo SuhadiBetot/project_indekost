@@ -18,20 +18,22 @@ class OwnerKosController extends Controller
 
     public function create()
     {
-        return view('owner.create_data_kos');
+        $datas = OwnerDataKosts::all();
+        return view('owner.create_data_kos', compact('datas'));
     }
 
     public function store(Request $request)
     {
         // dd($request->all());
         $request->validate([
+            'tipe_kost' => 'required|in:laki-laki,perempuan,campur',
             'nama_kost' => 'required|string|max:255',
             'ketentuan' => 'required|string',
+            'kecamatan' => 'required|in:Ampelgading,Bantur,Bululawang,Dampit,Dau,Donomulyo,Gedangan,Gondanglegi,Jabung,Kalipare,Karangploso,Kasembon,Kepanjen,Kromengan,Lawang,Ngajum,Ngantang,Pagak,Pagelaran,Pakis,Pakisaji,Poncokusumo,Pujon,Singosari,Sumbermanjing Wetan,Sumberpucung,Tajinan,Tirtoyudo,Tumpang,Turen,Wagir,Wajak,Wonosari',
             'lokasi' => 'required|string',
             'peraturan' => 'required|string',
             'spesifikasi' => 'required|string',
             'harga' => 'required|numeric',
-            'diskon' => 'nullable|numeric',
             'fasilitas_kamar' => 'required|array',
             'fasilitas_kamar.*' => 'required|string',
             'fasilitas_kamar_mandi' => 'required|string',
@@ -104,13 +106,14 @@ class OwnerKosController extends Controller
         // Gunakan create untuk menyimpan data ke dalam database
         $result = OwnerDataKosts::create([
             'user_id' => auth()->user()->id,
+            'tipe_kost' => $request->tipe_kost,
             'nama_kost' => $request->nama_kost,
             'ketentuan' => $request->ketentuan,
+            'kecamatan' => $request->kecamatan,
             'lokasi' => $request->lokasi,
             'peraturan' => $request->peraturan,
             'spesifikasi' => $request->spesifikasi,
             'harga' => $request->harga,
-            'diskon' => $request->diskon,
             'fasilitas_kamar' => $fasilitasKamar,
             'fasilitas_kamar_mandi' => $request->fasilitas_kamar_mandi,
             'fasilitas_tempat_parkir' => $request->fasilitas_tempat_parkir,
@@ -131,8 +134,10 @@ class OwnerKosController extends Controller
     public function update(Request $request, OwnerDataKosts $OwnerDataKosts)
     {
         $request->validate([
+            'tipe_kost' => 'required|in:laki-laki,perempuan,campur',
             'nama_kost' => 'required|string|max:255',
             'ketentuan' => 'required|string',
+            'kecamatan' => 'required|in:Ampelgading,Bantur,Bululawang,Dampit,Dau,Donomulyo,Gedangan,Gondanglegi,Jabung,Kalipare,Karangploso,Kasembon,Kepanjen,Kromengan,Lawang,Ngajum,Ngantang,Pagak,Pagelaran,Pakis,Pakisaji,Poncokusumo,Pujon,Singosari,Sumbermanjing Wetan,Sumberpucung,Tajinan,Tirtoyudo,Tumpang,Turen,Wagir,Wajak,Wonosari',
             'lokasi' => 'required|string',
             'peraturan' => 'required|string',
             'spesifikasi' => 'required|string',
@@ -226,13 +231,14 @@ class OwnerKosController extends Controller
 
         $result = $OwnerDataKosts->update([
             'user_id' => auth()->user()->id,
+            'tipe_kost' => $request->tipe_kost,
             'nama_kost' => $request->nama_kost,
             'ketentuan' => $request->ketentuan,
+            'kecamatan' => $request->kecamatan,
             'lokasi' => $request->lokasi,
             'peraturan' => $request->peraturan,
             'spesifikasi' => $request->spesifikasi,
             'harga' => $request->harga,
-            'diskon' => $request->diskon,
             'fasilitas_kamar' => $fasilitasKamar,
             'fasilitas_kamar_mandi' => $request->fasilitas_kamar_mandi,
             'fasilitas_tempat_parkir' => $request->fasilitas_tempat_parkir,

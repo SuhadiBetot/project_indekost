@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('owner_data_kosts', function (Blueprint $table) {
+        Schema::table('users', function (Blueprint $table) {
             //
-            $table->json('foto_tambahan')->after('foto_dalam')->nullable();
+            $table->integer('pendapatan')->nullable();
         });
     }
 
@@ -22,9 +22,9 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('owner_data_kosts', function (Blueprint $table) {
+        Schema::table('users', function (Blueprint $table) {
             //
-            $table->dropColumn('foto_tambahan');
+            $table->dropColumn('pendapatan');
         });
     }
 };

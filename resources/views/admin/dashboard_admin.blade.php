@@ -16,8 +16,8 @@
 
   <div id="main-wrapper" class="wallet-open active">
 
-        @include('layout.navbarr')
-        @include('layout.sidebarr')
+        @include('layout.navbar')
+        @include('layout.sidebar')
 
     <div class="content-body">
       <!-- row -->

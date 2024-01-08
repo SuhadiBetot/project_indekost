@@ -68,10 +68,66 @@
                                                 @enderror
                                             </div>
                                             <div class="col-xl-12 mb-4">
+                                                <label for="" class="form-label">Tipe kost<span
+                                                        class="text-danger">*</span></label>
+                                                <select name="tipe_kost" id="" class="form-control">
+                                                    <option selected disabled>pilih tipe kost</option>
+                                                    <option value="laki-laki" {{ $OwnerDataKosts->tipe_kost == 'laki-laki' ? 'selected' : '' }}>laki-laki</option>
+                                                    <option value="perempuan" {{ $OwnerDataKosts->tipe_kost == 'perempuan' ? 'selected' : '' }}>perempuan</option>
+                                                    <option value="campur" {{ $OwnerDataKosts->tipe_kost == 'campur' ? 'selected' : '' }}>campur</option>
+                                                </select>
+                                                @error('tipe_kost')
+                                                    <div class="invalid-feedback">{{ $message }}</div>
+                                                @enderror
+                                            </div>
+                                            <div class="col-xl-12 mb-4">
                                                 <label for="" class="form-label">Ketentuan<span
                                                         class="text-danger">*</span></label>
                                                 <textarea rows="3" class="form-control" name="ketentuan" placeholder="Cth: Perempuan">{{ $OwnerDataKosts->ketentuan }}</textarea>
                                                 @error('ketentuan')
+                                                    <div class="invalid-feedback">{{ $message }}</div>
+                                                @enderror
+                                            </div>
+                                            <div class="col-xl-12 mb-4">
+                                                <label for="" class="form-label">kecamatan<span
+                                                        class="text-danger">*</span></label>
+                                                <select name="kecamatan" id="" class="form-control">
+                                                    <option selected disabled>pilih kecamatan</option>
+                                                    <option value="Ampelgading" {{ $OwnerDataKosts->kecamatan == 'Ampelgading' ? 'selected' : '' }}>Ampelgading</option>
+                                                    <option value="Bantur" {{ $OwnerDataKosts->kecamatan == 'Bantur' ? 'selected' : '' }}>Bantur</option>
+                                                    <option value="Bululawang" {{ $OwnerDataKosts->kecamatan == 'Bululawang' ? 'selected' : '' }}>Bululawang</option>
+                                                    <option value="Dampit" {{ $OwnerDataKosts->kecamatan == 'Dampit' ? 'selected' : '' }}>Dampit</option>
+                                                    <option value="Dau" {{ $OwnerDataKosts->kecamatan == 'Dau' ? 'selected' : '' }}>Dau</option>
+                                                    <option value="Donomulyo" {{ $OwnerDataKosts->kecamatan == 'Donomulyo' ? 'selected' : '' }}>Donomulyo</option>
+                                                    <option value="Gedangan" {{ $OwnerDataKosts->kecamatan == 'Gedangan' ? 'selected' : '' }}>Gedangan</option>
+                                                    <option value="Gondanglegi" {{ $OwnerDataKosts->kecamatan == 'Gondanglegi' ? 'selected' : '' }}>Gondanglegi</option>
+                                                    <option value="Jabung" {{ $OwnerDataKosts->kecamatan == 'Jabung' ? 'selected' : '' }}>Jabung</option>
+                                                    <option value="Kalipare" {{ $OwnerDataKosts->kecamatan == 'Kalipare' ? 'selected' : '' }}>Kalipare</option>
+                                                    <option value="Karangploso" {{ $OwnerDataKosts->kecamatan == 'Karangploso' ? 'selected' : '' }}>Karangploso</option>
+                                                    <option value="Kasembon" {{ $OwnerDataKosts->kecamatan == 'Kasembon' ? 'selected' : '' }}>Kasembon</option>
+                                                    <option value="Kepanjen" {{ $OwnerDataKosts->kecamatan == 'Kepanjen' ? 'selected' : '' }}>Kepanjen</option>
+                                                    <option value="Kromengan" {{ $OwnerDataKosts->kecamatan == 'Kromengan' ? 'selected' : '' }}>Kromengan</option>
+                                                    <option value="Lawang" {{ $OwnerDataKosts->kecamatan == 'Lawang' ? 'selected' : '' }}>Lawang</option>
+                                                    <option value="Ngajum" {{ $OwnerDataKosts->kecamatan == 'Ngajum' ? 'selected' : '' }}>Ngajum</option>
+                                                    <option value="Ngantang" {{ $OwnerDataKosts->kecamatan == 'Ngantang' ? 'selected' : '' }}>Ngantang</option>
+                                                    <option value="Pagak" {{ $OwnerDataKosts->kecamatan == 'Pagak' ? 'selected' : '' }}>Pagak</option>
+                                                    <option value="Pagelaran" {{ $OwnerDataKosts->kecamatan == 'Pagelaran' ? 'selected' : '' }}>Pagelaran</option>
+                                                    <option value="Pakis" {{ $OwnerDataKosts->kecamatan == 'Pakis' ? 'selected' : '' }}>Pakis</option>
+                                                    <option value="Pakisaji" {{ $OwnerDataKosts->kecamatan == 'Pakisaji' ? 'selected' : '' }}>Pakisaji</option>
+                                                    <option value="Poncokusumo" {{ $OwnerDataKosts->kecamatan == 'Poncokusumo' ? 'selected' : '' }}>Poncokusumo</option>
+                                                    <option value="Pujon" {{ $OwnerDataKosts->kecamatan == 'Pujon' ? 'selected' : '' }}>Pujon</option>
+                                                    <option value="Singosari" {{ $OwnerDataKosts->kecamatan == 'Singosari' ? 'selected' : '' }}>Singosari</option>
+                                                    <option value="Sumbermanjing Wetan" {{ $OwnerDataKosts->kecamatan == 'Sumbermanjing Wetan' ? 'selected' : '' }}>Sumbermanjing Wetan</option>
+                                                    <option value="Sumberpucung" {{ $OwnerDataKosts->kecamatan == 'Sumberpucung' ? 'selected' : '' }}>Sumberpucung</option>
+                                                    <option value="Tajinan" {{ $OwnerDataKosts->kecamatan == 'Tajinan' ? 'selected' : '' }}>Tajinan</option>
+                                                    <option value="Tirtoyudo" {{ $OwnerDataKosts->kecamatan == 'Tirtoyudo' ? 'selected' : '' }}>Tirtoyudo</option>
+                                                    <option value="Tumpang" {{ $OwnerDataKosts->kecamatan == 'Tumpang' ? 'selected' : '' }}>Tumpang</option>
+                                                    <option value="Turen" {{ $OwnerDataKosts->kecamatan == 'Turen' ? 'selected' : '' }}>Turen</option>
+                                                    <option value="Wagir" {{ $OwnerDataKosts->kecamatan == 'Wagir' ? 'selected' : '' }}>Wagir</option>
+                                                    <option value="Wajak" {{ $OwnerDataKosts->kecamatan == 'Wajak' ? 'selected' : '' }}>Wajak</option>
+                                                    <option value="Wonosari" {{ $OwnerDataKosts->kecamatan == 'Wonosari' ? 'selected' : '' }}>Wonosari</option>
+                                                </select>
+                                                @error('kecamatan')
                                                     <div class="invalid-feedback">{{ $message }}</div>
                                                 @enderror
                                             </div>
@@ -110,11 +166,6 @@
                                                 @error('harga')
                                                     <div class="invalid-feedback">{{ $message }}</div>
                                                 @enderror
-                                            </div>
-                                            <div class="col-xl-12 mb-4">
-                                                <label for="" class="form-label">diskon</label>
-                                                <input type="number" class="form-control" name="diskon"
-                                                    placeholder="100.000" value="{{ $OwnerDataKosts->diskon }}">
                                             </div>
                                         </div>
                                     </div>
