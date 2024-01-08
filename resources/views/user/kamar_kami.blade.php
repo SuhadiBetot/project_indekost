@@ -79,7 +79,7 @@
                                           ⭐⭐⭐
                                         </label>
                                     </div>
-                                </div>   
+                                </div>
                             </form>
                         </div>
                         <div class="modal-footer" style="border-bottom: 2px solid #0000; border-top-color: #0000;">
@@ -102,7 +102,7 @@
                             </div>
                             <div class="col-xl-6">
                                 <span class="rounded-pill"
-                                    style="background-color: #D6EEFF; color: #666666; padding-top:7px; padding-bottom:7px; padding-left:20px; padding-right:20px; 
+                                    style="background-color: #D6EEFF; color: #666666; padding-top:7px; padding-bottom:7px; padding-left:20px; padding-right:20px;
                             margin-top: 50px;">Cowok</span>
                                 <h2 class="fw-medium mt-3">{{ $kost->nama_kost }}</h2>
                                 <h3 style="color: #675656;">{{ $kost->lokasi }}</h3>
@@ -116,19 +116,73 @@
                                 </p>
                                 <div class="d-flex justify-content-between">
                                     <h3>⭐⭐⭐⭐⭐/100</h3>
-                                    <div>
+                                    {{-- <div>
                                         <h5 style="color: red;">
                                             Rp.{{ number_format($kost->harga - $kost->diskon, 0, ',', '.') }}</h5>
                                         <h5 style="text-decoration: line-through;">
                                             Rp.{{ number_format($kost->harga, 0, ',', '.') }}</h5>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                         </div>
-                        <hr>
                     </a>
                 @endforeach
+
             </div>
+
+
+            <nav aria-label="Page navigation example">
+                <ul class="inline-flex -space-x-px text-sm">
+                  <li>
+                    <a href="#" class="flex items-center justify-center px-3 h-8 ms-0 leading-tight text-gray-500 bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Previous</a>
+                  </li>
+                  <li>
+                    <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">1</a>
+                  </li>
+                  <li>
+                    <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">2</a>
+                  </li>
+                  <li>
+                    <a href="#" aria-current="page" class="flex items-center justify-center px-3 h-8 text-blue-600 border border-gray-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white">3</a>
+                  </li>
+                  <li>
+                    <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">4</a>
+                  </li>
+                  <li>
+                    <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">5</a>
+                  </li>
+                  <li>
+                    <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Next</a>
+                  </li>
+                </ul>
+              </nav>
+              <nav aria-label="Page navigation example">
+                <ul class="inline-flex -space-x-px text-base h-10">
+                  <li>
+                    <a href="#" class="flex items-center justify-center px-4 h-10 ms-0 leading-tight text-gray-500 bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Previous</a>
+                  </li>
+                  <li>
+                    <a href="#" class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">1</a>
+                  </li>
+                  <li>
+                    <a href="#" class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">2</a>
+                  </li>
+                  <li>
+                    <a href="#" aria-current="page" class="flex items-center justify-center px-4 h-10 text-blue-600 border border-gray-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white">3</a>
+                  </li>
+                  <li>
+                    <a href="#" class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">4</a>
+                  </li>
+                  <li>
+                    <a href="#" class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">5</a>
+                  </li>
+                  <li>
+                    <a href="#" class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Next</a>
+                  </li>
+                </ul>
+              </nav>
+
         </div>
     </div>
+
 @endsection
