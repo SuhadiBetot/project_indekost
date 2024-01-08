@@ -76,7 +76,7 @@
                                                     <div class="user-info">
                                                         @foreach($owners as $owner)
                                                         <div class="user-img">
-                                                            <img src="{{ asset('asset/banner2.jpg') }}" alt="" class="avatar avatar-xl">
+                                                            <img src="{{ asset('storage/' . $owner->foto) }}" alt="" class="avatar avatar-xl">
                                                              {{-- <img src="{{ asset('storage/' . $owner->foto) }}" alt="Profile Picture" height="53" width="50" style="border-radius:25%;">    </div> --}}
                                                             <div class="user-details">
                                                                 <h4 class="user-name mb-0">{{ $owner->name}}</h4>
@@ -102,7 +102,7 @@
                                                               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                             </div>
                                                             <div class="modal-body">
-                                                                <img src="{{ asset('asset/banner2.jpg') }}" alt="" class="avatar avatar-xl">
+                                                                <img src="{{ asset('storage/' . $owner->foto) }}" alt="" class="avatar avatar-xl">
                                                                 <br><br><br>
                                                                 <h2>{{ $owner->name}}</h2>
                                                                 <h5>{{ $owner->email}}</h5>

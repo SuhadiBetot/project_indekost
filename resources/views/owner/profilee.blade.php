@@ -833,7 +833,6 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
-
 <div class="card">
     <div class="card-wrapper">
         <div class="card-header">
@@ -843,6 +842,7 @@
         </div>
         <div class="row">
             <div class="col-md text-start mb-2 mb-md-0">
+                <br>
                 <a href="javascript:history.back()" class="btn btn-danger btn-sm" style="border-radius:100px; height:40px; width:100px; font-size:16px; font-weight:700;">
                     <span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24">
@@ -853,15 +853,17 @@
                 </a>
             </div>
             <div class="col-md text-end">
+                <br>
                 <a href="{{ route('edit.profile.form', ['id' => $user->id]) }}" class="btn btn-secondary btn-sm" style="border-radius:100px; height:40px; width:100px; font-size:16px; font-weight:700;">
                     <span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"><path fill="currentColor" d="m14 18l-1.4-1.45L16.15 13H4v-2h12.15L12.6 7.45L14 6l6 6z"/></svg>
                     </span>
-                    Selanjutnya
+                    Next
                 </a>
             </div>
-
     <div class="card-hero">
+<br><br>
+
       <div class="hero-bg"></div>
       @if (Auth::user()->foto == null)
         <div class="default-photo-container">
@@ -874,7 +876,7 @@
       @endif
       <div class="bio">
         <span>
-          <h1>{{ $user->name }}</h1>
+          <h1 style="font-size: 40; font-weight:700;">{{ $user->name }}</h1>
         </span> <span><img class="span-img" src="https://www.svgrepo.com/show/347880/verified.svg"></span>
       </div>
     </div>
@@ -887,21 +889,18 @@
         <h1>9</h1>
         <p style="font-size: 15px;">Kost disewa</p>
       </div>
+
     </div>
+
     <div class="footer">
-      <div class="footer-item">
-        <img class="footer-img" />
+        <br><br>
         <div class="d-flex justify-content-center">
             <svg xmlns="http://www.w3.org/2000/svg" width="28.45" height="20" viewBox="0 0 256 193"><path fill="#4285F4" d="M58.182 192.05V93.14L27.507 65.077L0 49.504v125.091c0 9.658 7.825 17.455 17.455 17.455z"/><path fill="#34A853" d="M197.818 192.05h40.727c9.659 0 17.455-7.826 17.455-17.455V49.505l-31.156 17.837l-27.026 25.798z"/><path fill="#EA4335" d="m58.182 93.14l-4.174-38.647l4.174-36.989L128 69.868l69.818-52.364l4.669 34.992l-4.669 40.644L128 145.504z"/><path fill="#FBBC04" d="M197.818 17.504V93.14L256 49.504V26.231c0-21.585-24.64-33.89-41.89-20.945z"/><path fill="#C5221F" d="m0 49.504l26.759 20.07L58.182 93.14V17.504L41.89 5.286C24.61-7.66 0 4.646 0 26.23z"/></svg>
         <strong style="font-size: 15px;">{{ $user->email }}</strong>
+        <br><br>
         </div>
+        <br>
       </div>
-      {{-- <div class="footer-item">
-        <img class="footer-img" src="https://www.svgrepo.com/show/870/suitcase.svg" alt="" />
-        <p style="font-size: 15px;">{{ $user->email }}</p>
-      </div> --}}
-
-    </div>
     <center>
       <div class="follow-btn">
         <a href="{{ route('edit.profile.form', ['id' => $user->id]) }}" style="width: 500; height:70;">Edit Profil</a>

@@ -27,7 +27,7 @@ body {
 }
 
 .card-wrapper {
-  width: 100%; height:100%;
+  width: 100%;
   background: white;
   border-radius: 25px;
   padding: 15px;
@@ -76,7 +76,7 @@ body {
     position: relative;
     /* margin-bottom: -200px;  */
     margin-bottom: 0; /* Remove margin */
-    
+
 }
 
 
@@ -717,7 +717,7 @@ img {
                 <span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"><path fill="currentColor" d="m14 18l-1.4-1.45L16.15 13H4v-2h12.15L12.6 7.45L14 6l6 6z"/></svg>
                 </span>
-                Selanjutnya
+                Next
             </a>
         </div>
     </div>
@@ -736,24 +736,22 @@ img {
         </div>
         @endif
         <div class="bio">
-            <span><h1>{{ $user->name }}</h1></span> <span><img class="span-img" src="https://www.svgrepo.com/show/347880/verified.svg"></span>
+            <span><h1 style="font-size: 40; font-weight:700;">{{ $user->name }}</h1></span> <span><img class="span-img" src="https://www.svgrepo.com/show/347880/verified.svg"></span>
         </div>
     </div>
-
+<br><br><br>
       <div class="stats">
         <div class="stat">
-          <h1>19</h1>
+          <h3 style="font-weight: 500; font-size:25;">19</h3>
           <p style="font-size: 15px;">Transaksi</p>
         </div>
       </div>
       <div class="footer">
-        <div class="footer-item">
-          <img class="footer-img" src="https://www.svgrepo.com/show/129908/location.svg" alt=""/> <p style="font-size: 15px;"></p> <strong style="font-size: 15px;">Budapest</strong>
+        <div class="d-flex justify-content-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28.45" height="20" viewBox="0 0 256 193"><path fill="#4285F4" d="M58.182 192.05V93.14L27.507 65.077L0 49.504v125.091c0 9.658 7.825 17.455 17.455 17.455z"/><path fill="#34A853" d="M197.818 192.05h40.727c9.659 0 17.455-7.826 17.455-17.455V49.505l-31.156 17.837l-27.026 25.798z"/><path fill="#EA4335" d="m58.182 93.14l-4.174-38.647l4.174-36.989L128 69.868l69.818-52.364l4.669 34.992l-4.669 40.644L128 145.504z"/><path fill="#FBBC04" d="M197.818 17.504V93.14L256 49.504V26.231c0-21.585-24.64-33.89-41.89-20.945z"/><path fill="#C5221F" d="m0 49.504l26.759 20.07L58.182 93.14V17.504L41.89 5.286C24.61-7.66 0 4.646 0 26.23z"/></svg>
+        <strong style="font-size: 15px;">{{ $user->email }}</strong>
         </div>
-        <div class="footer-item">
-          <img class="footer-img" src="https://www.svgrepo.com/show/870/suitcase.svg" alt=""/> <p style="font-size: 15px;">serlynindi680@gmail.com</p>
-        </div>
-
+        <br>
       </div>
      <center>
         <div class="follow-btn">
@@ -765,64 +763,35 @@ img {
 <br><br><br>
 <main>
 <br><br><br>
-        <div class="card">
+{{-- Tabel --}}
+        {{-- <div class="card">
             <div class="card-wrapper">
                 <div id="wrapper">
-                    <h1>Profile</h1>
-
+                    <h1>Histori Pemesanan</h1>
+                    <br><br><br>
                     <table id="keywords" cellspacing="0" cellpadding="0">
                       <thead>
                         <tr>
-                          <th><span>Keywords</span></th>
-                          <th><span>Impressions</span></th>
-                          <th><span>Clicks</span></th>
-                          <th><span>CTR</span></th>
-                          <th><span>Rank</span></th>
+                          <th><span>No</span></th>
+                          <th><span>Gambar</span></th>
+                          <th><span>Nama Tempat</span></th>
+                          <th><span>Alamat</span></th>
+                          <th><span>Harga</span></th>
+                          <th><span>Status</span></th>
+                          <th><span>Aksi</span></th>
                         </tr>
                       </thead>
                       <tbody>
+                        @foreach ($user as $user)
                         <tr>
-                          <td class="lalign">silly tshirts</td>
-                          <td>6,000</td>
-                          <td>110</td>
-                          <td>1.8%</td>
-                          <td>22.2</td>
+                          <td>{{ $loop->iteration }}</td>
+                          <td>{{ $user->foto }}</td>
+                          <td>{{ $user->name }}</td>
+                          <td>{{ $user->name }}</td>
+                          <td>{{ $user->name}}</td>
+                          <td>{{ $user->name }}</td>
                         </tr>
-                        <tr>
-                          <td class="lalign">desktop workspace photos</td>
-                          <td>2,200</td>
-                          <td>500</td>
-                          <td>22%</td>
-                          <td>8.9</td>
-                        </tr>
-                        <tr>
-                          <td class="lalign">arrested development quotes</td>
-                          <td>13,500</td>
-                          <td>900</td>
-                          <td>6.7%</td>
-                          <td>12.0</td>
-                        </tr>
-                        <tr>
-                          <td class="lalign">popular web series</td>
-                          <td>8,700</td>
-                          <td>350</td>
-                          <td>4%</td>
-                          <td>7.0</td>
-                        </tr>
-                        <tr>
-                          <td class="lalign">2013 webapps</td>
-                          <td>9,900</td>
-                          <td>460</td>
-                          <td>4.6%</td>
-                          <td>11.5</td>
-                        </tr>
-                        <tr>
-                          <td class="lalign">ring bananaphone</td>
-                          <td>10,500</td>
-                          <td>748</td>
-                          <td>7.1%</td>
-                          <td>17.3</td>
-                        </tr>
+            @endforeach
                       </tbody>
                     </table>
                    </div>
@@ -830,7 +799,7 @@ img {
 
                 <div class="loader"></div>
             </div>
-        </div>
+        </div> --}}
 
 	<!-- End of container -->
 
